@@ -1,4 +1,4 @@
-# Swagger\Client\DefaultApi
+# AndyDune\MgmtIntaxxApi\DefaultApi
 
 All URIs are relative to *{protocol}://{domain}/api/v1*
 
@@ -17,7 +17,7 @@ Create order with product of given brand
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\DefaultApi(
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -60,7 +60,7 @@ Get full data for website to work with.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\DefaultApi(
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
