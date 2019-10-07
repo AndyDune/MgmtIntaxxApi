@@ -19,28 +19,30 @@ PHP 5.5 and later
 
 To install the bindings via [Composer](http://getcomposer.org/), add the following to `composer.json`:
 
+
 ```
-{
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/AndyDune/MgmtIntaxxApi.git"
-    }
-  ],
-  "require": {
-    "AndyDune/MgmtIntaxxApi": "*@dev"
-  }
+composer require andydune/mgmt-intaxx-api
+```
+Or if composer was not installed globally:
+```
+php composer.phar require andydune/mgmt-intaxx-api
+```
+Or edit your `composer.json`:
+```
+"require" : {
+     "andydune/mgmt-intaxx-api": "^1"
 }
+
+```
+And execute command:
+```
+php composer.phar update andydune/mgmt-intaxx-api
 ```
 
-Then run `composer install`
-
-### Manual Installation
-
-Download the files and include `autoload.php`:
+### Inject into code
 
 ```php
-    require_once('/path/to/SwaggerClient-php/vendor/autoload.php');
+    require_once('/project_root/vendor/autoload.php');
 ```
 
 ## Tests
