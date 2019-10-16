@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace AndyDune\MgmtIntaxxApi\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -33,16 +33,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use Swagger\Client\ApiException;
-use Swagger\Client\Configuration;
-use Swagger\Client\HeaderSelector;
-use Swagger\Client\ObjectSerializer;
+use AndyDune\MgmtIntaxxApi\ApiException;
+use AndyDune\MgmtIntaxxApi\Configuration;
+use AndyDune\MgmtIntaxxApi\HeaderSelector;
+use AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
  * DefaultApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -91,11 +91,11 @@ class DefaultApi
      *
      * Create order with product of given brand
      *
-     * @param  \Swagger\Client\Model\Order $body Order and customer datails (required)
+     * @param  \AndyDune\MgmtIntaxxApi\Model\Order $body Order and customer datails (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Response
+     * @return \AndyDune\MgmtIntaxxApi\Model\Response
      */
     public function createOrderPost($body)
     {
@@ -108,15 +108,15 @@ class DefaultApi
      *
      * Create order with product of given brand
      *
-     * @param  \Swagger\Client\Model\Order $body Order and customer datails (required)
+     * @param  \AndyDune\MgmtIntaxxApi\Model\Order $body Order and customer datails (required)
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AndyDune\MgmtIntaxxApi\Model\Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function createOrderPostWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\Model\Response';
+        $returnType = '\AndyDune\MgmtIntaxxApi\Model\Response';
         $request = $this->createOrderPostRequest($body);
 
         try {
@@ -168,7 +168,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Response',
+                        '\AndyDune\MgmtIntaxxApi\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -176,7 +176,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Response',
+                        '\AndyDune\MgmtIntaxxApi\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -184,7 +184,7 @@ class DefaultApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Response',
+                        '\AndyDune\MgmtIntaxxApi\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -199,7 +199,7 @@ class DefaultApi
      *
      * Create order with product of given brand
      *
-     * @param  \Swagger\Client\Model\Order $body Order and customer datails (required)
+     * @param  \AndyDune\MgmtIntaxxApi\Model\Order $body Order and customer datails (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -219,14 +219,14 @@ class DefaultApi
      *
      * Create order with product of given brand
      *
-     * @param  \Swagger\Client\Model\Order $body Order and customer datails (required)
+     * @param  \AndyDune\MgmtIntaxxApi\Model\Order $body Order and customer datails (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createOrderPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\Swagger\Client\Model\Response';
+        $returnType = '\AndyDune\MgmtIntaxxApi\Model\Response';
         $request = $this->createOrderPostRequest($body);
 
         return $this->client
@@ -269,7 +269,7 @@ class DefaultApi
     /**
      * Create request for operation 'createOrderPost'
      *
-     * @param  \Swagger\Client\Model\Order $body Order and customer datails (required)
+     * @param  \AndyDune\MgmtIntaxxApi\Model\Order $body Order and customer datails (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -370,9 +370,9 @@ class DefaultApi
      * Get full data for website to work with.
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Response
+     * @return \AndyDune\MgmtIntaxxApi\Model\Response
      */
     public function dataGet()
     {
@@ -386,13 +386,13 @@ class DefaultApi
      * Get full data for website to work with.
      *
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AndyDune\MgmtIntaxxApi\Model\Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function dataGetWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\Response';
+        $returnType = '\AndyDune\MgmtIntaxxApi\Model\Response';
         $request = $this->dataGetRequest();
 
         try {
@@ -444,7 +444,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Response',
+                        '\AndyDune\MgmtIntaxxApi\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -452,7 +452,7 @@ class DefaultApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Response',
+                        '\AndyDune\MgmtIntaxxApi\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -460,7 +460,7 @@ class DefaultApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\Response',
+                        '\AndyDune\MgmtIntaxxApi\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -500,7 +500,7 @@ class DefaultApi
      */
     public function dataGetAsyncWithHttpInfo()
     {
-        $returnType = '\Swagger\Client\Model\Response';
+        $returnType = '\AndyDune\MgmtIntaxxApi\Model\Response';
         $request = $this->dataGetRequest();
 
         return $this->client

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace AndyDune\MgmtIntaxxApi\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
  * OrderItem Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class OrderItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'product_id' => 'float',
+        'productId' => 'float',
 'price' => 'float'    ];
 
     /**
@@ -65,7 +65,7 @@ class OrderItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'product_id' => 'int32',
+        'productId' => 'int32',
 'price' => 'float'    ];
 
     /**
@@ -95,7 +95,7 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'product_id' => 'product_id',
+        'productId' => 'product_id',
 'price' => 'price'    ];
 
     /**
@@ -104,7 +104,7 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'product_id' => 'setProductId',
+        'productId' => 'setProductId',
 'price' => 'setPrice'    ];
 
     /**
@@ -113,7 +113,7 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'product_id' => 'getProductId',
+        'productId' => 'getProductId',
 'price' => 'getPrice'    ];
 
     /**
@@ -174,7 +174,7 @@ class OrderItem implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
+        $this->container['productId'] = isset($data['productId']) ? $data['productId'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
     }
 
@@ -203,25 +203,25 @@ class OrderItem implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets product_id
+     * Gets productId
      *
      * @return float
      */
     public function getProductId()
     {
-        return $this->container['product_id'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets product_id
+     * Sets productId
      *
-     * @param float $product_id product_id
+     * @param float $productId productId
      *
      * @return $this
      */
-    public function setProductId($product_id)
+    public function setProductId($productId)
     {
-        $this->container['product_id'] = $product_id;
+        $this->container['productId'] = $productId;
 
         return $this;
     }

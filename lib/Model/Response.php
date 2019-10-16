@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace AndyDune\MgmtIntaxxApi\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
  * Response Class Doc Comment
  *
  * @category Class
  * @description Common response from server.
- * @package  Swagger\Client
+ * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -59,8 +59,8 @@ class Response implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'success' => 'bool',
 'message' => 'string',
-'context_type' => 'string',
-'context_id' => 'float',
+'contextType' => 'string',
+'contextId' => 'float',
 'data' => 'null[]'    ];
 
     /**
@@ -71,8 +71,8 @@ class Response implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'success' => null,
 'message' => null,
-'context_type' => null,
-'context_id' => 'int64',
+'contextType' => null,
+'contextId' => 'int64',
 'data' => null    ];
 
     /**
@@ -104,8 +104,8 @@ class Response implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'success' => 'success',
 'message' => 'message',
-'context_type' => 'contextType',
-'context_id' => 'contextId',
+'contextType' => 'contextType',
+'contextId' => 'contextId',
 'data' => 'data'    ];
 
     /**
@@ -116,8 +116,8 @@ class Response implements ModelInterface, ArrayAccess
     protected static $setters = [
         'success' => 'setSuccess',
 'message' => 'setMessage',
-'context_type' => 'setContextType',
-'context_id' => 'setContextId',
+'contextType' => 'setContextType',
+'contextId' => 'setContextId',
 'data' => 'setData'    ];
 
     /**
@@ -128,8 +128,8 @@ class Response implements ModelInterface, ArrayAccess
     protected static $getters = [
         'success' => 'getSuccess',
 'message' => 'getMessage',
-'context_type' => 'getContextType',
-'context_id' => 'getContextId',
+'contextType' => 'getContextType',
+'contextId' => 'getContextId',
 'data' => 'getData'    ];
 
     /**
@@ -192,8 +192,8 @@ class Response implements ModelInterface, ArrayAccess
     {
         $this->container['success'] = isset($data['success']) ? $data['success'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['context_type'] = isset($data['context_type']) ? $data['context_type'] : null;
-        $this->container['context_id'] = isset($data['context_id']) ? $data['context_id'] : null;
+        $this->container['contextType'] = isset($data['contextType']) ? $data['contextType'] : null;
+        $this->container['contextId'] = isset($data['contextId']) ? $data['contextId'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
@@ -273,49 +273,49 @@ class Response implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets context_type
+     * Gets contextType
      *
      * @return string
      */
     public function getContextType()
     {
-        return $this->container['context_type'];
+        return $this->container['contextType'];
     }
 
     /**
-     * Sets context_type
+     * Sets contextType
      *
-     * @param string $context_type context_type
+     * @param string $contextType contextType
      *
      * @return $this
      */
-    public function setContextType($context_type)
+    public function setContextType($contextType)
     {
-        $this->container['context_type'] = $context_type;
+        $this->container['contextType'] = $contextType;
 
         return $this;
     }
 
     /**
-     * Gets context_id
+     * Gets contextId
      *
      * @return float
      */
     public function getContextId()
     {
-        return $this->container['context_id'];
+        return $this->container['contextId'];
     }
 
     /**
-     * Sets context_id
+     * Sets contextId
      *
-     * @param float $context_id context_id
+     * @param float $contextId contextId
      *
      * @return $this
      */
-    public function setContextId($context_id)
+    public function setContextId($contextId)
     {
-        $this->container['context_id'] = $context_id;
+        $this->container['contextId'] = $contextId;
 
         return $this;
     }

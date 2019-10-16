@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,14 +26,14 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace AndyDune\MgmtIntaxxApi;
 
 /**
  * ResponseTest Class Doc Comment
  *
  * @category    Class
  * @description Common response from server.
- * @package     Swagger\Client
+ * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -90,14 +90,14 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "context_type"
+     * Test attribute "contextType"
      */
     public function testPropertyContextType()
     {
     }
 
     /**
-     * Test attribute "context_id"
+     * Test attribute "contextId"
      */
     public function testPropertyContextId()
     {

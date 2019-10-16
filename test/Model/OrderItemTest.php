@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,14 +26,14 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace AndyDune\MgmtIntaxxApi;
 
 /**
  * OrderItemTest Class Doc Comment
  *
  * @category    Class
  * @description OrderItem
- * @package     Swagger\Client
+ * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -76,7 +76,7 @@ class OrderItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "product_id"
+     * Test attribute "productId"
      */
     public function testPropertyProductId()
     {

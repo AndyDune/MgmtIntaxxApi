@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,17 +26,17 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace AndyDune\MgmtIntaxxApi\Model;
 
 use \ArrayAccess;
-use \Swagger\Client\ObjectSerializer;
+use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
  * Order Class Doc Comment
  *
  * @category Class
  * @description Order customar details.
- * @package  Swagger\Client
+ * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -58,19 +58,19 @@ class Order implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'email' => 'string',
-'first_name' => 'string',
-'last_name' => 'string',
+'firstName' => 'string',
+'lastName' => 'string',
 'gender' => 'string',
 'birthday' => '\DateTime',
 'phone' => 'string',
-'country_code' => 'string',
+'countryCode' => 'string',
 'city' => 'string',
 'street' => 'string',
 'house' => 'string',
 'room' => 'string',
 'state' => 'string',
 'zip' => 'string',
-'items' => '\Swagger\Client\Model\OrderItem[]'    ];
+'items' => '\AndyDune\MgmtIntaxxApi\Model\OrderItem[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -79,12 +79,12 @@ class Order implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'email' => 'email',
-'first_name' => null,
-'last_name' => null,
+'firstName' => null,
+'lastName' => null,
 'gender' => null,
 'birthday' => 'date',
 'phone' => null,
-'country_code' => null,
+'countryCode' => null,
 'city' => null,
 'street' => null,
 'house' => null,
@@ -121,12 +121,12 @@ class Order implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'email' => 'email',
-'first_name' => 'first_name',
-'last_name' => 'last_name',
+'firstName' => 'first_name',
+'lastName' => 'last_name',
 'gender' => 'gender',
 'birthday' => 'birthday',
 'phone' => 'phone',
-'country_code' => 'country_code',
+'countryCode' => 'country_code',
 'city' => 'city',
 'street' => 'street',
 'house' => 'house',
@@ -142,12 +142,12 @@ class Order implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'email' => 'setEmail',
-'first_name' => 'setFirstName',
-'last_name' => 'setLastName',
+'firstName' => 'setFirstName',
+'lastName' => 'setLastName',
 'gender' => 'setGender',
 'birthday' => 'setBirthday',
 'phone' => 'setPhone',
-'country_code' => 'setCountryCode',
+'countryCode' => 'setCountryCode',
 'city' => 'setCity',
 'street' => 'setStreet',
 'house' => 'setHouse',
@@ -163,12 +163,12 @@ class Order implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'email' => 'getEmail',
-'first_name' => 'getFirstName',
-'last_name' => 'getLastName',
+'firstName' => 'getFirstName',
+'lastName' => 'getLastName',
 'gender' => 'getGender',
 'birthday' => 'getBirthday',
 'phone' => 'getPhone',
-'country_code' => 'getCountryCode',
+'countryCode' => 'getCountryCode',
 'city' => 'getCity',
 'street' => 'getStreet',
 'house' => 'getHouse',
@@ -236,12 +236,12 @@ class Order implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
+        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
         $this->container['birthday'] = isset($data['birthday']) ? $data['birthday'] : null;
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
+        $this->container['countryCode'] = isset($data['countryCode']) ? $data['countryCode'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['street'] = isset($data['street']) ? $data['street'] : null;
         $this->container['house'] = isset($data['house']) ? $data['house'] : null;
@@ -303,49 +303,49 @@ class Order implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets first_name
+     * Gets firstName
      *
      * @return string
      */
     public function getFirstName()
     {
-        return $this->container['first_name'];
+        return $this->container['firstName'];
     }
 
     /**
-     * Sets first_name
+     * Sets firstName
      *
-     * @param string $first_name first_name
+     * @param string $firstName firstName
      *
      * @return $this
      */
-    public function setFirstName($first_name)
+    public function setFirstName($firstName)
     {
-        $this->container['first_name'] = $first_name;
+        $this->container['firstName'] = $firstName;
 
         return $this;
     }
 
     /**
-     * Gets last_name
+     * Gets lastName
      *
      * @return string
      */
     public function getLastName()
     {
-        return $this->container['last_name'];
+        return $this->container['lastName'];
     }
 
     /**
-     * Sets last_name
+     * Sets lastName
      *
-     * @param string $last_name last_name
+     * @param string $lastName lastName
      *
      * @return $this
      */
-    public function setLastName($last_name)
+    public function setLastName($lastName)
     {
-        $this->container['last_name'] = $last_name;
+        $this->container['lastName'] = $lastName;
 
         return $this;
     }
@@ -423,25 +423,25 @@ class Order implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets country_code
+     * Gets countryCode
      *
      * @return string
      */
     public function getCountryCode()
     {
-        return $this->container['country_code'];
+        return $this->container['countryCode'];
     }
 
     /**
-     * Sets country_code
+     * Sets countryCode
      *
-     * @param string $country_code country_code
+     * @param string $countryCode countryCode
      *
      * @return $this
      */
-    public function setCountryCode($country_code)
+    public function setCountryCode($countryCode)
     {
-        $this->container['country_code'] = $country_code;
+        $this->container['countryCode'] = $countryCode;
 
         return $this;
     }
@@ -593,7 +593,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Gets items
      *
-     * @return \Swagger\Client\Model\OrderItem[]
+     * @return \AndyDune\MgmtIntaxxApi\Model\OrderItem[]
      */
     public function getItems()
     {
@@ -603,7 +603,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Sets items
      *
-     * @param \Swagger\Client\Model\OrderItem[] $items If items is null - site must have only one product to use.
+     * @param \AndyDune\MgmtIntaxxApi\Model\OrderItem[] $items If items is null - site must have only one product to use.
      *
      * @return $this
      */

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,14 +26,14 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace AndyDune\MgmtIntaxxApi;
 
 /**
  * OrderTest Class Doc Comment
  *
  * @category    Class
  * @description Order customar details.
- * @package     Swagger\Client
+ * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -83,14 +83,14 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "first_name"
+     * Test attribute "firstName"
      */
     public function testPropertyFirstName()
     {
     }
 
     /**
-     * Test attribute "last_name"
+     * Test attribute "lastName"
      */
     public function testPropertyLastName()
     {
@@ -118,7 +118,7 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "country_code"
+     * Test attribute "countryCode"
      */
     public function testPropertyCountryCode()
     {
