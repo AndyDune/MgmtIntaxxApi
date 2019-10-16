@@ -1,6 +1,6 @@
 # AndyDune\MgmtIntaxxApi\DefaultApi
 
-All URIs are relative to *{protocol}://{domain}/api/v1*
+All URIs are relative to *https://mgmt.intaxx.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**dataGet**](DefaultApi.md#dataget) | **GET** /data | Get full data for website to work with.
 
 # **createOrderPost**
-> object createOrderPost()
+> \AndyDune\MgmtIntaxxApi\Model\Response createOrderPost($body)
 
 Create order with product of given brand
 
@@ -22,9 +22,10 @@ $apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$body = new \AndyDune\MgmtIntaxxApi\Model\Order(); // \AndyDune\MgmtIntaxxApi\Model\Order | Order and customer datails
 
 try {
-    $result = $apiInstance->createOrderPost();
+    $result = $apiInstance->createOrderPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->createOrderPost: ', $e->getMessage(), PHP_EOL;
@@ -33,11 +34,14 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\AndyDune\MgmtIntaxxApi\Model\Order**](../Model/Order.md)| Order and customer datails |
 
 ### Return type
 
-**object**
+[**\AndyDune\MgmtIntaxxApi\Model\Response**](../Model/Response.md)
 
 ### Authorization
 
@@ -45,13 +49,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **dataGet**
-> object dataGet()
+> \AndyDune\MgmtIntaxxApi\Model\Response dataGet()
 
 Get full data for website to work with.
 
@@ -80,7 +84,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**object**
+[**\AndyDune\MgmtIntaxxApi\Model\Response**](../Model/Response.md)
 
 ### Authorization
 

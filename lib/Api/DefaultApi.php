@@ -91,14 +91,15 @@ class DefaultApi
      *
      * Create order with product of given brand
      *
+     * @param  \AndyDune\MgmtIntaxxApi\Model\Order $body Order and customer datails (required)
      *
      * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return \AndyDune\MgmtIntaxxApi\Model\Response
      */
-    public function createOrderPost()
+    public function createOrderPost($body)
     {
-        list($response) = $this->createOrderPostWithHttpInfo();
+        list($response) = $this->createOrderPostWithHttpInfo($body);
         return $response;
     }
 
@@ -107,15 +108,16 @@ class DefaultApi
      *
      * Create order with product of given brand
      *
+     * @param  \AndyDune\MgmtIntaxxApi\Model\Order $body Order and customer datails (required)
      *
      * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AndyDune\MgmtIntaxxApi\Model\Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createOrderPostWithHttpInfo()
+    public function createOrderPostWithHttpInfo($body)
     {
-        $returnType = 'object';
-        $request = $this->createOrderPostRequest();
+        $returnType = '\AndyDune\MgmtIntaxxApi\Model\Response';
+        $request = $this->createOrderPostRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -166,7 +168,23 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\AndyDune\MgmtIntaxxApi\Model\Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AndyDune\MgmtIntaxxApi\Model\Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AndyDune\MgmtIntaxxApi\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -181,13 +199,14 @@ class DefaultApi
      *
      * Create order with product of given brand
      *
+     * @param  \AndyDune\MgmtIntaxxApi\Model\Order $body Order and customer datails (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOrderPostAsync()
+    public function createOrderPostAsync($body)
     {
-        return $this->createOrderPostAsyncWithHttpInfo()
+        return $this->createOrderPostAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -200,14 +219,15 @@ class DefaultApi
      *
      * Create order with product of given brand
      *
+     * @param  \AndyDune\MgmtIntaxxApi\Model\Order $body Order and customer datails (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createOrderPostAsyncWithHttpInfo()
+    public function createOrderPostAsyncWithHttpInfo($body)
     {
-        $returnType = 'object';
-        $request = $this->createOrderPostRequest();
+        $returnType = '\AndyDune\MgmtIntaxxApi\Model\Response';
+        $request = $this->createOrderPostRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -249,12 +269,19 @@ class DefaultApi
     /**
      * Create request for operation 'createOrderPost'
      *
+     * @param  \AndyDune\MgmtIntaxxApi\Model\Order $body Order and customer datails (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createOrderPostRequest()
+    protected function createOrderPostRequest($body)
     {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling createOrderPost'
+            );
+        }
 
         $resourcePath = '/create-order';
         $formParams = [];
@@ -267,6 +294,9 @@ class DefaultApi
 
         // body params
         $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -275,7 +305,7 @@ class DefaultApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                []
+                ['application/json']
             );
         }
 
@@ -337,7 +367,7 @@ class DefaultApi
      *
      * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return \AndyDune\MgmtIntaxxApi\Model\Response
      */
     public function dataGet()
     {
@@ -353,11 +383,11 @@ class DefaultApi
      *
      * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AndyDune\MgmtIntaxxApi\Model\Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function dataGetWithHttpInfo()
     {
-        $returnType = 'object';
+        $returnType = '\AndyDune\MgmtIntaxxApi\Model\Response';
         $request = $this->dataGetRequest();
 
         try {
@@ -409,7 +439,23 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\AndyDune\MgmtIntaxxApi\Model\Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AndyDune\MgmtIntaxxApi\Model\Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AndyDune\MgmtIntaxxApi\Model\Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -449,7 +495,7 @@ class DefaultApi
      */
     public function dataGetAsyncWithHttpInfo()
     {
-        $returnType = 'object';
+        $returnType = '\AndyDune\MgmtIntaxxApi\Model\Response';
         $request = $this->dataGetRequest();
 
         return $this->client
