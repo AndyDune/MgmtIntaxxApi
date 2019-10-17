@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderItemTest
+ * PincodeCheckTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * OrderItemTest Class Doc Comment
+ * PincodeCheckTest Class Doc Comment
  *
  * @category    Class
- * @description OrderItem
+ * @description PincodeCheck
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrderItemTest extends \PHPUnit_Framework_TestCase
+class PincodeCheckTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,23 +69,30 @@ class OrderItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OrderItem"
+     * Test "PincodeCheck"
      */
-    public function testOrderItem()
+    public function testPincodeCheck()
     {
     }
 
     /**
-     * Test attribute "productId"
+     * Test attribute "login"
      */
-    public function testPropertyProductId()
+    public function testPropertyLogin()
     {
     }
 
     /**
-     * Test attribute "price"
+     * Test attribute "pin"
      */
-    public function testPropertyPrice()
+    public function testPropertyPin()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Response
+ * PincodeCheck
  *
  * PHP version 5
  *
@@ -32,15 +32,14 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * Response Class Doc Comment
+ * PincodeCheck Class Doc Comment
  *
  * @category Class
- * @description Common response from server.
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Response implements ModelInterface, ArrayAccess
+class PincodeCheck implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class Response implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Response';
+    protected static $swaggerModelName = 'PincodeCheck';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +56,9 @@ class Response implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'success' => 'bool',
-'message' => 'string',
-'contextType' => 'string',
-'contextId' => 'float',
-'data' => 'null[]'    ];
+        'login' => 'string',
+'pin' => 'string',
+'type' => 'float'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,11 +66,9 @@ class Response implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'success' => null,
-'message' => null,
-'contextType' => null,
-'contextId' => 'int64',
-'data' => null    ];
+        'login' => null,
+'pin' => null,
+'type' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -102,11 +97,9 @@ class Response implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-'message' => 'message',
-'contextType' => 'contextType',
-'contextId' => 'contextId',
-'data' => 'data'    ];
+        'login' => 'login',
+'pin' => 'pin',
+'type' => 'type'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -114,11 +107,9 @@ class Response implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-'message' => 'setMessage',
-'contextType' => 'setContextType',
-'contextId' => 'setContextId',
-'data' => 'setData'    ];
+        'login' => 'setLogin',
+'pin' => 'setPin',
+'type' => 'setType'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -126,11 +117,9 @@ class Response implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-'message' => 'getMessage',
-'contextType' => 'getContextType',
-'contextId' => 'getContextId',
-'data' => 'getData'    ];
+        'login' => 'getLogin',
+'pin' => 'getPin',
+'type' => 'getType'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -190,11 +179,9 @@ class Response implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['contextType'] = isset($data['contextType']) ? $data['contextType'] : null;
-        $this->container['contextId'] = isset($data['contextId']) ? $data['contextId'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['login'] = isset($data['login']) ? $data['login'] : null;
+        $this->container['pin'] = isset($data['pin']) ? $data['pin'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -206,8 +193,11 @@ class Response implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['success'] === null) {
-            $invalidProperties[] = "'success' can't be null";
+        if ($this->container['login'] === null) {
+            $invalidProperties[] = "'login' can't be null";
+        }
+        if ($this->container['pin'] === null) {
+            $invalidProperties[] = "'pin' can't be null";
         }
         return $invalidProperties;
     }
@@ -225,121 +215,73 @@ class Response implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success success
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
+     * Gets login
      *
      * @return string
      */
-    public function getMessage()
+    public function getLogin()
     {
-        return $this->container['message'];
+        return $this->container['login'];
     }
 
     /**
-     * Sets message
+     * Sets login
      *
-     * @param string $message message
+     * @param string $login login
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setLogin($login)
     {
-        $this->container['message'] = $message;
+        $this->container['login'] = $login;
 
         return $this;
     }
 
     /**
-     * Gets contextType
+     * Gets pin
      *
      * @return string
      */
-    public function getContextType()
+    public function getPin()
     {
-        return $this->container['contextType'];
+        return $this->container['pin'];
     }
 
     /**
-     * Sets contextType
+     * Sets pin
      *
-     * @param string $contextType contextType
+     * @param string $pin pin
      *
      * @return $this
      */
-    public function setContextType($contextType)
+    public function setPin($pin)
     {
-        $this->container['contextType'] = $contextType;
+        $this->container['pin'] = $pin;
 
         return $this;
     }
 
     /**
-     * Gets contextId
+     * Gets type
      *
      * @return float
      */
-    public function getContextId()
+    public function getType()
     {
-        return $this->container['contextId'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets contextId
+     * Sets type
      *
-     * @param float $contextId contextId
+     * @param float $type type
      *
      * @return $this
      */
-    public function setContextId($contextId)
+    public function setType($type)
     {
-        $this->container['contextId'] = $contextId;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return null[]
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param null[] $data data
-     *
-     * @return $this
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
+        $this->container['type'] = $type;
 
         return $this;
     }
