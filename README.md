@@ -148,5 +148,3 @@ Class | Method | HTTP request | Description
 
 ## Author
 
-
-
