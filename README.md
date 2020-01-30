@@ -60,6 +60,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: ApiKeyAuth
 $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config->setHost('https://mgmt.intaxx.com/api/v1');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
@@ -80,6 +81,7 @@ try {
 
 // Configure API key authorization: ApiKeyAuth
 $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config->setHost('https://mgmt.intaxx.com/api/v1');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
@@ -100,6 +102,7 @@ try {
 
 // Configure API key authorization: ApiKeyAuth
 $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+$config->setHost('https://mgmt.intaxx.com/api/v1');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
@@ -121,7 +124,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://mgmt.intaxx.com/api/v1*
+All URIs are relative to *{protocol}://{domain}/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

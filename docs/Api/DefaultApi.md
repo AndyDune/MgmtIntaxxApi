@@ -1,6 +1,6 @@
 # AndyDune\MgmtIntaxxApi\DefaultApi
 
-All URIs are relative to *https://mgmt.intaxx.com/api/v1*
+All URIs are relative to *{protocol}://{domain}/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
