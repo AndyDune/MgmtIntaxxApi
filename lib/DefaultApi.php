@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace AndyDune\MgmtIntaxxApi\;
+namespace AndyDune\MgmtIntaxxApi;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
