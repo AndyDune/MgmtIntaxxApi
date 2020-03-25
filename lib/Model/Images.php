@@ -56,10 +56,9 @@ class Images implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'selfie' => 'string',
-'selfieType' => 'string',
-'signature' => 'string',
-'signatureType' => 'string'    ];
+        'id' => 'string',
+'selfie' => 'string',
+'signature' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -67,10 +66,9 @@ class Images implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'selfie' => 'binary',
-'selfieType' => null,
-'signature' => 'binary',
-'signatureType' => null    ];
+        'id' => null,
+'selfie' => 'binary',
+'signature' => 'binary'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -99,10 +97,9 @@ class Images implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'selfie' => 'selfie',
-'selfieType' => 'selfieType',
-'signature' => 'signature',
-'signatureType' => 'signatureType'    ];
+        'id' => 'id',
+'selfie' => 'selfie',
+'signature' => 'signature'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -110,10 +107,9 @@ class Images implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'selfie' => 'setSelfie',
-'selfieType' => 'setSelfieType',
-'signature' => 'setSignature',
-'signatureType' => 'setSignatureType'    ];
+        'id' => 'setId',
+'selfie' => 'setSelfie',
+'signature' => 'setSignature'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -121,10 +117,9 @@ class Images implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'selfie' => 'getSelfie',
-'selfieType' => 'getSelfieType',
-'signature' => 'getSignature',
-'signatureType' => 'getSignatureType'    ];
+        'id' => 'getId',
+'selfie' => 'getSelfie',
+'signature' => 'getSignature'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -184,10 +179,9 @@ class Images implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['selfie'] = isset($data['selfie']) ? $data['selfie'] : null;
-        $this->container['selfieType'] = isset($data['selfieType']) ? $data['selfieType'] : null;
         $this->container['signature'] = isset($data['signature']) ? $data['signature'] : null;
-        $this->container['signatureType'] = isset($data['signatureType']) ? $data['signatureType'] : null;
     }
 
     /**
@@ -215,6 +209,30 @@ class Images implements ModelInterface, ArrayAccess
 
 
     /**
+     * Gets id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
      * Gets selfie
      *
      * @return string
@@ -239,30 +257,6 @@ class Images implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets selfieType
-     *
-     * @return string
-     */
-    public function getSelfieType()
-    {
-        return $this->container['selfieType'];
-    }
-
-    /**
-     * Sets selfieType
-     *
-     * @param string $selfieType selfieType
-     *
-     * @return $this
-     */
-    public function setSelfieType($selfieType)
-    {
-        $this->container['selfieType'] = $selfieType;
-
-        return $this;
-    }
-
-    /**
      * Gets signature
      *
      * @return string
@@ -282,30 +276,6 @@ class Images implements ModelInterface, ArrayAccess
     public function setSignature($signature)
     {
         $this->container['signature'] = $signature;
-
-        return $this;
-    }
-
-    /**
-     * Gets signatureType
-     *
-     * @return string
-     */
-    public function getSignatureType()
-    {
-        return $this->container['signatureType'];
-    }
-
-    /**
-     * Sets signatureType
-     *
-     * @param string $signatureType signatureType
-     *
-     * @return $this
-     */
-    public function setSignatureType($signatureType)
-    {
-        $this->container['signatureType'] = $signatureType;
 
         return $this;
     }

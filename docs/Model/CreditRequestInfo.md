@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **employerCountry** | **string** |  | [optional] 
 **employedSinceMonth** | **string** |  | [optional] 
 **employedSinceYear** | **string** |  | [optional] 
+**newsletter** | **bool** |  | [optional] 
+**rechtliches** | **bool** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

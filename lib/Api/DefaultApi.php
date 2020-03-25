@@ -1181,18 +1181,17 @@ class DefaultApi
      *
      * Upload selfie, signature and maybe more
      *
+     * @param  string $id id (optional)
      * @param  string $selfie selfie (optional)
-     * @param  string $selfieType selfieType (optional)
      * @param  string $signature signature (optional)
-     * @param  string $signatureType signatureType (optional)
      *
      * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \AndyDune\MgmtIntaxxApi\Model\Response
      */
-    public function uploadImagesPost($selfie = null, $selfieType = null, $signature = null, $signatureType = null)
+    public function uploadImagesPost($id = null, $selfie = null, $signature = null)
     {
-        list($response) = $this->uploadImagesPostWithHttpInfo($selfie, $selfieType, $signature, $signatureType);
+        list($response) = $this->uploadImagesPostWithHttpInfo($id, $selfie, $signature);
         return $response;
     }
 
@@ -1201,19 +1200,18 @@ class DefaultApi
      *
      * Upload selfie, signature and maybe more
      *
+     * @param  string $id (optional)
      * @param  string $selfie (optional)
-     * @param  string $selfieType (optional)
      * @param  string $signature (optional)
-     * @param  string $signatureType (optional)
      *
      * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \AndyDune\MgmtIntaxxApi\Model\Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadImagesPostWithHttpInfo($selfie = null, $selfieType = null, $signature = null, $signatureType = null)
+    public function uploadImagesPostWithHttpInfo($id = null, $selfie = null, $signature = null)
     {
         $returnType = '\AndyDune\MgmtIntaxxApi\Model\Response';
-        $request = $this->uploadImagesPostRequest($selfie, $selfieType, $signature, $signatureType);
+        $request = $this->uploadImagesPostRequest($id, $selfie, $signature);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1295,17 +1293,16 @@ class DefaultApi
      *
      * Upload selfie, signature and maybe more
      *
+     * @param  string $id (optional)
      * @param  string $selfie (optional)
-     * @param  string $selfieType (optional)
      * @param  string $signature (optional)
-     * @param  string $signatureType (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadImagesPostAsync($selfie = null, $selfieType = null, $signature = null, $signatureType = null)
+    public function uploadImagesPostAsync($id = null, $selfie = null, $signature = null)
     {
-        return $this->uploadImagesPostAsyncWithHttpInfo($selfie, $selfieType, $signature, $signatureType)
+        return $this->uploadImagesPostAsyncWithHttpInfo($id, $selfie, $signature)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1318,18 +1315,17 @@ class DefaultApi
      *
      * Upload selfie, signature and maybe more
      *
+     * @param  string $id (optional)
      * @param  string $selfie (optional)
-     * @param  string $selfieType (optional)
      * @param  string $signature (optional)
-     * @param  string $signatureType (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadImagesPostAsyncWithHttpInfo($selfie = null, $selfieType = null, $signature = null, $signatureType = null)
+    public function uploadImagesPostAsyncWithHttpInfo($id = null, $selfie = null, $signature = null)
     {
         $returnType = '\AndyDune\MgmtIntaxxApi\Model\Response';
-        $request = $this->uploadImagesPostRequest($selfie, $selfieType, $signature, $signatureType);
+        $request = $this->uploadImagesPostRequest($id, $selfie, $signature);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1371,15 +1367,14 @@ class DefaultApi
     /**
      * Create request for operation 'uploadImagesPost'
      *
+     * @param  string $id (optional)
      * @param  string $selfie (optional)
-     * @param  string $selfieType (optional)
      * @param  string $signature (optional)
-     * @param  string $signatureType (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function uploadImagesPostRequest($selfie = null, $selfieType = null, $signature = null, $signatureType = null)
+    protected function uploadImagesPostRequest($id = null, $selfie = null, $signature = null)
     {
 
         $resourcePath = '/upload-images';
@@ -1392,22 +1387,18 @@ class DefaultApi
 
 
         // form params
+        if ($id !== null) {
+            $formParams['id'] = ObjectSerializer::toFormValue($id);
+        }
+        // form params
         if ($selfie !== null) {
             $multipart = true;
             $formParams['selfie'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($selfie), 'rb');
         }
         // form params
-        if ($selfieType !== null) {
-            $formParams['selfieType'] = ObjectSerializer::toFormValue($selfieType);
-        }
-        // form params
         if ($signature !== null) {
             $multipart = true;
             $formParams['signature'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($signature), 'rb');
-        }
-        // form params
-        if ($signatureType !== null) {
-            $formParams['signatureType'] = ObjectSerializer::toFormValue($signatureType);
         }
         // body params
         $_tempBody = null;

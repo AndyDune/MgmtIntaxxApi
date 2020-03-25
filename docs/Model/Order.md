@@ -22,6 +22,9 @@ Name | Type | Description | Notes
 **domain** | **string** |  | [optional] 
 **cookie** | **map[string,object]** |  | [optional] 
 **creditRequestInfo** | [**\AndyDune\MgmtIntaxxApi\Model\CreditRequestInfo**](CreditRequestInfo.md) |  | [optional] 
+**utmSource** | **string** |  | [optional] 
+**utmContent** | **string** |  | [optional] 
+**utmCampaign** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
