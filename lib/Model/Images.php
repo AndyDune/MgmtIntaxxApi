@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderItem
+ * Images
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * OrderItem Class Doc Comment
+ * Images Class Doc Comment
  *
  * @category Class
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OrderItem implements ModelInterface, ArrayAccess
+class Images implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class OrderItem implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrderItem';
+    protected static $swaggerModelName = 'Images';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +56,10 @@ class OrderItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'productId' => 'float',
-'price' => 'float'    ];
+        'selfie' => 'string',
+'selfieType' => 'string',
+'signature' => 'string',
+'signatureType' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -65,8 +67,10 @@ class OrderItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'productId' => 'int32',
-'price' => 'float'    ];
+        'selfie' => 'binary',
+'selfieType' => null,
+'signature' => 'binary',
+'signatureType' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -95,8 +99,10 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'productId' => 'product_id',
-'price' => 'price'    ];
+        'selfie' => 'selfie',
+'selfieType' => 'selfieType',
+'signature' => 'signature',
+'signatureType' => 'signatureType'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -104,8 +110,10 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'productId' => 'setProductId',
-'price' => 'setPrice'    ];
+        'selfie' => 'setSelfie',
+'selfieType' => 'setSelfieType',
+'signature' => 'setSignature',
+'signatureType' => 'setSignatureType'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -113,8 +121,10 @@ class OrderItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'productId' => 'getProductId',
-'price' => 'getPrice'    ];
+        'selfie' => 'getSelfie',
+'selfieType' => 'getSelfieType',
+'signature' => 'getSignature',
+'signatureType' => 'getSignatureType'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -174,8 +184,10 @@ class OrderItem implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['productId'] = isset($data['productId']) ? $data['productId'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['selfie'] = isset($data['selfie']) ? $data['selfie'] : null;
+        $this->container['selfieType'] = isset($data['selfieType']) ? $data['selfieType'] : null;
+        $this->container['signature'] = isset($data['signature']) ? $data['signature'] : null;
+        $this->container['signatureType'] = isset($data['signatureType']) ? $data['signatureType'] : null;
     }
 
     /**
@@ -203,49 +215,97 @@ class OrderItem implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets productId
+     * Gets selfie
      *
-     * @return float
+     * @return string
      */
-    public function getProductId()
+    public function getSelfie()
     {
-        return $this->container['productId'];
+        return $this->container['selfie'];
     }
 
     /**
-     * Sets productId
+     * Sets selfie
      *
-     * @param float $productId productId
+     * @param string $selfie selfie
      *
      * @return $this
      */
-    public function setProductId($productId)
+    public function setSelfie($selfie)
     {
-        $this->container['productId'] = $productId;
+        $this->container['selfie'] = $selfie;
 
         return $this;
     }
 
     /**
-     * Gets price
+     * Gets selfieType
      *
-     * @return float
+     * @return string
      */
-    public function getPrice()
+    public function getSelfieType()
     {
-        return $this->container['price'];
+        return $this->container['selfieType'];
     }
 
     /**
-     * Sets price
+     * Sets selfieType
      *
-     * @param float $price If priсe is null - it will use established price
+     * @param string $selfieType selfieType
      *
      * @return $this
      */
-    public function setPrice($price)
+    public function setSelfieType($selfieType)
     {
-        $this->container['price'] = $price;
+        $this->container['selfieType'] = $selfieType;
+
+        return $this;
+    }
+
+    /**
+     * Gets signature
+     *
+     * @return string
+     */
+    public function getSignature()
+    {
+        return $this->container['signature'];
+    }
+
+    /**
+     * Sets signature
+     *
+     * @param string $signature signature
+     *
+     * @return $this
+     */
+    public function setSignature($signature)
+    {
+        $this->container['signature'] = $signature;
+
+        return $this;
+    }
+
+    /**
+     * Gets signatureType
+     *
+     * @return string
+     */
+    public function getSignatureType()
+    {
+        return $this->container['signatureType'];
+    }
+
+    /**
+     * Sets signatureType
+     *
+     * @param string $signatureType signatureType
+     *
+     * @return $this
+     */
+    public function setSignatureType($signatureType)
+    {
+        $this->container['signatureType'] = $signatureType;
 
         return $this;
     }
