@@ -1,6 +1,6 @@
 <?php
 /**
- * ResponseTest
+ * EmailConfirmationTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * ResponseTest Class Doc Comment
+ * EmailConfirmationTest Class Doc Comment
  *
  * @category    Class
- * @description Common response from server.
+ * @description EmailConfirmation
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ResponseTest extends \PHPUnit_Framework_TestCase
+class EmailConfirmationTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,44 +69,16 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Response"
+     * Test "EmailConfirmation"
      */
-    public function testResponse()
+    public function testEmailConfirmation()
     {
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "hash"
      */
-    public function testPropertySuccess()
-    {
-    }
-
-    /**
-     * Test attribute "message"
-     */
-    public function testPropertyMessage()
-    {
-    }
-
-    /**
-     * Test attribute "contextType"
-     */
-    public function testPropertyContextType()
-    {
-    }
-
-    /**
-     * Test attribute "contextId"
-     */
-    public function testPropertyContextId()
-    {
-    }
-
-    /**
-     * Test attribute "data"
-     */
-    public function testPropertyData()
+    public function testPropertyHash()
     {
     }
 }

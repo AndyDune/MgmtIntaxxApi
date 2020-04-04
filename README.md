@@ -65,7 +65,7 @@ $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setAp
 // $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 $config->setHost('https://mgmt.intaxx.com/api/v1');
 
-$apiInstance = new AndyDune\MgmtIntaxxApi\DefaultApi(
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -84,9 +84,8 @@ try {
 $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
-$config->setHost('https://mgmt.intaxx.com/api/v1');
 
-$apiInstance = new AndyDune\MgmtIntaxxApi\DefaultApi(
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -106,7 +105,7 @@ $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setAp
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
 
-$apiInstance = new AndyDune\MgmtIntaxxApi\DefaultApi(
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -119,7 +118,6 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->dataGet: ', $e->getMessage(), PHP_EOL;
 }
-
 
 // Configure API key authorization: ApiKeyAuth
 $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
@@ -152,7 +150,26 @@ $apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \AndyDune\MgmtIntaxxApi\Model\SmsConfirmation(); // \AndyDune\MgmtIntaxxApi\Model\SmsConfirmation | Customer sms confirmation with hash or orderId-secretCode pair.
 
+try {
+    $result = $apiInstance->smsConfirmPost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->smsConfirmPost: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: ApiKeyAuth
+$config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | 
 $selfie = "selfie_example"; // string | 
 $signature = "signature_example"; // string | 
@@ -176,17 +193,19 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**customerPincodeCheckPost**](docs/Api/DefaultApi.md#customerpincodecheckpost) | **POST** /customer/pincode-check | Request to check customer pincode.
 *DefaultApi* | [**dataGet**](docs/Api/DefaultApi.md#dataget) | **GET** /data | Check customer pincode.
 *DefaultApi* | [**emailConfirmPost**](docs/Api/DefaultApi.md#emailconfirmpost) | **POST** /email-confirm | Customer email confirmation.
+*DefaultApi* | [**smsConfirmPost**](docs/Api/DefaultApi.md#smsconfirmpost) | **POST** /sms-confirm | Customer sms confirmation.
 *DefaultApi* | [**uploadImagesPost**](docs/Api/DefaultApi.md#uploadimagespost) | **POST** /upload-images | Upload selfie, signature and maybe more
 
 ## Documentation For Models
 
  - [CreditRequestInfo](docs/Model/CreditRequestInfo.md)
  - [EmailConfirmation](docs/Model/EmailConfirmation.md)
+ - [Images](docs/Model/Images.md)
  - [Order](docs/Model/Order.md)
  - [OrderItem](docs/Model/OrderItem.md)
  - [PincodeCheck](docs/Model/PincodeCheck.md)
  - [Response](docs/Model/Response.md)
- - [Images](docs/Model/Images.md)
+ - [SmsConfirmation](docs/Model/SmsConfirmation.md)
 
 ## Documentation For Authorization
 

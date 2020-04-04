@@ -1,6 +1,6 @@
 <?php
 /**
- * ResponseTest
+ * ImagesTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * ResponseTest Class Doc Comment
+ * ImagesTest Class Doc Comment
  *
  * @category    Class
- * @description Common response from server.
+ * @description Images
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ResponseTest extends \PHPUnit_Framework_TestCase
+class ImagesTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,44 +69,30 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Response"
+     * Test "Images"
      */
-    public function testResponse()
+    public function testImages()
     {
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "id"
      */
-    public function testPropertySuccess()
+    public function testPropertyId()
     {
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "selfie"
      */
-    public function testPropertyMessage()
+    public function testPropertySelfie()
     {
     }
 
     /**
-     * Test attribute "contextType"
+     * Test attribute "signature"
      */
-    public function testPropertyContextType()
-    {
-    }
-
-    /**
-     * Test attribute "contextId"
-     */
-    public function testPropertyContextId()
-    {
-    }
-
-    /**
-     * Test attribute "data"
-     */
-    public function testPropertyData()
+    public function testPropertySignature()
     {
     }
 }

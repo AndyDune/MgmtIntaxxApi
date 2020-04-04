@@ -1,6 +1,6 @@
 <?php
 /**
- * ResponseTest
+ * SmsConfirmationTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * ResponseTest Class Doc Comment
+ * SmsConfirmationTest Class Doc Comment
  *
  * @category    Class
- * @description Common response from server.
+ * @description Use hash alone one or id-code pair
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ResponseTest extends \PHPUnit_Framework_TestCase
+class SmsConfirmationTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,44 +69,30 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Response"
+     * Test "SmsConfirmation"
      */
-    public function testResponse()
+    public function testSmsConfirmation()
     {
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "hash"
      */
-    public function testPropertySuccess()
+    public function testPropertyHash()
     {
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "id"
      */
-    public function testPropertyMessage()
+    public function testPropertyId()
     {
     }
 
     /**
-     * Test attribute "contextType"
+     * Test attribute "code"
      */
-    public function testPropertyContextType()
-    {
-    }
-
-    /**
-     * Test attribute "contextId"
-     */
-    public function testPropertyContextId()
-    {
-    }
-
-    /**
-     * Test attribute "data"
-     */
-    public function testPropertyData()
+    public function testPropertyCode()
     {
     }
 }

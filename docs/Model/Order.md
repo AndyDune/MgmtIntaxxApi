@@ -25,6 +25,8 @@ Name | Type | Description | Notes
 **utmSource** | **string** |  | [optional] 
 **utmContent** | **string** |  | [optional] 
 **utmCampaign** | **string** |  | [optional] 
+**utmMedium** | **string** |  | [optional] 
+**isInsurance** | **bool** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

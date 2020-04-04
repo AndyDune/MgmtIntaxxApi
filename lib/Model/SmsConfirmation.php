@@ -1,6 +1,6 @@
 <?php
 /**
- * Images
+ * SmsConfirmation
  *
  * PHP version 5
  *
@@ -32,14 +32,15 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * Images Class Doc Comment
+ * SmsConfirmation Class Doc Comment
  *
  * @category Class
+ * @description Use hash alone one or id-code pair
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Images implements ModelInterface, ArrayAccess
+class SmsConfirmation implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +49,7 @@ class Images implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Images';
+    protected static $swaggerModelName = 'SmsConfirmation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +57,9 @@ class Images implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-'selfie' => 'string',
-'signature' => 'string'    ];
+        'hash' => 'string',
+'id' => 'float',
+'code' => 'float'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +67,9 @@ class Images implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-'selfie' => 'binary',
-'signature' => 'binary'    ];
+        'hash' => null,
+'id' => null,
+'code' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +98,9 @@ class Images implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-'selfie' => 'selfie',
-'signature' => 'signature'    ];
+        'hash' => 'hash',
+'id' => 'id',
+'code' => 'code'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +108,9 @@ class Images implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-'selfie' => 'setSelfie',
-'signature' => 'setSignature'    ];
+        'hash' => 'setHash',
+'id' => 'setId',
+'code' => 'setCode'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +118,9 @@ class Images implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-'selfie' => 'getSelfie',
-'signature' => 'getSignature'    ];
+        'hash' => 'getHash',
+'id' => 'getId',
+'code' => 'getCode'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +180,9 @@ class Images implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['hash'] = isset($data['hash']) ? $data['hash'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['selfie'] = isset($data['selfie']) ? $data['selfie'] : null;
-        $this->container['signature'] = isset($data['signature']) ? $data['signature'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
     }
 
     /**
@@ -209,9 +210,33 @@ class Images implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets hash
      *
      * @return string
+     */
+    public function getHash()
+    {
+        return $this->container['hash'];
+    }
+
+    /**
+     * Sets hash
+     *
+     * @param string $hash hash
+     *
+     * @return $this
+     */
+    public function setHash($hash)
+    {
+        $this->container['hash'] = $hash;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return float
      */
     public function getId()
     {
@@ -221,7 +246,7 @@ class Images implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param float $id id
      *
      * @return $this
      */
@@ -233,49 +258,25 @@ class Images implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets selfie
+     * Gets code
      *
-     * @return string
+     * @return float
      */
-    public function getSelfie()
+    public function getCode()
     {
-        return $this->container['selfie'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets selfie
+     * Sets code
      *
-     * @param string $selfie selfie
+     * @param float $code code
      *
      * @return $this
      */
-    public function setSelfie($selfie)
+    public function setCode($code)
     {
-        $this->container['selfie'] = $selfie;
-
-        return $this;
-    }
-
-    /**
-     * Gets signature
-     *
-     * @return string
-     */
-    public function getSignature()
-    {
-        return $this->container['signature'];
-    }
-
-    /**
-     * Sets signature
-     *
-     * @param string $signature signature
-     *
-     * @return $this
-     */
-    public function setSignature($signature)
-    {
-        $this->container['signature'] = $signature;
+        $this->container['code'] = $code;
 
         return $this;
     }
