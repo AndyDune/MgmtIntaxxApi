@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **desiredAmount** | **string** |  | [optional] 
-**phone** | **string** |  | [optional] 
+**landlinePhoneNumber** | **string** |  | [optional] 
 **mobilePhone** | **string** |  | [optional] 
 **jobStatus** | **string** |  | [optional] 
 **netIncomePerMonth** | **string** |  | [optional] 
