@@ -24,6 +24,9 @@ Name | Type | Description | Notes
 **employedSinceYear** | **string** |  | [optional] 
 **newsletter** | **bool** |  | [optional] 
 **rechtliches** | **bool** |  | [optional] 
+**productIsFinance** | **bool** |  | [optional] 
+**productIsIsnuranceAndPkv** | **bool** |  | [optional] 
+**productIsPreventionAndHealth** | **bool** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
