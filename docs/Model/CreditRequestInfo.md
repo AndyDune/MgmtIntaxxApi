@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **productIsFinance** | **bool** |  | [optional] 
 **productIsIsnuranceAndPkv** | **bool** |  | [optional] 
 **productIsPreventionAndHealth** | **bool** |  | [optional] 
+**children** | **int** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
