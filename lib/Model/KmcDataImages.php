@@ -1,6 +1,6 @@
 <?php
 /**
- * PincodeCheck
+ * KmcDataImages
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * PincodeCheck Class Doc Comment
+ * KmcDataImages Class Doc Comment
  *
  * @category Class
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PincodeCheck implements ModelInterface, ArrayAccess
+class KmcDataImages implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class PincodeCheck implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PincodeCheck';
+    protected static $swaggerModelName = 'KmcDataImages';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,9 @@ class PincodeCheck implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'login' => 'string',
-'pin' => 'string',
-'type' => 'float'    ];
+        'id' => 'string',
+'idCardFront' => 'string',
+'idCardBack' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +66,9 @@ class PincodeCheck implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'login' => null,
-'pin' => null,
-'type' => 'int32'    ];
+        'id' => null,
+'idCardFront' => 'binary',
+'idCardBack' => 'binary'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +97,9 @@ class PincodeCheck implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'login' => 'login',
-'pin' => 'pin',
-'type' => 'type'    ];
+        'id' => 'id',
+'idCardFront' => 'id_card_front',
+'idCardBack' => 'id_card_back'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +107,9 @@ class PincodeCheck implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'login' => 'setLogin',
-'pin' => 'setPin',
-'type' => 'setType'    ];
+        'id' => 'setId',
+'idCardFront' => 'setIdCardFront',
+'idCardBack' => 'setIdCardBack'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +117,9 @@ class PincodeCheck implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'login' => 'getLogin',
-'pin' => 'getPin',
-'type' => 'getType'    ];
+        'id' => 'getId',
+'idCardFront' => 'getIdCardFront',
+'idCardBack' => 'getIdCardBack'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +179,9 @@ class PincodeCheck implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['login'] = isset($data['login']) ? $data['login'] : null;
-        $this->container['pin'] = isset($data['pin']) ? $data['pin'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['idCardFront'] = isset($data['idCardFront']) ? $data['idCardFront'] : null;
+        $this->container['idCardBack'] = isset($data['idCardBack']) ? $data['idCardBack'] : null;
     }
 
     /**
@@ -193,11 +193,8 @@ class PincodeCheck implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['login'] === null) {
-            $invalidProperties[] = "'login' can't be null";
-        }
-        if ($this->container['pin'] === null) {
-            $invalidProperties[] = "'pin' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
         return $invalidProperties;
     }
@@ -215,73 +212,73 @@ class PincodeCheck implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets login
+     * Gets id
      *
      * @return string
      */
-    public function getLogin()
+    public function getId()
     {
-        return $this->container['login'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets login
+     * Sets id
      *
-     * @param string $login login
+     * @param string $id id
      *
      * @return $this
      */
-    public function setLogin($login)
+    public function setId($id)
     {
-        $this->container['login'] = $login;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets pin
+     * Gets idCardFront
      *
      * @return string
      */
-    public function getPin()
+    public function getIdCardFront()
     {
-        return $this->container['pin'];
+        return $this->container['idCardFront'];
     }
 
     /**
-     * Sets pin
+     * Sets idCardFront
      *
-     * @param string $pin pin
+     * @param string $idCardFront idCardFront
      *
      * @return $this
      */
-    public function setPin($pin)
+    public function setIdCardFront($idCardFront)
     {
-        $this->container['pin'] = $pin;
+        $this->container['idCardFront'] = $idCardFront;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets idCardBack
      *
-     * @return float
+     * @return string
      */
-    public function getType()
+    public function getIdCardBack()
     {
-        return $this->container['type'];
+        return $this->container['idCardBack'];
     }
 
     /**
-     * Sets type
+     * Sets idCardBack
      *
-     * @param float $type type
+     * @param string $idCardBack idCardBack
      *
      * @return $this
      */
-    public function setType($type)
+    public function setIdCardBack($idCardBack)
     {
-        $this->container['type'] = $type;
+        $this->container['idCardBack'] = $idCardBack;
 
         return $this;
     }

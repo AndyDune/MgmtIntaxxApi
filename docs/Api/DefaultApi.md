@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**dataGet**](DefaultApi.md#dataget) | **GET** /data | Check customer pincode.
 [**emailConfirmPost**](DefaultApi.md#emailconfirmpost) | **POST** /email-confirm | Customer email confirmation.
 [**smsConfirmPost**](DefaultApi.md#smsconfirmpost) | **POST** /sms-confirm | Customer sms confirmation.
+[**updateKmcDataImagesPost**](DefaultApi.md#updatekmcdataimagespost) | **POST** /update-kmc-data-images | Upload KMC files
+[**updateKmcDataPost**](DefaultApi.md#updatekmcdatapost) | **POST** /update-kmc-data | Upload KMC data
 [**uploadImagesPost**](DefaultApi.md#uploadimagespost) | **POST** /upload-images | Upload selfie, signature and maybe more
 
 # **createOrderPost**
@@ -251,6 +253,114 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\AndyDune\MgmtIntaxxApi\Model\SmsConfirmation**](../Model/SmsConfirmation.md)| Customer sms confirmation with hash or orderId-secretCode pair. |
+
+### Return type
+
+[**\AndyDune\MgmtIntaxxApi\Model\Response**](../Model/Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateKmcDataImagesPost**
+> \AndyDune\MgmtIntaxxApi\Model\Response updateKmcDataImagesPost($id, $idCardFront, $idCardBack)
+
+Upload KMC files
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: ApiKeyAuth
+$config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$idCardFront = "idCardFront_example"; // string | 
+$idCardBack = "idCardBack_example"; // string | 
+
+try {
+    $result = $apiInstance->updateKmcDataImagesPost($id, $idCardFront, $idCardBack);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->updateKmcDataImagesPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **idCardFront** | **string****string**|  |
+ **idCardBack** | **string****string**|  |
+
+### Return type
+
+[**\AndyDune\MgmtIntaxxApi\Model\Response**](../Model/Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateKmcDataPost**
+> \AndyDune\MgmtIntaxxApi\Model\Response updateKmcDataPost($body)
+
+Upload KMC data
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: ApiKeyAuth
+$config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \AndyDune\MgmtIntaxxApi\Model\KmcData(); // \AndyDune\MgmtIntaxxApi\Model\KmcData | Kmc data are string and integer
+
+try {
+    $result = $apiInstance->updateKmcDataPost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->updateKmcDataPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\AndyDune\MgmtIntaxxApi\Model\KmcData**](../Model/KmcData.md)| Kmc data are string and integer |
 
 ### Return type
 

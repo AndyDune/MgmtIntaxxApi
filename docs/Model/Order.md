@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **string** |  | 
+**id** | **int** |  | [optional] 
+**email** | **string** |  | [optional] 
 **firstName** | **string** |  | [optional] 
 **lastName** | **string** |  | [optional] 
 **gender** | **string** |  | [optional] 
@@ -27,6 +28,10 @@ Name | Type | Description | Notes
 **utmCampaign** | **string** |  | [optional] 
 **utmMedium** | **string** |  | [optional] 
 **isInsurance** | **bool** |  | [optional] 
+**middleName** | **string** |  | [optional] 
+**anotherSurname** | **string** |  | [optional] 
+**anotherEmail** | **string** |  | [optional] 
+**landlinePhoneNumber** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
