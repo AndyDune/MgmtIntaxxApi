@@ -141,6 +141,16 @@ class DefaultApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for updateOrderPost
+     *
+     * Update customer data for order.
+     *
+     */
+    public function testUpdateOrderPost()
+    {
+    }
+
+    /**
      * Test case for uploadImagesPost
      *
      * Upload selfie, signature and maybe more.

@@ -205,6 +205,26 @@ $apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \AndyDune\MgmtIntaxxApi\Model\Order(); // \AndyDune\MgmtIntaxxApi\Model\Order | Order and customer datails. Email and likn to product can not be updated. Id parameter is required.
+
+try {
+    $result = $apiInstance->updateOrderPost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->updateOrderPost: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure API key authorization: ApiKeyAuth
+$config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | 
 $selfie = "selfie_example"; // string | 
 $signature = "signature_example"; // string | 
@@ -231,6 +251,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**smsConfirmPost**](docs/Api/DefaultApi.md#smsconfirmpost) | **POST** /sms-confirm | Customer sms confirmation.
 *DefaultApi* | [**updateKmcDataImagesPost**](docs/Api/DefaultApi.md#updatekmcdataimagespost) | **POST** /update-kmc-data-images | Upload KMC files
 *DefaultApi* | [**updateKmcDataPost**](docs/Api/DefaultApi.md#updatekmcdatapost) | **POST** /update-kmc-data | Upload KMC data
+*DefaultApi* | [**updateOrderPost**](docs/Api/DefaultApi.md#updateorderpost) | **POST** /update-order | Update customer data for order
 *DefaultApi* | [**uploadImagesPost**](docs/Api/DefaultApi.md#uploadimagespost) | **POST** /upload-images | Upload selfie, signature and maybe more
 
 ## Documentation For Models
