@@ -1,6 +1,6 @@
 <?php
 /**
- * ImagesTest
+ * OrderMarksTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * ImagesTest Class Doc Comment
+ * OrderMarksTest Class Doc Comment
  *
  * @category    Class
- * @description Images
+ * @description Order marks or flags
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ImagesTest extends \PHPUnit_Framework_TestCase
+class OrderMarksTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,30 +69,72 @@ class ImagesTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Images"
+     * Test "OrderMarks"
      */
-    public function testImages()
+    public function testOrderMarks()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "isEmailConfirmed"
      */
-    public function testPropertyId()
+    public function testPropertyIsEmailConfirmed()
     {
     }
 
     /**
-     * Test attribute "selfie"
+     * Test attribute "isSmsConfirmedByHash"
      */
-    public function testPropertySelfie()
+    public function testPropertyIsSmsConfirmedByHash()
     {
     }
 
     /**
-     * Test attribute "signature"
+     * Test attribute "isSmsConfirmedByCode"
      */
-    public function testPropertySignature()
+    public function testPropertyIsSmsConfirmedByCode()
+    {
+    }
+
+    /**
+     * Test attribute "isOrderLikedToCollector"
+     */
+    public function testPropertyIsOrderLikedToCollector()
+    {
+    }
+
+    /**
+     * Test attribute "isOrderExported"
+     */
+    public function testPropertyIsOrderExported()
+    {
+    }
+
+    /**
+     * Test attribute "isSelfieLoaded"
+     */
+    public function testPropertyIsSelfieLoaded()
+    {
+    }
+
+    /**
+     * Test attribute "isSignatureLoaded"
+     */
+    public function testPropertyIsSignatureLoaded()
+    {
+    }
+
+    /**
+     * Test attribute "isIdCardFrontLoaded"
+     */
+    public function testPropertyIsIdCardFrontLoaded()
+    {
+    }
+
+    /**
+     * Test attribute "isIdCardBackLoaded"
+     */
+    public function testPropertyIsIdCardBackLoaded()
     {
     }
 }

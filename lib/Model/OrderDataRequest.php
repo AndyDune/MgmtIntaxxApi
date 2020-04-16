@@ -1,6 +1,6 @@
 <?php
 /**
- * PincodeCheck
+ * OrderDataRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,15 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * PincodeCheck Class Doc Comment
+ * OrderDataRequest Class Doc Comment
  *
  * @category Class
+ * @description Request order full data
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PincodeCheck implements ModelInterface, ArrayAccess
+class OrderDataRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +49,7 @@ class PincodeCheck implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PincodeCheck';
+    protected static $swaggerModelName = 'OrderDataRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +57,7 @@ class PincodeCheck implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'login' => 'string',
-'pin' => 'string',
-'type' => 'float'    ];
+        'id' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +65,7 @@ class PincodeCheck implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'login' => null,
-'pin' => null,
-'type' => 'int32'    ];
+        'id' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +94,7 @@ class PincodeCheck implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'login' => 'login',
-'pin' => 'pin',
-'type' => 'type'    ];
+        'id' => 'id'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +102,7 @@ class PincodeCheck implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'login' => 'setLogin',
-'pin' => 'setPin',
-'type' => 'setType'    ];
+        'id' => 'setId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +110,7 @@ class PincodeCheck implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'login' => 'getLogin',
-'pin' => 'getPin',
-'type' => 'getType'    ];
+        'id' => 'getId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +170,7 @@ class PincodeCheck implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['login'] = isset($data['login']) ? $data['login'] : null;
-        $this->container['pin'] = isset($data['pin']) ? $data['pin'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -193,12 +182,6 @@ class PincodeCheck implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['login'] === null) {
-            $invalidProperties[] = "'login' can't be null";
-        }
-        if ($this->container['pin'] === null) {
-            $invalidProperties[] = "'pin' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -215,73 +198,25 @@ class PincodeCheck implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets login
+     * Gets id
      *
-     * @return string
+     * @return int
      */
-    public function getLogin()
+    public function getId()
     {
-        return $this->container['login'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets login
+     * Sets id
      *
-     * @param string $login login
+     * @param int $id id
      *
      * @return $this
      */
-    public function setLogin($login)
+    public function setId($id)
     {
-        $this->container['login'] = $login;
-
-        return $this;
-    }
-
-    /**
-     * Gets pin
-     *
-     * @return string
-     */
-    public function getPin()
-    {
-        return $this->container['pin'];
-    }
-
-    /**
-     * Sets pin
-     *
-     * @param string $pin pin
-     *
-     * @return $this
-     */
-    public function setPin($pin)
-    {
-        $this->container['pin'] = $pin;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return float
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param float $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
+        $this->container['id'] = $id;
 
         return $this;
     }

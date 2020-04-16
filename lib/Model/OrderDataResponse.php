@@ -1,6 +1,6 @@
 <?php
 /**
- * PincodeCheck
+ * OrderDataResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,15 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * PincodeCheck Class Doc Comment
+ * OrderDataResponse Class Doc Comment
  *
  * @category Class
+ * @description Order full data
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PincodeCheck implements ModelInterface, ArrayAccess
+class OrderDataResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +49,7 @@ class PincodeCheck implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PincodeCheck';
+    protected static $swaggerModelName = 'OrderDataResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +57,11 @@ class PincodeCheck implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'login' => 'string',
-'pin' => 'string',
-'type' => 'float'    ];
+        'success' => 'bool',
+'message' => 'string',
+'data' => '\AndyDune\MgmtIntaxxApi\Model\Order',
+'kmc' => '\AndyDune\MgmtIntaxxApi\Model\KmcData',
+'marks' => '\AndyDune\MgmtIntaxxApi\Model\OrderMarks'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +69,11 @@ class PincodeCheck implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'login' => null,
-'pin' => null,
-'type' => 'int32'    ];
+        'success' => null,
+'message' => null,
+'data' => null,
+'kmc' => null,
+'marks' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +102,11 @@ class PincodeCheck implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'login' => 'login',
-'pin' => 'pin',
-'type' => 'type'    ];
+        'success' => 'success',
+'message' => 'message',
+'data' => 'data',
+'kmc' => 'kmc',
+'marks' => 'marks'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +114,11 @@ class PincodeCheck implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'login' => 'setLogin',
-'pin' => 'setPin',
-'type' => 'setType'    ];
+        'success' => 'setSuccess',
+'message' => 'setMessage',
+'data' => 'setData',
+'kmc' => 'setKmc',
+'marks' => 'setMarks'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +126,11 @@ class PincodeCheck implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'login' => 'getLogin',
-'pin' => 'getPin',
-'type' => 'getType'    ];
+        'success' => 'getSuccess',
+'message' => 'getMessage',
+'data' => 'getData',
+'kmc' => 'getKmc',
+'marks' => 'getMarks'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +190,11 @@ class PincodeCheck implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['login'] = isset($data['login']) ? $data['login'] : null;
-        $this->container['pin'] = isset($data['pin']) ? $data['pin'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['kmc'] = isset($data['kmc']) ? $data['kmc'] : null;
+        $this->container['marks'] = isset($data['marks']) ? $data['marks'] : null;
     }
 
     /**
@@ -193,11 +206,8 @@ class PincodeCheck implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['login'] === null) {
-            $invalidProperties[] = "'login' can't be null";
-        }
-        if ($this->container['pin'] === null) {
-            $invalidProperties[] = "'pin' can't be null";
+        if ($this->container['success'] === null) {
+            $invalidProperties[] = "'success' can't be null";
         }
         return $invalidProperties;
     }
@@ -215,73 +225,121 @@ class PincodeCheck implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets login
+     * Gets success
      *
-     * @return string
+     * @return bool
      */
-    public function getLogin()
+    public function getSuccess()
     {
-        return $this->container['login'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets login
+     * Sets success
      *
-     * @param string $login login
+     * @param bool $success success
      *
      * @return $this
      */
-    public function setLogin($login)
+    public function setSuccess($success)
     {
-        $this->container['login'] = $login;
+        $this->container['success'] = $success;
 
         return $this;
     }
 
     /**
-     * Gets pin
+     * Gets message
      *
      * @return string
      */
-    public function getPin()
+    public function getMessage()
     {
-        return $this->container['pin'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets pin
+     * Sets message
      *
-     * @param string $pin pin
+     * @param string $message message
      *
      * @return $this
      */
-    public function setPin($pin)
+    public function setMessage($message)
     {
-        $this->container['pin'] = $pin;
+        $this->container['message'] = $message;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets data
      *
-     * @return float
+     * @return \AndyDune\MgmtIntaxxApi\Model\Order
      */
-    public function getType()
+    public function getData()
     {
-        return $this->container['type'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets type
+     * Sets data
      *
-     * @param float $type type
+     * @param \AndyDune\MgmtIntaxxApi\Model\Order $data data
      *
      * @return $this
      */
-    public function setType($type)
+    public function setData($data)
     {
-        $this->container['type'] = $type;
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets kmc
+     *
+     * @return \AndyDune\MgmtIntaxxApi\Model\KmcData
+     */
+    public function getKmc()
+    {
+        return $this->container['kmc'];
+    }
+
+    /**
+     * Sets kmc
+     *
+     * @param \AndyDune\MgmtIntaxxApi\Model\KmcData $kmc kmc
+     *
+     * @return $this
+     */
+    public function setKmc($kmc)
+    {
+        $this->container['kmc'] = $kmc;
+
+        return $this;
+    }
+
+    /**
+     * Gets marks
+     *
+     * @return \AndyDune\MgmtIntaxxApi\Model\OrderMarks
+     */
+    public function getMarks()
+    {
+        return $this->container['marks'];
+    }
+
+    /**
+     * Sets marks
+     *
+     * @param \AndyDune\MgmtIntaxxApi\Model\OrderMarks $marks marks
+     *
+     * @return $this
+     */
+    public function setMarks($marks)
+    {
+        $this->container['marks'] = $marks;
 
         return $this;
     }
