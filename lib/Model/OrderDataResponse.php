@@ -59,6 +59,11 @@ class OrderDataResponse implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'success' => 'bool',
 'message' => 'string',
+'datetimeCreate' => 'string',
+'datetimeUpdate' => 'string',
+'datetimeImport' => 'string',
+'source' => 'string',
+'status' => 'string',
 'data' => '\AndyDune\MgmtIntaxxApi\Model\Order',
 'kmc' => '\AndyDune\MgmtIntaxxApi\Model\KmcData',
 'marks' => '\AndyDune\MgmtIntaxxApi\Model\OrderMarks'    ];
@@ -71,6 +76,11 @@ class OrderDataResponse implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'success' => null,
 'message' => null,
+'datetimeCreate' => null,
+'datetimeUpdate' => null,
+'datetimeImport' => null,
+'source' => null,
+'status' => null,
 'data' => null,
 'kmc' => null,
 'marks' => null    ];
@@ -104,6 +114,11 @@ class OrderDataResponse implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'success' => 'success',
 'message' => 'message',
+'datetimeCreate' => 'datetime_create',
+'datetimeUpdate' => 'datetime_update',
+'datetimeImport' => 'datetime_import',
+'source' => 'source',
+'status' => 'status',
 'data' => 'data',
 'kmc' => 'kmc',
 'marks' => 'marks'    ];
@@ -116,6 +131,11 @@ class OrderDataResponse implements ModelInterface, ArrayAccess
     protected static $setters = [
         'success' => 'setSuccess',
 'message' => 'setMessage',
+'datetimeCreate' => 'setDatetimeCreate',
+'datetimeUpdate' => 'setDatetimeUpdate',
+'datetimeImport' => 'setDatetimeImport',
+'source' => 'setSource',
+'status' => 'setStatus',
 'data' => 'setData',
 'kmc' => 'setKmc',
 'marks' => 'setMarks'    ];
@@ -128,6 +148,11 @@ class OrderDataResponse implements ModelInterface, ArrayAccess
     protected static $getters = [
         'success' => 'getSuccess',
 'message' => 'getMessage',
+'datetimeCreate' => 'getDatetimeCreate',
+'datetimeUpdate' => 'getDatetimeUpdate',
+'datetimeImport' => 'getDatetimeImport',
+'source' => 'getSource',
+'status' => 'getStatus',
 'data' => 'getData',
 'kmc' => 'getKmc',
 'marks' => 'getMarks'    ];
@@ -192,6 +217,11 @@ class OrderDataResponse implements ModelInterface, ArrayAccess
     {
         $this->container['success'] = isset($data['success']) ? $data['success'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['datetimeCreate'] = isset($data['datetimeCreate']) ? $data['datetimeCreate'] : null;
+        $this->container['datetimeUpdate'] = isset($data['datetimeUpdate']) ? $data['datetimeUpdate'] : null;
+        $this->container['datetimeImport'] = isset($data['datetimeImport']) ? $data['datetimeImport'] : null;
+        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
         $this->container['kmc'] = isset($data['kmc']) ? $data['kmc'] : null;
         $this->container['marks'] = isset($data['marks']) ? $data['marks'] : null;
@@ -268,6 +298,126 @@ class OrderDataResponse implements ModelInterface, ArrayAccess
     public function setMessage($message)
     {
         $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets datetimeCreate
+     *
+     * @return string
+     */
+    public function getDatetimeCreate()
+    {
+        return $this->container['datetimeCreate'];
+    }
+
+    /**
+     * Sets datetimeCreate
+     *
+     * @param string $datetimeCreate datetimeCreate
+     *
+     * @return $this
+     */
+    public function setDatetimeCreate($datetimeCreate)
+    {
+        $this->container['datetimeCreate'] = $datetimeCreate;
+
+        return $this;
+    }
+
+    /**
+     * Gets datetimeUpdate
+     *
+     * @return string
+     */
+    public function getDatetimeUpdate()
+    {
+        return $this->container['datetimeUpdate'];
+    }
+
+    /**
+     * Sets datetimeUpdate
+     *
+     * @param string $datetimeUpdate datetimeUpdate
+     *
+     * @return $this
+     */
+    public function setDatetimeUpdate($datetimeUpdate)
+    {
+        $this->container['datetimeUpdate'] = $datetimeUpdate;
+
+        return $this;
+    }
+
+    /**
+     * Gets datetimeImport
+     *
+     * @return string
+     */
+    public function getDatetimeImport()
+    {
+        return $this->container['datetimeImport'];
+    }
+
+    /**
+     * Sets datetimeImport
+     *
+     * @param string $datetimeImport datetimeImport
+     *
+     * @return $this
+     */
+    public function setDatetimeImport($datetimeImport)
+    {
+        $this->container['datetimeImport'] = $datetimeImport;
+
+        return $this;
+    }
+
+    /**
+     * Gets source
+     *
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->container['source'];
+    }
+
+    /**
+     * Sets source
+     *
+     * @param string $source source
+     *
+     * @return $this
+     */
+    public function setSource($source)
+    {
+        $this->container['source'] = $source;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
 
         return $this;
     }

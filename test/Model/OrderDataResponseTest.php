@@ -90,6 +90,41 @@ class OrderDataResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "datetimeCreate"
+     */
+    public function testPropertyDatetimeCreate()
+    {
+    }
+
+    /**
+     * Test attribute "datetimeUpdate"
+     */
+    public function testPropertyDatetimeUpdate()
+    {
+    }
+
+    /**
+     * Test attribute "datetimeImport"
+     */
+    public function testPropertyDatetimeImport()
+    {
+    }
+
+    /**
+     * Test attribute "source"
+     */
+    public function testPropertySource()
+    {
+    }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
      * Test attribute "data"
      */
     public function testPropertyData()
