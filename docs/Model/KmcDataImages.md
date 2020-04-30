@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | 
+**id** | **string** |  | [optional] 
 **idCardFront** | **string** |  | [optional] 
 **idCardBack** | **string** |  | [optional] 
 
