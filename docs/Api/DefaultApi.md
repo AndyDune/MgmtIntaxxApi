@@ -360,9 +360,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **idCardFront** | **string****string**|  |
- **idCardBack** | **string****string**|  |
+ **id** | **string**|  | [optional]
+ **idCardFront** | **string****string**|  | [optional]
+ **idCardBack** | **string****string**|  | [optional]
 
 ### Return type
 

@@ -86,7 +86,10 @@ class KmcData implements ModelInterface, ArrayAccess
 'idNumber' => 'string',
 'nationality' => 'string',
 'isCardWasOrder' => 'string',
-'cardWasOrderedDate' => 'string'    ];
+'cardWasOrderedDate' => 'string',
+'employerAddressCountry' => 'string',
+'isTermsAndConditionsConfirmed' => 'bool',
+'isAgreedToUsePersonalDataConfirmed' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -124,7 +127,10 @@ class KmcData implements ModelInterface, ArrayAccess
 'idNumber' => null,
 'nationality' => null,
 'isCardWasOrder' => null,
-'cardWasOrderedDate' => null    ];
+'cardWasOrderedDate' => null,
+'employerAddressCountry' => null,
+'isTermsAndConditionsConfirmed' => null,
+'isAgreedToUsePersonalDataConfirmed' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -183,7 +189,10 @@ class KmcData implements ModelInterface, ArrayAccess
 'idNumber' => 'id_number',
 'nationality' => 'nationality',
 'isCardWasOrder' => 'is_card_was_order',
-'cardWasOrderedDate' => 'card_was_ordered_date'    ];
+'cardWasOrderedDate' => 'card_was_ordered_date',
+'employerAddressCountry' => 'employer_address_country',
+'isTermsAndConditionsConfirmed' => 'is_terms_and_conditions_confirmed',
+'isAgreedToUsePersonalDataConfirmed' => 'is_agreed_to_use_personal_data_confirmed'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -221,7 +230,10 @@ class KmcData implements ModelInterface, ArrayAccess
 'idNumber' => 'setIdNumber',
 'nationality' => 'setNationality',
 'isCardWasOrder' => 'setIsCardWasOrder',
-'cardWasOrderedDate' => 'setCardWasOrderedDate'    ];
+'cardWasOrderedDate' => 'setCardWasOrderedDate',
+'employerAddressCountry' => 'setEmployerAddressCountry',
+'isTermsAndConditionsConfirmed' => 'setIsTermsAndConditionsConfirmed',
+'isAgreedToUsePersonalDataConfirmed' => 'setIsAgreedToUsePersonalDataConfirmed'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -259,7 +271,10 @@ class KmcData implements ModelInterface, ArrayAccess
 'idNumber' => 'getIdNumber',
 'nationality' => 'getNationality',
 'isCardWasOrder' => 'getIsCardWasOrder',
-'cardWasOrderedDate' => 'getCardWasOrderedDate'    ];
+'cardWasOrderedDate' => 'getCardWasOrderedDate',
+'employerAddressCountry' => 'getEmployerAddressCountry',
+'isTermsAndConditionsConfirmed' => 'getIsTermsAndConditionsConfirmed',
+'isAgreedToUsePersonalDataConfirmed' => 'getIsAgreedToUsePersonalDataConfirmed'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -302,22 +317,7 @@ class KmcData implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const IS_CARD_WAS_ORDER_NOT_ORDERED = 'not ordered';
-const IS_CARD_WAS_ORDER_ORDERED = 'ordered';
-const IS_CARD_WAS_ORDER_SENT = 'sent';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getIsCardWasOrderAllowableValues()
-    {
-        return [
-            self::IS_CARD_WAS_ORDER_NOT_ORDERED,
-self::IS_CARD_WAS_ORDER_ORDERED,
-self::IS_CARD_WAS_ORDER_SENT,        ];
-    }
+    
 
     /**
      * Associative array for storing property values
@@ -365,6 +365,9 @@ self::IS_CARD_WAS_ORDER_SENT,        ];
         $this->container['nationality'] = isset($data['nationality']) ? $data['nationality'] : null;
         $this->container['isCardWasOrder'] = isset($data['isCardWasOrder']) ? $data['isCardWasOrder'] : null;
         $this->container['cardWasOrderedDate'] = isset($data['cardWasOrderedDate']) ? $data['cardWasOrderedDate'] : null;
+        $this->container['employerAddressCountry'] = isset($data['employerAddressCountry']) ? $data['employerAddressCountry'] : null;
+        $this->container['isTermsAndConditionsConfirmed'] = isset($data['isTermsAndConditionsConfirmed']) ? $data['isTermsAndConditionsConfirmed'] : null;
+        $this->container['isAgreedToUsePersonalDataConfirmed'] = isset($data['isAgreedToUsePersonalDataConfirmed']) ? $data['isAgreedToUsePersonalDataConfirmed'] : null;
     }
 
     /**
@@ -375,14 +378,6 @@ self::IS_CARD_WAS_ORDER_SENT,        ];
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        $allowedValues = $this->getIsCardWasOrderAllowableValues();
-        if (!is_null($this->container['isCardWasOrder']) && !in_array($this->container['isCardWasOrder'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'isCardWasOrder', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -1108,21 +1103,12 @@ self::IS_CARD_WAS_ORDER_SENT,        ];
     /**
      * Sets isCardWasOrder
      *
-     * @param string $isCardWasOrder isCardWasOrder
+     * @param string $isCardWasOrder It may be not ordered (no), ordered (yes) or sent
      *
      * @return $this
      */
     public function setIsCardWasOrder($isCardWasOrder)
     {
-        $allowedValues = $this->getIsCardWasOrderAllowableValues();
-        if (!is_null($isCardWasOrder) && !in_array($isCardWasOrder, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'isCardWasOrder', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['isCardWasOrder'] = $isCardWasOrder;
 
         return $this;
@@ -1148,6 +1134,78 @@ self::IS_CARD_WAS_ORDER_SENT,        ];
     public function setCardWasOrderedDate($cardWasOrderedDate)
     {
         $this->container['cardWasOrderedDate'] = $cardWasOrderedDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets employerAddressCountry
+     *
+     * @return string
+     */
+    public function getEmployerAddressCountry()
+    {
+        return $this->container['employerAddressCountry'];
+    }
+
+    /**
+     * Sets employerAddressCountry
+     *
+     * @param string $employerAddressCountry employerAddressCountry
+     *
+     * @return $this
+     */
+    public function setEmployerAddressCountry($employerAddressCountry)
+    {
+        $this->container['employerAddressCountry'] = $employerAddressCountry;
+
+        return $this;
+    }
+
+    /**
+     * Gets isTermsAndConditionsConfirmed
+     *
+     * @return bool
+     */
+    public function getIsTermsAndConditionsConfirmed()
+    {
+        return $this->container['isTermsAndConditionsConfirmed'];
+    }
+
+    /**
+     * Sets isTermsAndConditionsConfirmed
+     *
+     * @param bool $isTermsAndConditionsConfirmed isTermsAndConditionsConfirmed
+     *
+     * @return $this
+     */
+    public function setIsTermsAndConditionsConfirmed($isTermsAndConditionsConfirmed)
+    {
+        $this->container['isTermsAndConditionsConfirmed'] = $isTermsAndConditionsConfirmed;
+
+        return $this;
+    }
+
+    /**
+     * Gets isAgreedToUsePersonalDataConfirmed
+     *
+     * @return bool
+     */
+    public function getIsAgreedToUsePersonalDataConfirmed()
+    {
+        return $this->container['isAgreedToUsePersonalDataConfirmed'];
+    }
+
+    /**
+     * Sets isAgreedToUsePersonalDataConfirmed
+     *
+     * @param bool $isAgreedToUsePersonalDataConfirmed isAgreedToUsePersonalDataConfirmed
+     *
+     * @return $this
+     */
+    public function setIsAgreedToUsePersonalDataConfirmed($isAgreedToUsePersonalDataConfirmed)
+    {
+        $this->container['isAgreedToUsePersonalDataConfirmed'] = $isAgreedToUsePersonalDataConfirmed;
 
         return $this;
     }

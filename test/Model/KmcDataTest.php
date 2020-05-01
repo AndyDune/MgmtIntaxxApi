@@ -291,4 +291,25 @@ class KmcDataTest extends \PHPUnit_Framework_TestCase
     public function testPropertyCardWasOrderedDate()
     {
     }
+
+    /**
+     * Test attribute "employerAddressCountry"
+     */
+    public function testPropertyEmployerAddressCountry()
+    {
+    }
+
+    /**
+     * Test attribute "isTermsAndConditionsConfirmed"
+     */
+    public function testPropertyIsTermsAndConditionsConfirmed()
+    {
+    }
+
+    /**
+     * Test attribute "isAgreedToUsePersonalDataConfirmed"
+     */
+    public function testPropertyIsAgreedToUsePersonalDataConfirmed()
+    {
+    }
 }

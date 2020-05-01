@@ -32,8 +32,11 @@ Name | Type | Description | Notes
 **placeOfBirth** | **string** |  | [optional] 
 **idNumber** | **string** |  | [optional] 
 **nationality** | **string** |  | [optional] 
-**isCardWasOrder** | **string** |  | [optional] 
+**isCardWasOrder** | **string** | It may be not ordered (no), ordered (yes) or sent | [optional] 
 **cardWasOrderedDate** | **string** |  | [optional] 
+**employerAddressCountry** | **string** |  | [optional] 
+**isTermsAndConditionsConfirmed** | **bool** |  | [optional] 
+**isAgreedToUsePersonalDataConfirmed** | **bool** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
