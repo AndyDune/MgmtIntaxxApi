@@ -312,4 +312,11 @@ class KmcDataTest extends \PHPUnit_Framework_TestCase
     public function testPropertyIsAgreedToUsePersonalDataConfirmed()
     {
     }
+
+    /**
+     * Test attribute "loanRequest"
+     */
+    public function testPropertyLoanRequest()
+    {
+    }
 }

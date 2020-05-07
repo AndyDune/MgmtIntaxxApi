@@ -89,7 +89,8 @@ class KmcData implements ModelInterface, ArrayAccess
 'cardWasOrderedDate' => 'string',
 'employerAddressCountry' => 'string',
 'isTermsAndConditionsConfirmed' => 'bool',
-'isAgreedToUsePersonalDataConfirmed' => 'bool'    ];
+'isAgreedToUsePersonalDataConfirmed' => 'bool',
+'loanRequest' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -130,7 +131,8 @@ class KmcData implements ModelInterface, ArrayAccess
 'cardWasOrderedDate' => null,
 'employerAddressCountry' => null,
 'isTermsAndConditionsConfirmed' => null,
-'isAgreedToUsePersonalDataConfirmed' => null    ];
+'isAgreedToUsePersonalDataConfirmed' => null,
+'loanRequest' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -192,7 +194,8 @@ class KmcData implements ModelInterface, ArrayAccess
 'cardWasOrderedDate' => 'card_was_ordered_date',
 'employerAddressCountry' => 'employer_address_country',
 'isTermsAndConditionsConfirmed' => 'is_terms_and_conditions_confirmed',
-'isAgreedToUsePersonalDataConfirmed' => 'is_agreed_to_use_personal_data_confirmed'    ];
+'isAgreedToUsePersonalDataConfirmed' => 'is_agreed_to_use_personal_data_confirmed',
+'loanRequest' => 'loan_request'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -233,7 +236,8 @@ class KmcData implements ModelInterface, ArrayAccess
 'cardWasOrderedDate' => 'setCardWasOrderedDate',
 'employerAddressCountry' => 'setEmployerAddressCountry',
 'isTermsAndConditionsConfirmed' => 'setIsTermsAndConditionsConfirmed',
-'isAgreedToUsePersonalDataConfirmed' => 'setIsAgreedToUsePersonalDataConfirmed'    ];
+'isAgreedToUsePersonalDataConfirmed' => 'setIsAgreedToUsePersonalDataConfirmed',
+'loanRequest' => 'setLoanRequest'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -274,7 +278,8 @@ class KmcData implements ModelInterface, ArrayAccess
 'cardWasOrderedDate' => 'getCardWasOrderedDate',
 'employerAddressCountry' => 'getEmployerAddressCountry',
 'isTermsAndConditionsConfirmed' => 'getIsTermsAndConditionsConfirmed',
-'isAgreedToUsePersonalDataConfirmed' => 'getIsAgreedToUsePersonalDataConfirmed'    ];
+'isAgreedToUsePersonalDataConfirmed' => 'getIsAgreedToUsePersonalDataConfirmed',
+'loanRequest' => 'getLoanRequest'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -368,6 +373,7 @@ class KmcData implements ModelInterface, ArrayAccess
         $this->container['employerAddressCountry'] = isset($data['employerAddressCountry']) ? $data['employerAddressCountry'] : null;
         $this->container['isTermsAndConditionsConfirmed'] = isset($data['isTermsAndConditionsConfirmed']) ? $data['isTermsAndConditionsConfirmed'] : null;
         $this->container['isAgreedToUsePersonalDataConfirmed'] = isset($data['isAgreedToUsePersonalDataConfirmed']) ? $data['isAgreedToUsePersonalDataConfirmed'] : null;
+        $this->container['loanRequest'] = isset($data['loanRequest']) ? $data['loanRequest'] : null;
     }
 
     /**
@@ -1206,6 +1212,30 @@ class KmcData implements ModelInterface, ArrayAccess
     public function setIsAgreedToUsePersonalDataConfirmed($isAgreedToUsePersonalDataConfirmed)
     {
         $this->container['isAgreedToUsePersonalDataConfirmed'] = $isAgreedToUsePersonalDataConfirmed;
+
+        return $this;
+    }
+
+    /**
+     * Gets loanRequest
+     *
+     * @return string
+     */
+    public function getLoanRequest()
+    {
+        return $this->container['loanRequest'];
+    }
+
+    /**
+     * Sets loanRequest
+     *
+     * @param string $loanRequest It may be no, yes or sent
+     *
+     * @return $this
+     */
+    public function setLoanRequest($loanRequest)
+    {
+        $this->container['loanRequest'] = $loanRequest;
 
         return $this;
     }
