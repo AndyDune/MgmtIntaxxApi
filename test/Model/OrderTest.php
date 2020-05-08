@@ -132,6 +132,13 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "countryName"
+     */
+    public function testPropertyCountryName()
+    {
+    }
+
+    /**
      * Test attribute "city"
      */
     public function testPropertyCity()

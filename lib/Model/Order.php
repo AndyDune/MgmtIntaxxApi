@@ -65,6 +65,7 @@ class Order implements ModelInterface, ArrayAccess
 'birthday' => '\DateTime',
 'phone' => 'string',
 'countryCode' => 'string',
+'countryName' => 'string',
 'city' => 'string',
 'street' => 'string',
 'house' => 'string',
@@ -101,6 +102,7 @@ class Order implements ModelInterface, ArrayAccess
 'birthday' => 'date',
 'phone' => null,
 'countryCode' => null,
+'countryName' => null,
 'city' => null,
 'street' => null,
 'house' => null,
@@ -158,6 +160,7 @@ class Order implements ModelInterface, ArrayAccess
 'birthday' => 'birthday',
 'phone' => 'phone',
 'countryCode' => 'country_code',
+'countryName' => 'country_name',
 'city' => 'city',
 'street' => 'street',
 'house' => 'house',
@@ -194,6 +197,7 @@ class Order implements ModelInterface, ArrayAccess
 'birthday' => 'setBirthday',
 'phone' => 'setPhone',
 'countryCode' => 'setCountryCode',
+'countryName' => 'setCountryName',
 'city' => 'setCity',
 'street' => 'setStreet',
 'house' => 'setHouse',
@@ -230,6 +234,7 @@ class Order implements ModelInterface, ArrayAccess
 'birthday' => 'getBirthday',
 'phone' => 'getPhone',
 'countryCode' => 'getCountryCode',
+'countryName' => 'getCountryName',
 'city' => 'getCity',
 'street' => 'getStreet',
 'house' => 'getHouse',
@@ -318,6 +323,7 @@ class Order implements ModelInterface, ArrayAccess
         $this->container['birthday'] = isset($data['birthday']) ? $data['birthday'] : null;
         $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
         $this->container['countryCode'] = isset($data['countryCode']) ? $data['countryCode'] : null;
+        $this->container['countryName'] = isset($data['countryName']) ? $data['countryName'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['street'] = isset($data['street']) ? $data['street'] : null;
         $this->container['house'] = isset($data['house']) ? $data['house'] : null;
@@ -553,6 +559,30 @@ class Order implements ModelInterface, ArrayAccess
     public function setCountryCode($countryCode)
     {
         $this->container['countryCode'] = $countryCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets countryName
+     *
+     * @return string
+     */
+    public function getCountryName()
+    {
+        return $this->container['countryName'];
+    }
+
+    /**
+     * Sets countryName
+     *
+     * @param string $countryName countryName
+     *
+     * @return $this
+     */
+    public function setCountryName($countryName)
+    {
+        $this->container['countryName'] = $countryName;
 
         return $this;
     }

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **birthday** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **phone** | **string** |  | [optional] 
 **countryCode** | **string** |  | [optional] 
+**countryName** | **string** |  | [optional] 
 **city** | **string** |  | [optional] 
 **street** | **string** |  | [optional] 
 **house** | **string** |  | [optional] 
