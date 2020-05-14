@@ -1,6 +1,6 @@
 <?php
 /**
- * EmailConfirmation
+ * SmsWithBrandTemplate
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * EmailConfirmation Class Doc Comment
+ * SmsWithBrandTemplate Class Doc Comment
  *
  * @category Class
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EmailConfirmation implements ModelInterface, ArrayAccess
+class SmsWithBrandTemplate implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class EmailConfirmation implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'EmailConfirmation';
+    protected static $swaggerModelName = 'SmsWithBrandTemplate';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,11 @@ class EmailConfirmation implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'hash' => 'string'    ];
+        'id' => 'int',
+'templateId' => 'int',
+'changePassword' => 'bool',
+'messageBody' => 'string',
+'messageOriginator' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +68,11 @@ class EmailConfirmation implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'hash' => null    ];
+        'id' => null,
+'templateId' => null,
+'changePassword' => null,
+'messageBody' => null,
+'messageOriginator' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +101,11 @@ class EmailConfirmation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'hash' => 'hash'    ];
+        'id' => 'id',
+'templateId' => 'template_id',
+'changePassword' => 'change_password',
+'messageBody' => 'message_body',
+'messageOriginator' => 'message_originator'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +113,11 @@ class EmailConfirmation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'hash' => 'setHash'    ];
+        'id' => 'setId',
+'templateId' => 'setTemplateId',
+'changePassword' => 'setChangePassword',
+'messageBody' => 'setMessageBody',
+'messageOriginator' => 'setMessageOriginator'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +125,11 @@ class EmailConfirmation implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'hash' => 'getHash'    ];
+        'id' => 'getId',
+'templateId' => 'getTemplateId',
+'changePassword' => 'getChangePassword',
+'messageBody' => 'getMessageBody',
+'messageOriginator' => 'getMessageOriginator'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,7 +189,11 @@ class EmailConfirmation implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['hash'] = isset($data['hash']) ? $data['hash'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['templateId'] = isset($data['templateId']) ? $data['templateId'] : null;
+        $this->container['changePassword'] = isset($data['changePassword']) ? $data['changePassword'] : false;
+        $this->container['messageBody'] = isset($data['messageBody']) ? $data['messageBody'] : null;
+        $this->container['messageOriginator'] = isset($data['messageOriginator']) ? $data['messageOriginator'] : null;
     }
 
     /**
@@ -181,8 +205,8 @@ class EmailConfirmation implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['hash'] === null) {
-            $invalidProperties[] = "'hash' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
         return $invalidProperties;
     }
@@ -200,25 +224,121 @@ class EmailConfirmation implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets hash
+     * Gets id
      *
-     * @return string
+     * @return int
      */
-    public function getHash()
+    public function getId()
     {
-        return $this->container['hash'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets hash
+     * Sets id
      *
-     * @param string $hash hash
+     * @param int $id id
      *
      * @return $this
      */
-    public function setHash($hash)
+    public function setId($id)
     {
-        $this->container['hash'] = $hash;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets templateId
+     *
+     * @return int
+     */
+    public function getTemplateId()
+    {
+        return $this->container['templateId'];
+    }
+
+    /**
+     * Sets templateId
+     *
+     * @param int $templateId templateId
+     *
+     * @return $this
+     */
+    public function setTemplateId($templateId)
+    {
+        $this->container['templateId'] = $templateId;
+
+        return $this;
+    }
+
+    /**
+     * Gets changePassword
+     *
+     * @return bool
+     */
+    public function getChangePassword()
+    {
+        return $this->container['changePassword'];
+    }
+
+    /**
+     * Sets changePassword
+     *
+     * @param bool $changePassword changePassword
+     *
+     * @return $this
+     */
+    public function setChangePassword($changePassword)
+    {
+        $this->container['changePassword'] = $changePassword;
+
+        return $this;
+    }
+
+    /**
+     * Gets messageBody
+     *
+     * @return string
+     */
+    public function getMessageBody()
+    {
+        return $this->container['messageBody'];
+    }
+
+    /**
+     * Sets messageBody
+     *
+     * @param string $messageBody messageBody
+     *
+     * @return $this
+     */
+    public function setMessageBody($messageBody)
+    {
+        $this->container['messageBody'] = $messageBody;
+
+        return $this;
+    }
+
+    /**
+     * Gets messageOriginator
+     *
+     * @return string
+     */
+    public function getMessageOriginator()
+    {
+        return $this->container['messageOriginator'];
+    }
+
+    /**
+     * Sets messageOriginator
+     *
+     * @param string $messageOriginator messageOriginator
+     *
+     * @return $this
+     */
+    public function setMessageOriginator($messageOriginator)
+    {
+        $this->container['messageOriginator'] = $messageOriginator;
 
         return $this;
     }

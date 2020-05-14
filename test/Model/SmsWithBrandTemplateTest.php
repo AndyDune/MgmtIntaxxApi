@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderDataRequestTest
+ * SmsWithBrandTemplateTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * OrderDataRequestTest Class Doc Comment
+ * SmsWithBrandTemplateTest Class Doc Comment
  *
  * @category    Class
- * @description Request order full data
+ * @description SmsWithBrandTemplate
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrderDataRequestTest extends \PHPUnit_Framework_TestCase
+class SmsWithBrandTemplateTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,9 +69,9 @@ class OrderDataRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OrderDataRequest"
+     * Test "SmsWithBrandTemplate"
      */
-    public function testOrderDataRequest()
+    public function testSmsWithBrandTemplate()
     {
     }
 
@@ -79,6 +79,34 @@ class OrderDataRequestTest extends \PHPUnit_Framework_TestCase
      * Test attribute "id"
      */
     public function testPropertyId()
+    {
+    }
+
+    /**
+     * Test attribute "templateId"
+     */
+    public function testPropertyTemplateId()
+    {
+    }
+
+    /**
+     * Test attribute "changePassword"
+     */
+    public function testPropertyChangePassword()
+    {
+    }
+
+    /**
+     * Test attribute "messageBody"
+     */
+    public function testPropertyMessageBody()
+    {
+    }
+
+    /**
+     * Test attribute "messageOriginator"
+     */
+    public function testPropertyMessageOriginator()
     {
     }
 }
