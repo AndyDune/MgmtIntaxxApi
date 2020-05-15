@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **isTermsAndConditionsConfirmed** | **bool** |  | [optional] 
 **isAgreedToUsePersonalDataConfirmed** | **bool** |  | [optional] 
 **loanRequest** | **string** | It may be no, yes or sent | [optional] 
+**isPowerOfAttorneyConfirmed** | **bool** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -2012,14 +2012,16 @@ class DefaultApi
      * @param  string $id id (optional)
      * @param  string $idCardFront idCardFront (optional)
      * @param  string $idCardBack idCardBack (optional)
+     * @param  string $powerOfAttorneySign powerOfAttorneySign (optional)
+     * @param  string $powerOfAttorneySignAuto powerOfAttorneySignAuto (optional)
      *
      * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \AndyDune\MgmtIntaxxApi\Model\Response
      */
-    public function updateKmcDataImagesPost($id = null, $idCardFront = null, $idCardBack = null)
+    public function updateKmcDataImagesPost($id = null, $idCardFront = null, $idCardBack = null, $powerOfAttorneySign = null, $powerOfAttorneySignAuto = null)
     {
-        list($response) = $this->updateKmcDataImagesPostWithHttpInfo($id, $idCardFront, $idCardBack);
+        list($response) = $this->updateKmcDataImagesPostWithHttpInfo($id, $idCardFront, $idCardBack, $powerOfAttorneySign, $powerOfAttorneySignAuto);
         return $response;
     }
 
@@ -2031,15 +2033,17 @@ class DefaultApi
      * @param  string $id (optional)
      * @param  string $idCardFront (optional)
      * @param  string $idCardBack (optional)
+     * @param  string $powerOfAttorneySign (optional)
+     * @param  string $powerOfAttorneySignAuto (optional)
      *
      * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \AndyDune\MgmtIntaxxApi\Model\Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateKmcDataImagesPostWithHttpInfo($id = null, $idCardFront = null, $idCardBack = null)
+    public function updateKmcDataImagesPostWithHttpInfo($id = null, $idCardFront = null, $idCardBack = null, $powerOfAttorneySign = null, $powerOfAttorneySignAuto = null)
     {
         $returnType = '\AndyDune\MgmtIntaxxApi\Model\Response';
-        $request = $this->updateKmcDataImagesPostRequest($id, $idCardFront, $idCardBack);
+        $request = $this->updateKmcDataImagesPostRequest($id, $idCardFront, $idCardBack, $powerOfAttorneySign, $powerOfAttorneySignAuto);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2124,13 +2128,15 @@ class DefaultApi
      * @param  string $id (optional)
      * @param  string $idCardFront (optional)
      * @param  string $idCardBack (optional)
+     * @param  string $powerOfAttorneySign (optional)
+     * @param  string $powerOfAttorneySignAuto (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateKmcDataImagesPostAsync($id = null, $idCardFront = null, $idCardBack = null)
+    public function updateKmcDataImagesPostAsync($id = null, $idCardFront = null, $idCardBack = null, $powerOfAttorneySign = null, $powerOfAttorneySignAuto = null)
     {
-        return $this->updateKmcDataImagesPostAsyncWithHttpInfo($id, $idCardFront, $idCardBack)
+        return $this->updateKmcDataImagesPostAsyncWithHttpInfo($id, $idCardFront, $idCardBack, $powerOfAttorneySign, $powerOfAttorneySignAuto)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2146,14 +2152,16 @@ class DefaultApi
      * @param  string $id (optional)
      * @param  string $idCardFront (optional)
      * @param  string $idCardBack (optional)
+     * @param  string $powerOfAttorneySign (optional)
+     * @param  string $powerOfAttorneySignAuto (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateKmcDataImagesPostAsyncWithHttpInfo($id = null, $idCardFront = null, $idCardBack = null)
+    public function updateKmcDataImagesPostAsyncWithHttpInfo($id = null, $idCardFront = null, $idCardBack = null, $powerOfAttorneySign = null, $powerOfAttorneySignAuto = null)
     {
         $returnType = '\AndyDune\MgmtIntaxxApi\Model\Response';
-        $request = $this->updateKmcDataImagesPostRequest($id, $idCardFront, $idCardBack);
+        $request = $this->updateKmcDataImagesPostRequest($id, $idCardFront, $idCardBack, $powerOfAttorneySign, $powerOfAttorneySignAuto);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2198,11 +2206,13 @@ class DefaultApi
      * @param  string $id (optional)
      * @param  string $idCardFront (optional)
      * @param  string $idCardBack (optional)
+     * @param  string $powerOfAttorneySign (optional)
+     * @param  string $powerOfAttorneySignAuto (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateKmcDataImagesPostRequest($id = null, $idCardFront = null, $idCardBack = null)
+    protected function updateKmcDataImagesPostRequest($id = null, $idCardFront = null, $idCardBack = null, $powerOfAttorneySign = null, $powerOfAttorneySignAuto = null)
     {
 
         $resourcePath = '/update-kmc-data-images';
@@ -2227,6 +2237,16 @@ class DefaultApi
         if ($idCardBack !== null) {
             $multipart = true;
             $formParams['id_card_back'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($idCardBack), 'rb');
+        }
+        // form params
+        if ($powerOfAttorneySign !== null) {
+            $multipart = true;
+            $formParams['power_of_attorney_sign'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($powerOfAttorneySign), 'rb');
+        }
+        // form params
+        if ($powerOfAttorneySignAuto !== null) {
+            $multipart = true;
+            $formParams['power_of_attorney_sign_auto'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($powerOfAttorneySignAuto), 'rb');
         }
         // body params
         $_tempBody = null;

@@ -95,4 +95,18 @@ class KmcDataImagesTest extends \PHPUnit_Framework_TestCase
     public function testPropertyIdCardBack()
     {
     }
+
+    /**
+     * Test attribute "powerOfAttorneySign"
+     */
+    public function testPropertyPowerOfAttorneySign()
+    {
+    }
+
+    /**
+     * Test attribute "powerOfAttorneySignAuto"
+     */
+    public function testPropertyPowerOfAttorneySignAuto()
+    {
+    }
 }

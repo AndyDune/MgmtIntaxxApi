@@ -319,4 +319,11 @@ class KmcDataTest extends \PHPUnit_Framework_TestCase
     public function testPropertyLoanRequest()
     {
     }
+
+    /**
+     * Test attribute "isPowerOfAttorneyConfirmed"
+     */
+    public function testPropertyIsPowerOfAttorneyConfirmed()
+    {
+    }
 }

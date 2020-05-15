@@ -58,7 +58,9 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
 'idCardFront' => 'string',
-'idCardBack' => 'string'    ];
+'idCardBack' => 'string',
+'powerOfAttorneySign' => 'string',
+'powerOfAttorneySignAuto' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,7 +70,9 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
 'idCardFront' => 'binary',
-'idCardBack' => 'binary'    ];
+'idCardBack' => 'binary',
+'powerOfAttorneySign' => 'binary',
+'powerOfAttorneySignAuto' => 'binary'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -99,7 +103,9 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
 'idCardFront' => 'id_card_front',
-'idCardBack' => 'id_card_back'    ];
+'idCardBack' => 'id_card_back',
+'powerOfAttorneySign' => 'power_of_attorney_sign',
+'powerOfAttorneySignAuto' => 'power_of_attorney_sign_auto'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -109,7 +115,9 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
 'idCardFront' => 'setIdCardFront',
-'idCardBack' => 'setIdCardBack'    ];
+'idCardBack' => 'setIdCardBack',
+'powerOfAttorneySign' => 'setPowerOfAttorneySign',
+'powerOfAttorneySignAuto' => 'setPowerOfAttorneySignAuto'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -119,7 +127,9 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
 'idCardFront' => 'getIdCardFront',
-'idCardBack' => 'getIdCardBack'    ];
+'idCardBack' => 'getIdCardBack',
+'powerOfAttorneySign' => 'getPowerOfAttorneySign',
+'powerOfAttorneySignAuto' => 'getPowerOfAttorneySignAuto'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -182,6 +192,8 @@ class KmcDataImages implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['idCardFront'] = isset($data['idCardFront']) ? $data['idCardFront'] : null;
         $this->container['idCardBack'] = isset($data['idCardBack']) ? $data['idCardBack'] : null;
+        $this->container['powerOfAttorneySign'] = isset($data['powerOfAttorneySign']) ? $data['powerOfAttorneySign'] : null;
+        $this->container['powerOfAttorneySignAuto'] = isset($data['powerOfAttorneySignAuto']) ? $data['powerOfAttorneySignAuto'] : null;
     }
 
     /**
@@ -279,6 +291,54 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     public function setIdCardBack($idCardBack)
     {
         $this->container['idCardBack'] = $idCardBack;
+
+        return $this;
+    }
+
+    /**
+     * Gets powerOfAttorneySign
+     *
+     * @return string
+     */
+    public function getPowerOfAttorneySign()
+    {
+        return $this->container['powerOfAttorneySign'];
+    }
+
+    /**
+     * Sets powerOfAttorneySign
+     *
+     * @param string $powerOfAttorneySign powerOfAttorneySign
+     *
+     * @return $this
+     */
+    public function setPowerOfAttorneySign($powerOfAttorneySign)
+    {
+        $this->container['powerOfAttorneySign'] = $powerOfAttorneySign;
+
+        return $this;
+    }
+
+    /**
+     * Gets powerOfAttorneySignAuto
+     *
+     * @return string
+     */
+    public function getPowerOfAttorneySignAuto()
+    {
+        return $this->container['powerOfAttorneySignAuto'];
+    }
+
+    /**
+     * Sets powerOfAttorneySignAuto
+     *
+     * @param string $powerOfAttorneySignAuto powerOfAttorneySignAuto
+     *
+     * @return $this
+     */
+    public function setPowerOfAttorneySignAuto($powerOfAttorneySignAuto)
+    {
+        $this->container['powerOfAttorneySignAuto'] = $powerOfAttorneySignAuto;
 
         return $this;
     }

@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateKmcDataImagesPost**
-> \AndyDune\MgmtIntaxxApi\Model\Response updateKmcDataImagesPost($id, $idCardFront, $idCardBack)
+> \AndyDune\MgmtIntaxxApi\Model\Response updateKmcDataImagesPost($id, $idCardFront, $idCardBack, $powerOfAttorneySign, $powerOfAttorneySignAuto)
 
 Upload KMC files
 
@@ -399,9 +399,11 @@ $apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
 $id = "id_example"; // string | 
 $idCardFront = "idCardFront_example"; // string | 
 $idCardBack = "idCardBack_example"; // string | 
+$powerOfAttorneySign = "powerOfAttorneySign_example"; // string | 
+$powerOfAttorneySignAuto = "powerOfAttorneySignAuto_example"; // string | 
 
 try {
-    $result = $apiInstance->updateKmcDataImagesPost($id, $idCardFront, $idCardBack);
+    $result = $apiInstance->updateKmcDataImagesPost($id, $idCardFront, $idCardBack, $powerOfAttorneySign, $powerOfAttorneySignAuto);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->updateKmcDataImagesPost: ', $e->getMessage(), PHP_EOL;
@@ -416,6 +418,8 @@ Name | Type | Description  | Notes
  **id** | **string**|  | [optional]
  **idCardFront** | **string****string**|  | [optional]
  **idCardBack** | **string****string**|  | [optional]
+ **powerOfAttorneySign** | **string****string**|  | [optional]
+ **powerOfAttorneySignAuto** | **string****string**|  | [optional]
 
 ### Return type
 
