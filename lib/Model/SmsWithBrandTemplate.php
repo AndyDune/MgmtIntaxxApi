@@ -59,6 +59,7 @@ class SmsWithBrandTemplate implements ModelInterface, ArrayAccess
         'id' => 'int',
 'templateId' => 'int',
 'changePassword' => 'bool',
+'changePhoneNumberConfirmCode' => 'bool',
 'messageBody' => 'string',
 'messageOriginator' => 'string'    ];
 
@@ -71,6 +72,7 @@ class SmsWithBrandTemplate implements ModelInterface, ArrayAccess
         'id' => null,
 'templateId' => null,
 'changePassword' => null,
+'changePhoneNumberConfirmCode' => null,
 'messageBody' => null,
 'messageOriginator' => null    ];
 
@@ -104,6 +106,7 @@ class SmsWithBrandTemplate implements ModelInterface, ArrayAccess
         'id' => 'id',
 'templateId' => 'template_id',
 'changePassword' => 'change_password',
+'changePhoneNumberConfirmCode' => 'change_phone_number_confirm_code',
 'messageBody' => 'message_body',
 'messageOriginator' => 'message_originator'    ];
 
@@ -116,6 +119,7 @@ class SmsWithBrandTemplate implements ModelInterface, ArrayAccess
         'id' => 'setId',
 'templateId' => 'setTemplateId',
 'changePassword' => 'setChangePassword',
+'changePhoneNumberConfirmCode' => 'setChangePhoneNumberConfirmCode',
 'messageBody' => 'setMessageBody',
 'messageOriginator' => 'setMessageOriginator'    ];
 
@@ -128,6 +132,7 @@ class SmsWithBrandTemplate implements ModelInterface, ArrayAccess
         'id' => 'getId',
 'templateId' => 'getTemplateId',
 'changePassword' => 'getChangePassword',
+'changePhoneNumberConfirmCode' => 'getChangePhoneNumberConfirmCode',
 'messageBody' => 'getMessageBody',
 'messageOriginator' => 'getMessageOriginator'    ];
 
@@ -192,6 +197,7 @@ class SmsWithBrandTemplate implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['templateId'] = isset($data['templateId']) ? $data['templateId'] : null;
         $this->container['changePassword'] = isset($data['changePassword']) ? $data['changePassword'] : false;
+        $this->container['changePhoneNumberConfirmCode'] = isset($data['changePhoneNumberConfirmCode']) ? $data['changePhoneNumberConfirmCode'] : false;
         $this->container['messageBody'] = isset($data['messageBody']) ? $data['messageBody'] : null;
         $this->container['messageOriginator'] = isset($data['messageOriginator']) ? $data['messageOriginator'] : null;
     }
@@ -291,6 +297,30 @@ class SmsWithBrandTemplate implements ModelInterface, ArrayAccess
     public function setChangePassword($changePassword)
     {
         $this->container['changePassword'] = $changePassword;
+
+        return $this;
+    }
+
+    /**
+     * Gets changePhoneNumberConfirmCode
+     *
+     * @return bool
+     */
+    public function getChangePhoneNumberConfirmCode()
+    {
+        return $this->container['changePhoneNumberConfirmCode'];
+    }
+
+    /**
+     * Sets changePhoneNumberConfirmCode
+     *
+     * @param bool $changePhoneNumberConfirmCode changePhoneNumberConfirmCode
+     *
+     * @return $this
+     */
+    public function setChangePhoneNumberConfirmCode($changePhoneNumberConfirmCode)
+    {
+        $this->container['changePhoneNumberConfirmCode'] = $changePhoneNumberConfirmCode;
 
         return $this;
     }

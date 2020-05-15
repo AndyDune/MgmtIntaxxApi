@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | 
 **templateId** | **int** |  | [optional] 
 **changePassword** | **bool** |  | [optional] [default to false]
+**changePhoneNumberConfirmCode** | **bool** |  | [optional] [default to false]
 **messageBody** | **string** |  | [optional] 
 **messageOriginator** | **string** |  | [optional] 
 

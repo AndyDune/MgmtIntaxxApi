@@ -97,6 +97,13 @@ class SmsWithBrandTemplateTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "changePhoneNumberConfirmCode"
+     */
+    public function testPropertyChangePhoneNumberConfirmCode()
+    {
+    }
+
+    /**
      * Test attribute "messageBody"
      */
     public function testPropertyMessageBody()
