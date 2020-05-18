@@ -284,4 +284,11 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     public function testPropertyLandlinePhoneNumber()
     {
     }
+
+    /**
+     * Test attribute "isDataConfirmed"
+     */
+    public function testPropertyIsDataConfirmed()
+    {
+    }
 }

@@ -86,7 +86,8 @@ class Order implements ModelInterface, ArrayAccess
 'middleName' => 'string',
 'anotherSurname' => 'string',
 'anotherEmail' => 'string',
-'landlinePhoneNumber' => 'string'    ];
+'landlinePhoneNumber' => 'string',
+'isDataConfirmed' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -123,7 +124,8 @@ class Order implements ModelInterface, ArrayAccess
 'middleName' => null,
 'anotherSurname' => null,
 'anotherEmail' => null,
-'landlinePhoneNumber' => null    ];
+'landlinePhoneNumber' => null,
+'isDataConfirmed' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -181,7 +183,8 @@ class Order implements ModelInterface, ArrayAccess
 'middleName' => 'middle_name',
 'anotherSurname' => 'another_surname',
 'anotherEmail' => 'another_email',
-'landlinePhoneNumber' => 'landline_phone_number'    ];
+'landlinePhoneNumber' => 'landline_phone_number',
+'isDataConfirmed' => 'is_data_confirmed'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -218,7 +221,8 @@ class Order implements ModelInterface, ArrayAccess
 'middleName' => 'setMiddleName',
 'anotherSurname' => 'setAnotherSurname',
 'anotherEmail' => 'setAnotherEmail',
-'landlinePhoneNumber' => 'setLandlinePhoneNumber'    ];
+'landlinePhoneNumber' => 'setLandlinePhoneNumber',
+'isDataConfirmed' => 'setIsDataConfirmed'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -255,7 +259,8 @@ class Order implements ModelInterface, ArrayAccess
 'middleName' => 'getMiddleName',
 'anotherSurname' => 'getAnotherSurname',
 'anotherEmail' => 'getAnotherEmail',
-'landlinePhoneNumber' => 'getLandlinePhoneNumber'    ];
+'landlinePhoneNumber' => 'getLandlinePhoneNumber',
+'isDataConfirmed' => 'getIsDataConfirmed'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -345,6 +350,7 @@ class Order implements ModelInterface, ArrayAccess
         $this->container['anotherSurname'] = isset($data['anotherSurname']) ? $data['anotherSurname'] : null;
         $this->container['anotherEmail'] = isset($data['anotherEmail']) ? $data['anotherEmail'] : null;
         $this->container['landlinePhoneNumber'] = isset($data['landlinePhoneNumber']) ? $data['landlinePhoneNumber'] : null;
+        $this->container['isDataConfirmed'] = isset($data['isDataConfirmed']) ? $data['isDataConfirmed'] : null;
     }
 
     /**
@@ -1087,6 +1093,30 @@ class Order implements ModelInterface, ArrayAccess
     public function setLandlinePhoneNumber($landlinePhoneNumber)
     {
         $this->container['landlinePhoneNumber'] = $landlinePhoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets isDataConfirmed
+     *
+     * @return bool
+     */
+    public function getIsDataConfirmed()
+    {
+        return $this->container['isDataConfirmed'];
+    }
+
+    /**
+     * Sets isDataConfirmed
+     *
+     * @param bool $isDataConfirmed isDataConfirmed
+     *
+     * @return $this
+     */
+    public function setIsDataConfirmed($isDataConfirmed)
+    {
+        $this->container['isDataConfirmed'] = $isDataConfirmed;
 
         return $this;
     }
