@@ -187,8 +187,8 @@ class PaymentRequest implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['hash'] = isset($data['hash']) ? $data['hash'] : null;
-        $this->container['force'] = isset($data['force']) ? $data['force'] : null;
-        $this->container['urlRedirect'] = isset($data['urlRedirect']) ? $data['urlRedirect'] : null;
+        $this->container['force'] = isset($data['force']) ? $data['force'] : false;
+        $this->container['urlRedirect'] = isset($data['urlRedirect']) ? $data['urlRedirect'] : '';
     }
 
     /**

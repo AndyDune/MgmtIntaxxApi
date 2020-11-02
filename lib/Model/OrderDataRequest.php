@@ -176,7 +176,7 @@ class OrderDataRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['hash'] = isset($data['hash']) ? $data['hash'] : null;
+        $this->container['hash'] = isset($data['hash']) ? $data['hash'] : '';
     }
 
     /**
