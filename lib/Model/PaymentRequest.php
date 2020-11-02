@@ -1,6 +1,6 @@
 <?php
 /**
- * KmcDataImages
+ * PaymentRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,15 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * KmcDataImages Class Doc Comment
+ * PaymentRequest Class Doc Comment
  *
  * @category Class
+ * @description Request for order payment
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class KmcDataImages implements ModelInterface, ArrayAccess
+class PaymentRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +49,7 @@ class KmcDataImages implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'KmcDataImages';
+    protected static $swaggerModelName = 'PaymentRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +57,10 @@ class KmcDataImages implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-'idCardFront' => 'string',
-'idCardBack' => 'string',
-'powerOfAttorneySign' => 'string',
-'powerOfAttorneySignAuto' => 'string'    ];
+        'id' => 'int',
+'hash' => 'string',
+'force' => 'bool',
+'urlRedirect' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,10 +69,9 @@ class KmcDataImages implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-'idCardFront' => 'binary',
-'idCardBack' => 'binary',
-'powerOfAttorneySign' => 'binary',
-'powerOfAttorneySignAuto' => 'binary'    ];
+'hash' => null,
+'force' => null,
+'urlRedirect' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -102,10 +101,9 @@ class KmcDataImages implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-'idCardFront' => 'id_card_front',
-'idCardBack' => 'id_card_back',
-'powerOfAttorneySign' => 'power_of_attorney_sign',
-'powerOfAttorneySignAuto' => 'power_of_attorney_sign_auto'    ];
+'hash' => 'hash',
+'force' => 'force',
+'urlRedirect' => 'url_redirect'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -114,10 +112,9 @@ class KmcDataImages implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-'idCardFront' => 'setIdCardFront',
-'idCardBack' => 'setIdCardBack',
-'powerOfAttorneySign' => 'setPowerOfAttorneySign',
-'powerOfAttorneySignAuto' => 'setPowerOfAttorneySignAuto'    ];
+'hash' => 'setHash',
+'force' => 'setForce',
+'urlRedirect' => 'setUrlRedirect'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -126,10 +123,9 @@ class KmcDataImages implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-'idCardFront' => 'getIdCardFront',
-'idCardBack' => 'getIdCardBack',
-'powerOfAttorneySign' => 'getPowerOfAttorneySign',
-'powerOfAttorneySignAuto' => 'getPowerOfAttorneySignAuto'    ];
+'hash' => 'getHash',
+'force' => 'getForce',
+'urlRedirect' => 'getUrlRedirect'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -190,10 +186,9 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['idCardFront'] = isset($data['idCardFront']) ? $data['idCardFront'] : null;
-        $this->container['idCardBack'] = isset($data['idCardBack']) ? $data['idCardBack'] : null;
-        $this->container['powerOfAttorneySign'] = isset($data['powerOfAttorneySign']) ? $data['powerOfAttorneySign'] : null;
-        $this->container['powerOfAttorneySignAuto'] = isset($data['powerOfAttorneySignAuto']) ? $data['powerOfAttorneySignAuto'] : null;
+        $this->container['hash'] = isset($data['hash']) ? $data['hash'] : null;
+        $this->container['force'] = isset($data['force']) ? $data['force'] : null;
+        $this->container['urlRedirect'] = isset($data['urlRedirect']) ? $data['urlRedirect'] : null;
     }
 
     /**
@@ -205,9 +200,6 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -226,7 +218,7 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
@@ -236,7 +228,7 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param int $id id
      *
      * @return $this
      */
@@ -248,97 +240,73 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets idCardFront
+     * Gets hash
      *
      * @return string
      */
-    public function getIdCardFront()
+    public function getHash()
     {
-        return $this->container['idCardFront'];
+        return $this->container['hash'];
     }
 
     /**
-     * Sets idCardFront
+     * Sets hash
      *
-     * @param string $idCardFront idCardFront
+     * @param string $hash hash
      *
      * @return $this
      */
-    public function setIdCardFront($idCardFront)
+    public function setHash($hash)
     {
-        $this->container['idCardFront'] = $idCardFront;
+        $this->container['hash'] = $hash;
 
         return $this;
     }
 
     /**
-     * Gets idCardBack
+     * Gets force
      *
-     * @return string
+     * @return bool
      */
-    public function getIdCardBack()
+    public function getForce()
     {
-        return $this->container['idCardBack'];
+        return $this->container['force'];
     }
 
     /**
-     * Sets idCardBack
+     * Sets force
      *
-     * @param string $idCardBack idCardBack
+     * @param bool $force force
      *
      * @return $this
      */
-    public function setIdCardBack($idCardBack)
+    public function setForce($force)
     {
-        $this->container['idCardBack'] = $idCardBack;
+        $this->container['force'] = $force;
 
         return $this;
     }
 
     /**
-     * Gets powerOfAttorneySign
+     * Gets urlRedirect
      *
      * @return string
      */
-    public function getPowerOfAttorneySign()
+    public function getUrlRedirect()
     {
-        return $this->container['powerOfAttorneySign'];
+        return $this->container['urlRedirect'];
     }
 
     /**
-     * Sets powerOfAttorneySign
+     * Sets urlRedirect
      *
-     * @param string $powerOfAttorneySign powerOfAttorneySign
+     * @param string $urlRedirect urlRedirect
      *
      * @return $this
      */
-    public function setPowerOfAttorneySign($powerOfAttorneySign)
+    public function setUrlRedirect($urlRedirect)
     {
-        $this->container['powerOfAttorneySign'] = $powerOfAttorneySign;
-
-        return $this;
-    }
-
-    /**
-     * Gets powerOfAttorneySignAuto
-     *
-     * @return string
-     */
-    public function getPowerOfAttorneySignAuto()
-    {
-        return $this->container['powerOfAttorneySignAuto'];
-    }
-
-    /**
-     * Sets powerOfAttorneySignAuto
-     *
-     * @param string $powerOfAttorneySignAuto powerOfAttorneySignAuto
-     *
-     * @return $this
-     */
-    public function setPowerOfAttorneySignAuto($powerOfAttorneySignAuto)
-    {
-        $this->container['powerOfAttorneySignAuto'] = $powerOfAttorneySignAuto;
+        $this->container['urlRedirect'] = $urlRedirect;
 
         return $this;
     }

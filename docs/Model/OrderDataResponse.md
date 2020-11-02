@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **data** | [**\AndyDune\MgmtIntaxxApi\Model\Order**](Order.md) |  | [optional] 
 **kmc** | [**\AndyDune\MgmtIntaxxApi\Model\KmcData**](KmcData.md) |  | [optional] 
 **marks** | [**\AndyDune\MgmtIntaxxApi\Model\OrderMarks**](OrderMarks.md) |  | [optional] 
+**payment** | [**\AndyDune\MgmtIntaxxApi\Model\Payment**](Payment.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

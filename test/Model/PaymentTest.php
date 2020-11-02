@@ -1,6 +1,6 @@
 <?php
 /**
- * ResponseTest
+ * PaymentTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * ResponseTest Class Doc Comment
+ * PaymentTest Class Doc Comment
  *
  * @category    Class
- * @description Common response from server.
+ * @description Payment
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ResponseTest extends \PHPUnit_Framework_TestCase
+class PaymentTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,51 +69,72 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Response"
+     * Test "Payment"
      */
-    public function testResponse()
+    public function testPayment()
     {
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "id"
      */
-    public function testPropertySuccess()
+    public function testPropertyId()
     {
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "sum"
      */
-    public function testPropertyMessage()
+    public function testPropertySum()
     {
     }
 
     /**
-     * Test attribute "contextType"
+     * Test attribute "isPaid"
      */
-    public function testPropertyContextType()
+    public function testPropertyIsPaid()
     {
     }
 
     /**
-     * Test attribute "contextId"
+     * Test attribute "status"
      */
-    public function testPropertyContextId()
+    public function testPropertyStatus()
     {
     }
 
     /**
-     * Test attribute "data"
+     * Test attribute "urlCheckout"
      */
-    public function testPropertyData()
+    public function testPropertyUrlCheckout()
     {
     }
 
     /**
-     * Test attribute "errorCode"
+     * Test attribute "urlRedirect"
      */
-    public function testPropertyErrorCode()
+    public function testPropertyUrlRedirect()
+    {
+    }
+
+    /**
+     * Test attribute "statusExternal"
+     */
+    public function testPropertyStatusExternal()
+    {
+    }
+
+    /**
+     * Test attribute "idExternal"
+     */
+    public function testPropertyIdExternal()
+    {
+    }
+
+    /**
+     * Test attribute "datetimeCreate"
+     */
+    public function testPropertyDatetimeCreate()
     {
     }
 }

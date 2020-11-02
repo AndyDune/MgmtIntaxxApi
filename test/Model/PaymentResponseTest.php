@@ -1,6 +1,6 @@
 <?php
 /**
- * ResponseTest
+ * PaymentResponseTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * ResponseTest Class Doc Comment
+ * PaymentResponseTest Class Doc Comment
  *
  * @category    Class
- * @description Common response from server.
+ * @description Payment details
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ResponseTest extends \PHPUnit_Framework_TestCase
+class PaymentResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,9 +69,9 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Response"
+     * Test "PaymentResponse"
      */
-    public function testResponse()
+    public function testPaymentResponse()
     {
     }
 
@@ -83,6 +83,41 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "canCreatePayment"
+     */
+    public function testPropertyCanCreatePayment()
+    {
+    }
+
+    /**
+     * Test attribute "orderId"
+     */
+    public function testPropertyOrderId()
+    {
+    }
+
+    /**
+     * Test attribute "orderHash"
+     */
+    public function testPropertyOrderHash()
+    {
+    }
+
+    /**
+     * Test attribute "orderStatus"
+     */
+    public function testPropertyOrderStatus()
+    {
+    }
+
+    /**
+     * Test attribute "orderDebt"
+     */
+    public function testPropertyOrderDebt()
+    {
+    }
+
+    /**
      * Test attribute "message"
      */
     public function testPropertyMessage()
@@ -90,30 +125,9 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "contextType"
+     * Test attribute "payment"
      */
-    public function testPropertyContextType()
-    {
-    }
-
-    /**
-     * Test attribute "contextId"
-     */
-    public function testPropertyContextId()
-    {
-    }
-
-    /**
-     * Test attribute "data"
-     */
-    public function testPropertyData()
-    {
-    }
-
-    /**
-     * Test attribute "errorCode"
-     */
-    public function testPropertyErrorCode()
+    public function testPropertyPayment()
     {
     }
 }

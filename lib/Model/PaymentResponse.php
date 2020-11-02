@@ -1,6 +1,6 @@
 <?php
 /**
- * KmcDataImages
+ * PaymentResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,15 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * KmcDataImages Class Doc Comment
+ * PaymentResponse Class Doc Comment
  *
  * @category Class
+ * @description Payment details
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class KmcDataImages implements ModelInterface, ArrayAccess
+class PaymentResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +49,7 @@ class KmcDataImages implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'KmcDataImages';
+    protected static $swaggerModelName = 'PaymentResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +57,14 @@ class KmcDataImages implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-'idCardFront' => 'string',
-'idCardBack' => 'string',
-'powerOfAttorneySign' => 'string',
-'powerOfAttorneySignAuto' => 'string'    ];
+        'success' => 'bool',
+'canCreatePayment' => 'bool',
+'orderId' => 'int',
+'orderHash' => 'string',
+'orderStatus' => 'string',
+'orderDebt' => 'float',
+'message' => 'string',
+'payment' => '\AndyDune\MgmtIntaxxApi\Model\Payment'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +72,14 @@ class KmcDataImages implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-'idCardFront' => 'binary',
-'idCardBack' => 'binary',
-'powerOfAttorneySign' => 'binary',
-'powerOfAttorneySignAuto' => 'binary'    ];
+        'success' => null,
+'canCreatePayment' => null,
+'orderId' => null,
+'orderHash' => null,
+'orderStatus' => null,
+'orderDebt' => null,
+'message' => null,
+'payment' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +108,14 @@ class KmcDataImages implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-'idCardFront' => 'id_card_front',
-'idCardBack' => 'id_card_back',
-'powerOfAttorneySign' => 'power_of_attorney_sign',
-'powerOfAttorneySignAuto' => 'power_of_attorney_sign_auto'    ];
+        'success' => 'success',
+'canCreatePayment' => 'can_create_payment',
+'orderId' => 'order_id',
+'orderHash' => 'order_hash',
+'orderStatus' => 'order_status',
+'orderDebt' => 'order_debt',
+'message' => 'message',
+'payment' => 'payment'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +123,14 @@ class KmcDataImages implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-'idCardFront' => 'setIdCardFront',
-'idCardBack' => 'setIdCardBack',
-'powerOfAttorneySign' => 'setPowerOfAttorneySign',
-'powerOfAttorneySignAuto' => 'setPowerOfAttorneySignAuto'    ];
+        'success' => 'setSuccess',
+'canCreatePayment' => 'setCanCreatePayment',
+'orderId' => 'setOrderId',
+'orderHash' => 'setOrderHash',
+'orderStatus' => 'setOrderStatus',
+'orderDebt' => 'setOrderDebt',
+'message' => 'setMessage',
+'payment' => 'setPayment'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +138,14 @@ class KmcDataImages implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-'idCardFront' => 'getIdCardFront',
-'idCardBack' => 'getIdCardBack',
-'powerOfAttorneySign' => 'getPowerOfAttorneySign',
-'powerOfAttorneySignAuto' => 'getPowerOfAttorneySignAuto'    ];
+        'success' => 'getSuccess',
+'canCreatePayment' => 'getCanCreatePayment',
+'orderId' => 'getOrderId',
+'orderHash' => 'getOrderHash',
+'orderStatus' => 'getOrderStatus',
+'orderDebt' => 'getOrderDebt',
+'message' => 'getMessage',
+'payment' => 'getPayment'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +205,14 @@ class KmcDataImages implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['idCardFront'] = isset($data['idCardFront']) ? $data['idCardFront'] : null;
-        $this->container['idCardBack'] = isset($data['idCardBack']) ? $data['idCardBack'] : null;
-        $this->container['powerOfAttorneySign'] = isset($data['powerOfAttorneySign']) ? $data['powerOfAttorneySign'] : null;
-        $this->container['powerOfAttorneySignAuto'] = isset($data['powerOfAttorneySignAuto']) ? $data['powerOfAttorneySignAuto'] : null;
+        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['canCreatePayment'] = isset($data['canCreatePayment']) ? $data['canCreatePayment'] : null;
+        $this->container['orderId'] = isset($data['orderId']) ? $data['orderId'] : null;
+        $this->container['orderHash'] = isset($data['orderHash']) ? $data['orderHash'] : null;
+        $this->container['orderStatus'] = isset($data['orderStatus']) ? $data['orderStatus'] : null;
+        $this->container['orderDebt'] = isset($data['orderDebt']) ? $data['orderDebt'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['payment'] = isset($data['payment']) ? $data['payment'] : null;
     }
 
     /**
@@ -205,8 +224,8 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+        if ($this->container['success'] === null) {
+            $invalidProperties[] = "'success' can't be null";
         }
         return $invalidProperties;
     }
@@ -224,121 +243,193 @@ class KmcDataImages implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets success
      *
-     * @return string
+     * @return bool
      */
-    public function getId()
+    public function getSuccess()
     {
-        return $this->container['id'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets id
+     * Sets success
      *
-     * @param string $id id
+     * @param bool $success success
      *
      * @return $this
      */
-    public function setId($id)
+    public function setSuccess($success)
     {
-        $this->container['id'] = $id;
+        $this->container['success'] = $success;
 
         return $this;
     }
 
     /**
-     * Gets idCardFront
+     * Gets canCreatePayment
      *
-     * @return string
+     * @return bool
      */
-    public function getIdCardFront()
+    public function getCanCreatePayment()
     {
-        return $this->container['idCardFront'];
+        return $this->container['canCreatePayment'];
     }
 
     /**
-     * Sets idCardFront
+     * Sets canCreatePayment
      *
-     * @param string $idCardFront idCardFront
+     * @param bool $canCreatePayment canCreatePayment
      *
      * @return $this
      */
-    public function setIdCardFront($idCardFront)
+    public function setCanCreatePayment($canCreatePayment)
     {
-        $this->container['idCardFront'] = $idCardFront;
+        $this->container['canCreatePayment'] = $canCreatePayment;
 
         return $this;
     }
 
     /**
-     * Gets idCardBack
+     * Gets orderId
      *
-     * @return string
+     * @return int
      */
-    public function getIdCardBack()
+    public function getOrderId()
     {
-        return $this->container['idCardBack'];
+        return $this->container['orderId'];
     }
 
     /**
-     * Sets idCardBack
+     * Sets orderId
      *
-     * @param string $idCardBack idCardBack
+     * @param int $orderId orderId
      *
      * @return $this
      */
-    public function setIdCardBack($idCardBack)
+    public function setOrderId($orderId)
     {
-        $this->container['idCardBack'] = $idCardBack;
+        $this->container['orderId'] = $orderId;
 
         return $this;
     }
 
     /**
-     * Gets powerOfAttorneySign
+     * Gets orderHash
      *
      * @return string
      */
-    public function getPowerOfAttorneySign()
+    public function getOrderHash()
     {
-        return $this->container['powerOfAttorneySign'];
+        return $this->container['orderHash'];
     }
 
     /**
-     * Sets powerOfAttorneySign
+     * Sets orderHash
      *
-     * @param string $powerOfAttorneySign powerOfAttorneySign
+     * @param string $orderHash orderHash
      *
      * @return $this
      */
-    public function setPowerOfAttorneySign($powerOfAttorneySign)
+    public function setOrderHash($orderHash)
     {
-        $this->container['powerOfAttorneySign'] = $powerOfAttorneySign;
+        $this->container['orderHash'] = $orderHash;
 
         return $this;
     }
 
     /**
-     * Gets powerOfAttorneySignAuto
+     * Gets orderStatus
      *
      * @return string
      */
-    public function getPowerOfAttorneySignAuto()
+    public function getOrderStatus()
     {
-        return $this->container['powerOfAttorneySignAuto'];
+        return $this->container['orderStatus'];
     }
 
     /**
-     * Sets powerOfAttorneySignAuto
+     * Sets orderStatus
      *
-     * @param string $powerOfAttorneySignAuto powerOfAttorneySignAuto
+     * @param string $orderStatus orderStatus
      *
      * @return $this
      */
-    public function setPowerOfAttorneySignAuto($powerOfAttorneySignAuto)
+    public function setOrderStatus($orderStatus)
     {
-        $this->container['powerOfAttorneySignAuto'] = $powerOfAttorneySignAuto;
+        $this->container['orderStatus'] = $orderStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderDebt
+     *
+     * @return float
+     */
+    public function getOrderDebt()
+    {
+        return $this->container['orderDebt'];
+    }
+
+    /**
+     * Sets orderDebt
+     *
+     * @param float $orderDebt orderDebt
+     *
+     * @return $this
+     */
+    public function setOrderDebt($orderDebt)
+    {
+        $this->container['orderDebt'] = $orderDebt;
+
+        return $this;
+    }
+
+    /**
+     * Gets message
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->container['message'];
+    }
+
+    /**
+     * Sets message
+     *
+     * @param string $message message
+     *
+     * @return $this
+     */
+    public function setMessage($message)
+    {
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment
+     *
+     * @return \AndyDune\MgmtIntaxxApi\Model\Payment
+     */
+    public function getPayment()
+    {
+        return $this->container['payment'];
+    }
+
+    /**
+     * Sets payment
+     *
+     * @param \AndyDune\MgmtIntaxxApi\Model\Payment $payment payment
+     *
+     * @return $this
+     */
+    public function setPayment($payment)
+    {
+        $this->container['payment'] = $payment;
 
         return $this;
     }

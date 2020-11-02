@@ -1,6 +1,6 @@
 <?php
 /**
- * KmcDataImages
+ * Payment
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * KmcDataImages Class Doc Comment
+ * Payment Class Doc Comment
  *
  * @category Class
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class KmcDataImages implements ModelInterface, ArrayAccess
+class Payment implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class KmcDataImages implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'KmcDataImages';
+    protected static $swaggerModelName = 'Payment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,15 @@ class KmcDataImages implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-'idCardFront' => 'string',
-'idCardBack' => 'string',
-'powerOfAttorneySign' => 'string',
-'powerOfAttorneySignAuto' => 'string'    ];
+        'id' => 'int',
+'sum' => 'float',
+'isPaid' => 'bool',
+'status' => 'string',
+'urlCheckout' => 'string',
+'urlRedirect' => 'string',
+'statusExternal' => 'string',
+'idExternal' => 'string',
+'datetimeCreate' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,10 +73,14 @@ class KmcDataImages implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-'idCardFront' => 'binary',
-'idCardBack' => 'binary',
-'powerOfAttorneySign' => 'binary',
-'powerOfAttorneySignAuto' => 'binary'    ];
+'sum' => null,
+'isPaid' => null,
+'status' => null,
+'urlCheckout' => null,
+'urlRedirect' => null,
+'statusExternal' => null,
+'idExternal' => null,
+'datetimeCreate' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -102,10 +110,14 @@ class KmcDataImages implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-'idCardFront' => 'id_card_front',
-'idCardBack' => 'id_card_back',
-'powerOfAttorneySign' => 'power_of_attorney_sign',
-'powerOfAttorneySignAuto' => 'power_of_attorney_sign_auto'    ];
+'sum' => 'sum',
+'isPaid' => 'is_paid',
+'status' => 'status',
+'urlCheckout' => 'url_checkout',
+'urlRedirect' => 'url_redirect',
+'statusExternal' => 'status_external',
+'idExternal' => 'id_external',
+'datetimeCreate' => 'datetime_create'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -114,10 +126,14 @@ class KmcDataImages implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-'idCardFront' => 'setIdCardFront',
-'idCardBack' => 'setIdCardBack',
-'powerOfAttorneySign' => 'setPowerOfAttorneySign',
-'powerOfAttorneySignAuto' => 'setPowerOfAttorneySignAuto'    ];
+'sum' => 'setSum',
+'isPaid' => 'setIsPaid',
+'status' => 'setStatus',
+'urlCheckout' => 'setUrlCheckout',
+'urlRedirect' => 'setUrlRedirect',
+'statusExternal' => 'setStatusExternal',
+'idExternal' => 'setIdExternal',
+'datetimeCreate' => 'setDatetimeCreate'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -126,10 +142,14 @@ class KmcDataImages implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-'idCardFront' => 'getIdCardFront',
-'idCardBack' => 'getIdCardBack',
-'powerOfAttorneySign' => 'getPowerOfAttorneySign',
-'powerOfAttorneySignAuto' => 'getPowerOfAttorneySignAuto'    ];
+'sum' => 'getSum',
+'isPaid' => 'getIsPaid',
+'status' => 'getStatus',
+'urlCheckout' => 'getUrlCheckout',
+'urlRedirect' => 'getUrlRedirect',
+'statusExternal' => 'getStatusExternal',
+'idExternal' => 'getIdExternal',
+'datetimeCreate' => 'getDatetimeCreate'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -190,10 +210,14 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['idCardFront'] = isset($data['idCardFront']) ? $data['idCardFront'] : null;
-        $this->container['idCardBack'] = isset($data['idCardBack']) ? $data['idCardBack'] : null;
-        $this->container['powerOfAttorneySign'] = isset($data['powerOfAttorneySign']) ? $data['powerOfAttorneySign'] : null;
-        $this->container['powerOfAttorneySignAuto'] = isset($data['powerOfAttorneySignAuto']) ? $data['powerOfAttorneySignAuto'] : null;
+        $this->container['sum'] = isset($data['sum']) ? $data['sum'] : null;
+        $this->container['isPaid'] = isset($data['isPaid']) ? $data['isPaid'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['urlCheckout'] = isset($data['urlCheckout']) ? $data['urlCheckout'] : null;
+        $this->container['urlRedirect'] = isset($data['urlRedirect']) ? $data['urlRedirect'] : null;
+        $this->container['statusExternal'] = isset($data['statusExternal']) ? $data['statusExternal'] : null;
+        $this->container['idExternal'] = isset($data['idExternal']) ? $data['idExternal'] : null;
+        $this->container['datetimeCreate'] = isset($data['datetimeCreate']) ? $data['datetimeCreate'] : null;
     }
 
     /**
@@ -205,9 +229,6 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -226,7 +247,7 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
@@ -236,7 +257,7 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param string $id id
+     * @param int $id id
      *
      * @return $this
      */
@@ -248,97 +269,193 @@ class KmcDataImages implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets idCardFront
+     * Gets sum
      *
-     * @return string
+     * @return float
      */
-    public function getIdCardFront()
+    public function getSum()
     {
-        return $this->container['idCardFront'];
+        return $this->container['sum'];
     }
 
     /**
-     * Sets idCardFront
+     * Sets sum
      *
-     * @param string $idCardFront idCardFront
+     * @param float $sum sum
      *
      * @return $this
      */
-    public function setIdCardFront($idCardFront)
+    public function setSum($sum)
     {
-        $this->container['idCardFront'] = $idCardFront;
+        $this->container['sum'] = $sum;
 
         return $this;
     }
 
     /**
-     * Gets idCardBack
+     * Gets isPaid
      *
-     * @return string
+     * @return bool
      */
-    public function getIdCardBack()
+    public function getIsPaid()
     {
-        return $this->container['idCardBack'];
+        return $this->container['isPaid'];
     }
 
     /**
-     * Sets idCardBack
+     * Sets isPaid
      *
-     * @param string $idCardBack idCardBack
+     * @param bool $isPaid isPaid
      *
      * @return $this
      */
-    public function setIdCardBack($idCardBack)
+    public function setIsPaid($isPaid)
     {
-        $this->container['idCardBack'] = $idCardBack;
+        $this->container['isPaid'] = $isPaid;
 
         return $this;
     }
 
     /**
-     * Gets powerOfAttorneySign
+     * Gets status
      *
      * @return string
      */
-    public function getPowerOfAttorneySign()
+    public function getStatus()
     {
-        return $this->container['powerOfAttorneySign'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets powerOfAttorneySign
+     * Sets status
      *
-     * @param string $powerOfAttorneySign powerOfAttorneySign
+     * @param string $status status
      *
      * @return $this
      */
-    public function setPowerOfAttorneySign($powerOfAttorneySign)
+    public function setStatus($status)
     {
-        $this->container['powerOfAttorneySign'] = $powerOfAttorneySign;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets powerOfAttorneySignAuto
+     * Gets urlCheckout
      *
      * @return string
      */
-    public function getPowerOfAttorneySignAuto()
+    public function getUrlCheckout()
     {
-        return $this->container['powerOfAttorneySignAuto'];
+        return $this->container['urlCheckout'];
     }
 
     /**
-     * Sets powerOfAttorneySignAuto
+     * Sets urlCheckout
      *
-     * @param string $powerOfAttorneySignAuto powerOfAttorneySignAuto
+     * @param string $urlCheckout urlCheckout
      *
      * @return $this
      */
-    public function setPowerOfAttorneySignAuto($powerOfAttorneySignAuto)
+    public function setUrlCheckout($urlCheckout)
     {
-        $this->container['powerOfAttorneySignAuto'] = $powerOfAttorneySignAuto;
+        $this->container['urlCheckout'] = $urlCheckout;
+
+        return $this;
+    }
+
+    /**
+     * Gets urlRedirect
+     *
+     * @return string
+     */
+    public function getUrlRedirect()
+    {
+        return $this->container['urlRedirect'];
+    }
+
+    /**
+     * Sets urlRedirect
+     *
+     * @param string $urlRedirect urlRedirect
+     *
+     * @return $this
+     */
+    public function setUrlRedirect($urlRedirect)
+    {
+        $this->container['urlRedirect'] = $urlRedirect;
+
+        return $this;
+    }
+
+    /**
+     * Gets statusExternal
+     *
+     * @return string
+     */
+    public function getStatusExternal()
+    {
+        return $this->container['statusExternal'];
+    }
+
+    /**
+     * Sets statusExternal
+     *
+     * @param string $statusExternal statusExternal
+     *
+     * @return $this
+     */
+    public function setStatusExternal($statusExternal)
+    {
+        $this->container['statusExternal'] = $statusExternal;
+
+        return $this;
+    }
+
+    /**
+     * Gets idExternal
+     *
+     * @return string
+     */
+    public function getIdExternal()
+    {
+        return $this->container['idExternal'];
+    }
+
+    /**
+     * Sets idExternal
+     *
+     * @param string $idExternal idExternal
+     *
+     * @return $this
+     */
+    public function setIdExternal($idExternal)
+    {
+        $this->container['idExternal'] = $idExternal;
+
+        return $this;
+    }
+
+    /**
+     * Gets datetimeCreate
+     *
+     * @return string
+     */
+    public function getDatetimeCreate()
+    {
+        return $this->container['datetimeCreate'];
+    }
+
+    /**
+     * Sets datetimeCreate
+     *
+     * @param string $datetimeCreate datetimeCreate
+     *
+     * @return $this
+     */
+    public function setDatetimeCreate($datetimeCreate)
+    {
+        $this->container['datetimeCreate'] = $datetimeCreate;
 
         return $this;
     }

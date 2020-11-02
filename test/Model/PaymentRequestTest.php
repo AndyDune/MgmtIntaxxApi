@@ -1,6 +1,6 @@
 <?php
 /**
- * ResponseTest
+ * PaymentRequestTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * ResponseTest Class Doc Comment
+ * PaymentRequestTest Class Doc Comment
  *
  * @category    Class
- * @description Common response from server.
+ * @description Request for order payment
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ResponseTest extends \PHPUnit_Framework_TestCase
+class PaymentRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,51 +69,37 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Response"
+     * Test "PaymentRequest"
      */
-    public function testResponse()
+    public function testPaymentRequest()
     {
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "id"
      */
-    public function testPropertySuccess()
+    public function testPropertyId()
     {
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "hash"
      */
-    public function testPropertyMessage()
+    public function testPropertyHash()
     {
     }
 
     /**
-     * Test attribute "contextType"
+     * Test attribute "force"
      */
-    public function testPropertyContextType()
+    public function testPropertyForce()
     {
     }
 
     /**
-     * Test attribute "contextId"
+     * Test attribute "urlRedirect"
      */
-    public function testPropertyContextId()
-    {
-    }
-
-    /**
-     * Test attribute "data"
-     */
-    public function testPropertyData()
-    {
-    }
-
-    /**
-     * Test attribute "errorCode"
-     */
-    public function testPropertyErrorCode()
+    public function testPropertyUrlRedirect()
     {
     }
 }

@@ -10,6 +10,9 @@ Method | HTTP request | Description
 [**emailConfirmPost**](DefaultApi.md#emailconfirmpost) | **POST** /email-confirm | Customer email confirmation.
 [**getOrderDataPost**](DefaultApi.md#getorderdatapost) | **POST** /get-order-data | Full order data
 [**orderSendSmsWithTemplatePost**](DefaultApi.md#ordersendsmswithtemplatepost) | **POST** /order-send-sms-with-template | Send SMS for order with brand sms template
+[**paymentConditionsPost**](DefaultApi.md#paymentconditionspost) | **POST** /payment/conditions | Check conditions for payment creation
+[**paymentCreatePost**](DefaultApi.md#paymentcreatepost) | **POST** /payment/create | Create payment for order
+[**paymentLastPaymentDataPost**](DefaultApi.md#paymentlastpaymentdatapost) | **POST** /payment/last-payment-data | Get last payment data
 [**smsConfirmPost**](DefaultApi.md#smsconfirmpost) | **POST** /sms-confirm | Customer sms confirmation.
 [**updateKmcDataImagesPost**](DefaultApi.md#updatekmcdataimagespost) | **POST** /update-kmc-data-images | Upload KMC files
 [**updateKmcDataPost**](DefaultApi.md#updatekmcdatapost) | **POST** /update-kmc-data | Upload KMC data
@@ -312,6 +315,162 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\AndyDune\MgmtIntaxxApi\Model\Response**](../Model/Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **paymentConditionsPost**
+> \AndyDune\MgmtIntaxxApi\Model\PaymentResponse paymentConditionsPost($body)
+
+Check conditions for payment creation
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: ApiKeyAuth
+$config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \AndyDune\MgmtIntaxxApi\Model\PaymentRequest(); // \AndyDune\MgmtIntaxxApi\Model\PaymentRequest | Inctance for request body
+
+try {
+    $result = $apiInstance->paymentConditionsPost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->paymentConditionsPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\AndyDune\MgmtIntaxxApi\Model\PaymentRequest**](../Model/PaymentRequest.md)| Inctance for request body | [optional]
+
+### Return type
+
+[**\AndyDune\MgmtIntaxxApi\Model\PaymentResponse**](../Model/PaymentResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **paymentCreatePost**
+> \AndyDune\MgmtIntaxxApi\Model\PaymentResponse paymentCreatePost($body)
+
+Create payment for order
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: ApiKeyAuth
+$config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \AndyDune\MgmtIntaxxApi\Model\PaymentRequest(); // \AndyDune\MgmtIntaxxApi\Model\PaymentRequest | Inctance for request body
+
+try {
+    $result = $apiInstance->paymentCreatePost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->paymentCreatePost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\AndyDune\MgmtIntaxxApi\Model\PaymentRequest**](../Model/PaymentRequest.md)| Inctance for request body | [optional]
+
+### Return type
+
+[**\AndyDune\MgmtIntaxxApi\Model\PaymentResponse**](../Model/PaymentResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **paymentLastPaymentDataPost**
+> \AndyDune\MgmtIntaxxApi\Model\PaymentResponse paymentLastPaymentDataPost($body)
+
+Get last payment data
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: ApiKeyAuth
+$config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \AndyDune\MgmtIntaxxApi\Model\PaymentRequest(); // \AndyDune\MgmtIntaxxApi\Model\PaymentRequest | Inctance for request body
+
+try {
+    $result = $apiInstance->paymentLastPaymentDataPost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->paymentLastPaymentDataPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\AndyDune\MgmtIntaxxApi\Model\PaymentRequest**](../Model/PaymentRequest.md)| Inctance for request body | [optional]
+
+### Return type
+
+[**\AndyDune\MgmtIntaxxApi\Model\PaymentResponse**](../Model/PaymentResponse.md)
 
 ### Authorization
 
