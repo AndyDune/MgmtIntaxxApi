@@ -60,7 +60,8 @@ class PaymentRequest implements ModelInterface, ArrayAccess
         'id' => 'int',
 'hash' => 'string',
 'force' => 'bool',
-'urlRedirect' => 'string'    ];
+'urlRedirect' => 'string',
+'update' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,7 +72,8 @@ class PaymentRequest implements ModelInterface, ArrayAccess
         'id' => null,
 'hash' => null,
 'force' => null,
-'urlRedirect' => null    ];
+'urlRedirect' => null,
+'update' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -103,7 +105,8 @@ class PaymentRequest implements ModelInterface, ArrayAccess
         'id' => 'id',
 'hash' => 'hash',
 'force' => 'force',
-'urlRedirect' => 'url_redirect'    ];
+'urlRedirect' => 'url_redirect',
+'update' => 'update'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -114,7 +117,8 @@ class PaymentRequest implements ModelInterface, ArrayAccess
         'id' => 'setId',
 'hash' => 'setHash',
 'force' => 'setForce',
-'urlRedirect' => 'setUrlRedirect'    ];
+'urlRedirect' => 'setUrlRedirect',
+'update' => 'setUpdate'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,7 +129,8 @@ class PaymentRequest implements ModelInterface, ArrayAccess
         'id' => 'getId',
 'hash' => 'getHash',
 'force' => 'getForce',
-'urlRedirect' => 'getUrlRedirect'    ];
+'urlRedirect' => 'getUrlRedirect',
+'update' => 'getUpdate'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -186,9 +191,10 @@ class PaymentRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['hash'] = isset($data['hash']) ? $data['hash'] : null;
+        $this->container['hash'] = isset($data['hash']) ? $data['hash'] : '';
         $this->container['force'] = isset($data['force']) ? $data['force'] : false;
         $this->container['urlRedirect'] = isset($data['urlRedirect']) ? $data['urlRedirect'] : '';
+        $this->container['update'] = isset($data['update']) ? $data['update'] : false;
     }
 
     /**
@@ -307,6 +313,30 @@ class PaymentRequest implements ModelInterface, ArrayAccess
     public function setUrlRedirect($urlRedirect)
     {
         $this->container['urlRedirect'] = $urlRedirect;
+
+        return $this;
+    }
+
+    /**
+     * Gets update
+     *
+     * @return bool
+     */
+    public function getUpdate()
+    {
+        return $this->container['update'];
+    }
+
+    /**
+     * Sets update
+     *
+     * @param bool $update update
+     *
+     * @return $this
+     */
+    public function setUpdate($update)
+    {
+        $this->container['update'] = $update;
 
         return $this;
     }

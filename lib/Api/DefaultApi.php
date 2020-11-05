@@ -645,7 +645,7 @@ class DefaultApi
     /**
      * Operation dataGet
      *
-     * Check customer pincode.
+     * Basic data.
      *
      *
      * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
@@ -661,7 +661,7 @@ class DefaultApi
     /**
      * Operation dataGetWithHttpInfo
      *
-     * Check customer pincode.
+     * Basic data.
      *
      *
      * @throws \AndyDune\MgmtIntaxxApi\ApiException on non-2xx response
@@ -743,7 +743,7 @@ class DefaultApi
     /**
      * Operation dataGetAsync
      *
-     * Check customer pincode.
+     * Basic data.
      *
      *
      * @throws \InvalidArgumentException
@@ -762,7 +762,7 @@ class DefaultApi
     /**
      * Operation dataGetAsyncWithHttpInfo
      *
-     * Check customer pincode.
+     * Basic data.
      *
      *
      * @throws \InvalidArgumentException
