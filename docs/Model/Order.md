@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **isDataConfirmed** | **bool** |  | [optional] 
 **pfsId** | **string** |  | [optional] 
 **debt** | **float** | Order debt. If negative it can create payment. | [optional] 
+**sourceOrderId** | **int** | External order id | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

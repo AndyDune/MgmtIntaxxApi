@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **datetimeCreate** | **string** |  | [optional] 
 **datetimeUpdate** | **string** |  | [optional] 
 **datetimeImport** | **string** |  | [optional] 
+**datetimeExternal** | **string** |  | [optional] 
 **source** | **string** |  | [optional] 
 **status** | **string** |  | [optional] 
 **data** | [**\AndyDune\MgmtIntaxxApi\Model\Order**](Order.md) |  | [optional] 

@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createOrderPost**](DefaultApi.md#createorderpost) | **POST** /create-order | Create order with product of given brand
 [**customerPincodeCheckPost**](DefaultApi.md#customerpincodecheckpost) | **POST** /customer/pincode-check | Request to check customer pincode.
-[**dataGet**](DefaultApi.md#dataget) | **GET** /data | Check customer pincode.
+[**dataGet**](DefaultApi.md#dataget) | **GET** /data | Basic data.
 [**emailConfirmPost**](DefaultApi.md#emailconfirmpost) | **POST** /email-confirm | Customer email confirmation.
 [**getOrderDataPost**](DefaultApi.md#getorderdatapost) | **POST** /get-order-data | Full order data
 [**orderSendSmsWithTemplatePost**](DefaultApi.md#ordersendsmswithtemplatepost) | **POST** /order-send-sms-with-template | Send SMS for order with brand sms template
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 # **dataGet**
 > \AndyDune\MgmtIntaxxApi\Model\Response dataGet()
 
-Check customer pincode.
+Basic data.
 
 ### Example
 ```php
