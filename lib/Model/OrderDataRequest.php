@@ -57,7 +57,7 @@ class OrderDataRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
+        'id' => 'string',
 'hash' => 'string'    ];
 
     /**
@@ -175,7 +175,7 @@ class OrderDataRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : '';
         $this->container['hash'] = isset($data['hash']) ? $data['hash'] : '';
     }
 
@@ -206,7 +206,7 @@ class OrderDataRequest implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return int
+     * @return string
      */
     public function getId()
     {
@@ -216,7 +216,7 @@ class OrderDataRequest implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id id
+     * @param string $id id
      *
      * @return $this
      */

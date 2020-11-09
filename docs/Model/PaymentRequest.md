@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **string** |  | [optional] 
 **hash** | **string** |  | [optional] [default to '']
 **force** | **bool** |  | [optional] [default to false]
 **urlRedirect** | **string** |  | [optional] [default to '']

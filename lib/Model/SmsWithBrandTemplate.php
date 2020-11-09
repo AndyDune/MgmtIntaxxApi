@@ -56,7 +56,7 @@ class SmsWithBrandTemplate implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
+        'id' => 'string',
 'templateId' => 'int',
 'changePassword' => 'bool',
 'changePhoneNumberConfirmCode' => 'bool',
@@ -232,7 +232,7 @@ class SmsWithBrandTemplate implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return int
+     * @return string
      */
     public function getId()
     {
@@ -242,7 +242,7 @@ class SmsWithBrandTemplate implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id id
+     * @param string $id id
      *
      * @return $this
      */

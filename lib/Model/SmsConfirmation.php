@@ -58,7 +58,7 @@ class SmsConfirmation implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'hash' => 'string',
-'id' => 'float',
+'id' => 'string',
 'code' => 'float'    ];
 
     /**
@@ -236,7 +236,7 @@ class SmsConfirmation implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return float
+     * @return string
      */
     public function getId()
     {
@@ -246,7 +246,7 @@ class SmsConfirmation implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param float $id id
+     * @param string $id id
      *
      * @return $this
      */

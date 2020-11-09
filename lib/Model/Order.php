@@ -57,7 +57,7 @@ class Order implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
+        'id' => 'string',
 'hash' => 'string',
 'email' => 'string',
 'firstName' => 'string',
@@ -404,7 +404,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return int
+     * @return string
      */
     public function getId()
     {
@@ -414,7 +414,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id id
+     * @param string $id id
      *
      * @return $this
      */

@@ -57,7 +57,7 @@ class PaymentRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
+        'id' => 'string',
 'hash' => 'string',
 'force' => 'bool',
 'urlRedirect' => 'string',
@@ -224,7 +224,7 @@ class PaymentRequest implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return int
+     * @return string
      */
     public function getId()
     {
@@ -234,7 +234,7 @@ class PaymentRequest implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id id
+     * @param string $id id
      *
      * @return $this
      */

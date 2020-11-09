@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | 
+**id** | **string** |  | 
 **templateId** | **int** |  | [optional] 
 **changePassword** | **bool** |  | [optional] [default to false]
 **changePhoneNumberConfirmCode** | **bool** |  | [optional] [default to false]
