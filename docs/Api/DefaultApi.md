@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**dataGet**](DefaultApi.md#dataget) | **GET** /data | Basic data.
 [**emailConfirmPost**](DefaultApi.md#emailconfirmpost) | **POST** /email-confirm | Customer email confirmation.
 [**getOrderDataPost**](DefaultApi.md#getorderdatapost) | **POST** /get-order-data | Full order data
+[**orderImagePost**](DefaultApi.md#orderimagepost) | **POST** /order-image | Get order image with code
 [**orderSendSmsWithTemplatePost**](DefaultApi.md#ordersendsmswithtemplatepost) | **POST** /order-send-sms-with-template | Send SMS for order with brand sms template
 [**paymentConditionsPost**](DefaultApi.md#paymentconditionspost) | **POST** /payment/conditions | Check conditions for payment creation
 [**paymentCreatePost**](DefaultApi.md#paymentcreatepost) | **POST** /payment/create | Create payment for order
@@ -272,6 +273,58 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderImagePost**
+> string orderImagePost($body)
+
+Get order image with code
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: ApiKeyAuth
+$config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \AndyDune\MgmtIntaxxApi\Model\OrderImageRequest(); // \AndyDune\MgmtIntaxxApi\Model\OrderImageRequest | Inctance for request body
+
+try {
+    $result = $apiInstance->orderImagePost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->orderImagePost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\AndyDune\MgmtIntaxxApi\Model\OrderImageRequest**](../Model/OrderImageRequest.md)| Inctance for request body | [optional]
+
+### Return type
+
+**string**
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: image/_*, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
