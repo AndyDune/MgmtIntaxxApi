@@ -121,6 +121,16 @@ class DefaultApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for orderActionExecutePost
+     *
+     * Execute order action with code.
+     *
+     */
+    public function testOrderActionExecutePost()
+    {
+    }
+
+    /**
      * Test case for orderImagePost
      *
      * Get order image with code.
