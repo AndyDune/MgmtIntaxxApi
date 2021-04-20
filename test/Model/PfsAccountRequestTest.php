@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderDataRequestTest
+ * PfsAccountRequestTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * OrderDataRequestTest Class Doc Comment
+ * PfsAccountRequestTest Class Doc Comment
  *
  * @category    Class
- * @description Request order data
+ * @description Request pfs account data
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrderDataRequestTest extends \PHPUnit_Framework_TestCase
+class PfsAccountRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,23 +69,23 @@ class OrderDataRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OrderDataRequest"
+     * Test "PfsAccountRequest"
      */
-    public function testOrderDataRequest()
+    public function testPfsAccountRequest()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "issuingId"
      */
-    public function testPropertyId()
+    public function testPropertyIssuingId()
     {
     }
 
     /**
-     * Test attribute "hash"
+     * Test attribute "cardholderId"
      */
-    public function testPropertyHash()
+    public function testPropertyCardholderId()
     {
     }
 }

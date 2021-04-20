@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderDataResponseTest
+ * PfsAccountInitialDataTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * OrderDataResponseTest Class Doc Comment
+ * PfsAccountInitialDataTest Class Doc Comment
  *
  * @category    Class
- * @description Order full data
+ * @description PfsAccountInitialData
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrderDataResponseTest extends \PHPUnit_Framework_TestCase
+class PfsAccountInitialDataTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,93 +69,114 @@ class OrderDataResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OrderDataResponse"
+     * Test "PfsAccountInitialData"
      */
-    public function testOrderDataResponse()
+    public function testPfsAccountInitialData()
     {
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "firstName"
      */
-    public function testPropertySuccess()
+    public function testPropertyFirstName()
     {
     }
 
     /**
-     * Test attribute "message"
+     * Test attribute "lastName"
      */
-    public function testPropertyMessage()
+    public function testPropertyLastName()
     {
     }
 
     /**
-     * Test attribute "datetimeCreate"
+     * Test attribute "address1"
      */
-    public function testPropertyDatetimeCreate()
+    public function testPropertyAddress1()
     {
     }
 
     /**
-     * Test attribute "datetimeUpdate"
+     * Test attribute "city"
      */
-    public function testPropertyDatetimeUpdate()
+    public function testPropertyCity()
     {
     }
 
     /**
-     * Test attribute "datetimeImport"
+     * Test attribute "zipCode"
      */
-    public function testPropertyDatetimeImport()
+    public function testPropertyZipCode()
     {
     }
 
     /**
-     * Test attribute "datetimeExternal"
+     * Test attribute "countryCode"
      */
-    public function testPropertyDatetimeExternal()
+    public function testPropertyCountryCode()
     {
     }
 
     /**
-     * Test attribute "source"
+     * Test attribute "dateOfBirth"
      */
-    public function testPropertySource()
+    public function testPropertyDateOfBirth()
     {
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "mobileNo"
      */
-    public function testPropertyStatus()
+    public function testPropertyMobileNo()
     {
     }
 
     /**
-     * Test attribute "data"
+     * Test attribute "email"
      */
-    public function testPropertyData()
+    public function testPropertyEmail()
     {
     }
 
     /**
-     * Test attribute "kmc"
+     * Test attribute "embossName"
      */
-    public function testPropertyKmc()
+    public function testPropertyEmbossName()
     {
     }
 
     /**
-     * Test attribute "marks"
+     * Test attribute "userDefined2"
      */
-    public function testPropertyMarks()
+    public function testPropertyUserDefined2()
     {
     }
 
     /**
-     * Test attribute "payment"
+     * Test attribute "cardStyle"
      */
-    public function testPropertyPayment()
+    public function testPropertyCardStyle()
+    {
+    }
+
+    /**
+     * Test attribute "bin"
+     */
+    public function testPropertyBin()
+    {
+    }
+
+    /**
+     * Test attribute "distributorCode"
+     */
+    public function testPropertyDistributorCode()
+    {
+    }
+
+    /**
+     * Test attribute "userdefined"
+     */
+    public function testPropertyUserdefined()
     {
     }
 }

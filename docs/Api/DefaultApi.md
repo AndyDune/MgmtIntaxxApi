@@ -15,6 +15,8 @@ Method | HTTP request | Description
 [**paymentConditionsPost**](DefaultApi.md#paymentconditionspost) | **POST** /payment/conditions | Check conditions for payment creation
 [**paymentCreatePost**](DefaultApi.md#paymentcreatepost) | **POST** /payment/create | Create payment for order
 [**paymentLastPaymentDataPost**](DefaultApi.md#paymentlastpaymentdatapost) | **POST** /payment/last-payment-data | Get last payment data
+[**pfsAccountInfoPost**](DefaultApi.md#pfsaccountinfopost) | **POST** /pfs/account/info | Get accunt info
+[**pfsWebhookPost**](DefaultApi.md#pfswebhookpost) | **POST** /pfs/webhook | Follow pfs webhook to this url
 [**smsConfirmPost**](DefaultApi.md#smsconfirmpost) | **POST** /sms-confirm | Customer sms confirmation.
 [**updateKmcDataImagesPost**](DefaultApi.md#updatekmcdataimagespost) | **POST** /update-kmc-data-images | Upload KMC files
 [**updateKmcDataPost**](DefaultApi.md#updatekmcdatapost) | **POST** /update-kmc-data | Upload KMC data
@@ -577,6 +579,110 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\AndyDune\MgmtIntaxxApi\Model\PaymentResponse**](../Model/PaymentResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **pfsAccountInfoPost**
+> \AndyDune\MgmtIntaxxApi\Model\PfsAccount pfsAccountInfoPost($body)
+
+Get accunt info
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: ApiKeyAuth
+$config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \AndyDune\MgmtIntaxxApi\Model\PfsAccountRequest(); // \AndyDune\MgmtIntaxxApi\Model\PfsAccountRequest | 
+
+try {
+    $result = $apiInstance->pfsAccountInfoPost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->pfsAccountInfoPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\AndyDune\MgmtIntaxxApi\Model\PfsAccountRequest**](../Model/PfsAccountRequest.md)|  |
+
+### Return type
+
+[**\AndyDune\MgmtIntaxxApi\Model\PfsAccount**](../Model/PfsAccount.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **pfsWebhookPost**
+> \AndyDune\MgmtIntaxxApi\Model\Response pfsWebhookPost($body)
+
+Follow pfs webhook to this url
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: ApiKeyAuth
+$config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \AndyDune\MgmtIntaxxApi\Model\PfsWebhook(); // \AndyDune\MgmtIntaxxApi\Model\PfsWebhook | 
+
+try {
+    $result = $apiInstance->pfsWebhookPost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->pfsWebhookPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\AndyDune\MgmtIntaxxApi\Model\PfsWebhook**](../Model/PfsWebhook.md)|  |
+
+### Return type
+
+[**\AndyDune\MgmtIntaxxApi\Model\Response**](../Model/Response.md)
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderDataRequestTest
+ * PfsWebhookTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * OrderDataRequestTest Class Doc Comment
+ * PfsWebhookTest Class Doc Comment
  *
  * @category    Class
- * @description Request order data
+ * @description PfsWebhook
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrderDataRequestTest extends \PHPUnit_Framework_TestCase
+class PfsWebhookTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,23 +69,16 @@ class OrderDataRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OrderDataRequest"
+     * Test "PfsWebhook"
      */
-    public function testOrderDataRequest()
+    public function testPfsWebhook()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "data"
      */
-    public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "hash"
-     */
-    public function testPropertyHash()
+    public function testPropertyData()
     {
     }
 }

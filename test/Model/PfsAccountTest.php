@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderDataRequestTest
+ * PfsAccountTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * OrderDataRequestTest Class Doc Comment
+ * PfsAccountTest Class Doc Comment
  *
  * @category    Class
- * @description Request order data
+ * @description PfsAccount
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrderDataRequestTest extends \PHPUnit_Framework_TestCase
+class PfsAccountTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,23 +69,58 @@ class OrderDataRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OrderDataRequest"
+     * Test "PfsAccount"
      */
-    public function testOrderDataRequest()
+    public function testPfsAccount()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "exist"
      */
-    public function testPropertyId()
+    public function testPropertyExist()
     {
     }
 
     /**
-     * Test attribute "hash"
+     * Test attribute "issuingId"
      */
-    public function testPropertyHash()
+    public function testPropertyIssuingId()
+    {
+    }
+
+    /**
+     * Test attribute "cardholderId"
+     */
+    public function testPropertyCardholderId()
+    {
+    }
+
+    /**
+     * Test attribute "orderId"
+     */
+    public function testPropertyOrderId()
+    {
+    }
+
+    /**
+     * Test attribute "cardStatus"
+     */
+    public function testPropertyCardStatus()
+    {
+    }
+
+    /**
+     * Test attribute "cardStatusId"
+     */
+    public function testPropertyCardStatusId()
+    {
+    }
+
+    /**
+     * Test attribute "initialData"
+     */
+    public function testPropertyInitialData()
     {
     }
 }

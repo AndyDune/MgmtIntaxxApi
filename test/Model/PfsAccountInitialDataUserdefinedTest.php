@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderDataRequestTest
+ * PfsAccountInitialDataUserdefinedTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * OrderDataRequestTest Class Doc Comment
+ * PfsAccountInitialDataUserdefinedTest Class Doc Comment
  *
  * @category    Class
- * @description Request order data
+ * @description PfsAccountInitialDataUserdefined
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrderDataRequestTest extends \PHPUnit_Framework_TestCase
+class PfsAccountInitialDataUserdefinedTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,23 +69,37 @@ class OrderDataRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "OrderDataRequest"
+     * Test "PfsAccountInitialDataUserdefined"
      */
-    public function testOrderDataRequest()
+    public function testPfsAccountInitialDataUserdefined()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "occupation"
      */
-    public function testPropertyId()
+    public function testPropertyOccupation()
     {
     }
 
     /**
-     * Test attribute "hash"
+     * Test attribute "occupationProfession"
      */
-    public function testPropertyHash()
+    public function testPropertyOccupationProfession()
+    {
+    }
+
+    /**
+     * Test attribute "cardPurpose"
+     */
+    public function testPropertyCardPurpose()
+    {
+    }
+
+    /**
+     * Test attribute "monthlyIncome"
+     */
+    public function testPropertyMonthlyIncome()
     {
     }
 }

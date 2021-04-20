@@ -1,6 +1,6 @@
 <?php
 /**
- * Response
+ * PfsWebhook
  *
  * PHP version 5
  *
@@ -32,15 +32,14 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * Response Class Doc Comment
+ * PfsWebhook Class Doc Comment
  *
  * @category Class
- * @description Common response from server.
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Response implements ModelInterface, ArrayAccess
+class PfsWebhook implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class Response implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Response';
+    protected static $swaggerModelName = 'PfsWebhook';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +56,7 @@ class Response implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'success' => 'bool',
-'message' => 'string',
-'contextType' => 'string',
-'contextId' => 'float',
-'data' => 'map[string,object]',
-'errorCode' => 'string'    ];
+        'data' => 'object'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,12 +64,7 @@ class Response implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'success' => null,
-'message' => null,
-'contextType' => null,
-'contextId' => 'int64',
-'data' => null,
-'errorCode' => null    ];
+        'data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -104,12 +93,7 @@ class Response implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-'message' => 'message',
-'contextType' => 'contextType',
-'contextId' => 'contextId',
-'data' => 'data',
-'errorCode' => 'error_code'    ];
+        'data' => 'data'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -117,12 +101,7 @@ class Response implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-'message' => 'setMessage',
-'contextType' => 'setContextType',
-'contextId' => 'setContextId',
-'data' => 'setData',
-'errorCode' => 'setErrorCode'    ];
+        'data' => 'setData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -130,12 +109,7 @@ class Response implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-'message' => 'getMessage',
-'contextType' => 'getContextType',
-'contextId' => 'getContextId',
-'data' => 'getData',
-'errorCode' => 'getErrorCode'    ];
+        'data' => 'getData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -195,12 +169,7 @@ class Response implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['contextType'] = isset($data['contextType']) ? $data['contextType'] : null;
-        $this->container['contextId'] = isset($data['contextId']) ? $data['contextId'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
-        $this->container['errorCode'] = isset($data['errorCode']) ? $data['errorCode'] : null;
     }
 
     /**
@@ -212,9 +181,6 @@ class Response implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['success'] === null) {
-            $invalidProperties[] = "'success' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -231,105 +197,9 @@ class Response implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success success
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string $message message
-     *
-     * @return $this
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets contextType
-     *
-     * @return string
-     */
-    public function getContextType()
-    {
-        return $this->container['contextType'];
-    }
-
-    /**
-     * Sets contextType
-     *
-     * @param string $contextType contextType
-     *
-     * @return $this
-     */
-    public function setContextType($contextType)
-    {
-        $this->container['contextType'] = $contextType;
-
-        return $this;
-    }
-
-    /**
-     * Gets contextId
-     *
-     * @return float
-     */
-    public function getContextId()
-    {
-        return $this->container['contextId'];
-    }
-
-    /**
-     * Sets contextId
-     *
-     * @param float $contextId contextId
-     *
-     * @return $this
-     */
-    public function setContextId($contextId)
-    {
-        $this->container['contextId'] = $contextId;
-
-        return $this;
-    }
-
-    /**
      * Gets data
      *
-     * @return map[string,object]
+     * @return object
      */
     public function getData()
     {
@@ -339,37 +209,13 @@ class Response implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param map[string,object] $data data
+     * @param object $data JSON data was get from pfs webhook
      *
      * @return $this
      */
     public function setData($data)
     {
         $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets errorCode
-     *
-     * @return string
-     */
-    public function getErrorCode()
-    {
-        return $this->container['errorCode'];
-    }
-
-    /**
-     * Sets errorCode
-     *
-     * @param string $errorCode errorCode
-     *
-     * @return $this
-     */
-    public function setErrorCode($errorCode)
-    {
-        $this->container['errorCode'] = $errorCode;
 
         return $this;
     }

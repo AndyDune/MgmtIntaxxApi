@@ -1,6 +1,6 @@
 <?php
 /**
- * Response
+ * PfsAccountInitialDataUserdefined
  *
  * PHP version 5
  *
@@ -32,15 +32,14 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * Response Class Doc Comment
+ * PfsAccountInitialDataUserdefined Class Doc Comment
  *
  * @category Class
- * @description Common response from server.
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Response implements ModelInterface, ArrayAccess
+class PfsAccountInitialDataUserdefined implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class Response implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Response';
+    protected static $swaggerModelName = 'PfsAccount_initialData_userdefined';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +56,10 @@ class Response implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'success' => 'bool',
-'message' => 'string',
-'contextType' => 'string',
-'contextId' => 'float',
-'data' => 'map[string,object]',
-'errorCode' => 'string'    ];
+        'occupation' => 'string',
+'occupationProfession' => 'string',
+'cardPurpose' => 'string',
+'monthlyIncome' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,12 +67,10 @@ class Response implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'success' => null,
-'message' => null,
-'contextType' => null,
-'contextId' => 'int64',
-'data' => null,
-'errorCode' => null    ];
+        'occupation' => null,
+'occupationProfession' => null,
+'cardPurpose' => null,
+'monthlyIncome' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -104,12 +99,10 @@ class Response implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-'message' => 'message',
-'contextType' => 'contextType',
-'contextId' => 'contextId',
-'data' => 'data',
-'errorCode' => 'error_code'    ];
+        'occupation' => 'Occupation',
+'occupationProfession' => 'Occupation_Profession',
+'cardPurpose' => 'Card_Purpose',
+'monthlyIncome' => 'Monthly_Income'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -117,12 +110,10 @@ class Response implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-'message' => 'setMessage',
-'contextType' => 'setContextType',
-'contextId' => 'setContextId',
-'data' => 'setData',
-'errorCode' => 'setErrorCode'    ];
+        'occupation' => 'setOccupation',
+'occupationProfession' => 'setOccupationProfession',
+'cardPurpose' => 'setCardPurpose',
+'monthlyIncome' => 'setMonthlyIncome'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -130,12 +121,10 @@ class Response implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-'message' => 'getMessage',
-'contextType' => 'getContextType',
-'contextId' => 'getContextId',
-'data' => 'getData',
-'errorCode' => 'getErrorCode'    ];
+        'occupation' => 'getOccupation',
+'occupationProfession' => 'getOccupationProfession',
+'cardPurpose' => 'getCardPurpose',
+'monthlyIncome' => 'getMonthlyIncome'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -195,12 +184,10 @@ class Response implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['contextType'] = isset($data['contextType']) ? $data['contextType'] : null;
-        $this->container['contextId'] = isset($data['contextId']) ? $data['contextId'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
-        $this->container['errorCode'] = isset($data['errorCode']) ? $data['errorCode'] : null;
+        $this->container['occupation'] = isset($data['occupation']) ? $data['occupation'] : null;
+        $this->container['occupationProfession'] = isset($data['occupationProfession']) ? $data['occupationProfession'] : null;
+        $this->container['cardPurpose'] = isset($data['cardPurpose']) ? $data['cardPurpose'] : null;
+        $this->container['monthlyIncome'] = isset($data['monthlyIncome']) ? $data['monthlyIncome'] : null;
     }
 
     /**
@@ -212,9 +199,6 @@ class Response implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['success'] === null) {
-            $invalidProperties[] = "'success' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -231,145 +215,97 @@ class Response implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success success
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
+     * Gets occupation
      *
      * @return string
      */
-    public function getMessage()
+    public function getOccupation()
     {
-        return $this->container['message'];
+        return $this->container['occupation'];
     }
 
     /**
-     * Sets message
+     * Sets occupation
      *
-     * @param string $message message
+     * @param string $occupation occupation
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setOccupation($occupation)
     {
-        $this->container['message'] = $message;
+        $this->container['occupation'] = $occupation;
 
         return $this;
     }
 
     /**
-     * Gets contextType
+     * Gets occupationProfession
      *
      * @return string
      */
-    public function getContextType()
+    public function getOccupationProfession()
     {
-        return $this->container['contextType'];
+        return $this->container['occupationProfession'];
     }
 
     /**
-     * Sets contextType
+     * Sets occupationProfession
      *
-     * @param string $contextType contextType
+     * @param string $occupationProfession occupationProfession
      *
      * @return $this
      */
-    public function setContextType($contextType)
+    public function setOccupationProfession($occupationProfession)
     {
-        $this->container['contextType'] = $contextType;
+        $this->container['occupationProfession'] = $occupationProfession;
 
         return $this;
     }
 
     /**
-     * Gets contextId
-     *
-     * @return float
-     */
-    public function getContextId()
-    {
-        return $this->container['contextId'];
-    }
-
-    /**
-     * Sets contextId
-     *
-     * @param float $contextId contextId
-     *
-     * @return $this
-     */
-    public function setContextId($contextId)
-    {
-        $this->container['contextId'] = $contextId;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return map[string,object]
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param map[string,object] $data data
-     *
-     * @return $this
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets errorCode
+     * Gets cardPurpose
      *
      * @return string
      */
-    public function getErrorCode()
+    public function getCardPurpose()
     {
-        return $this->container['errorCode'];
+        return $this->container['cardPurpose'];
     }
 
     /**
-     * Sets errorCode
+     * Sets cardPurpose
      *
-     * @param string $errorCode errorCode
+     * @param string $cardPurpose cardPurpose
      *
      * @return $this
      */
-    public function setErrorCode($errorCode)
+    public function setCardPurpose($cardPurpose)
     {
-        $this->container['errorCode'] = $errorCode;
+        $this->container['cardPurpose'] = $cardPurpose;
+
+        return $this;
+    }
+
+    /**
+     * Gets monthlyIncome
+     *
+     * @return string
+     */
+    public function getMonthlyIncome()
+    {
+        return $this->container['monthlyIncome'];
+    }
+
+    /**
+     * Sets monthlyIncome
+     *
+     * @param string $monthlyIncome monthlyIncome
+     *
+     * @return $this
+     */
+    public function setMonthlyIncome($monthlyIncome)
+    {
+        $this->container['monthlyIncome'] = $monthlyIncome;
 
         return $this;
     }

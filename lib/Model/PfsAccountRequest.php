@@ -1,6 +1,6 @@
 <?php
 /**
- * Response
+ * PfsAccountRequest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * Response Class Doc Comment
+ * PfsAccountRequest Class Doc Comment
  *
  * @category Class
- * @description Common response from server.
+ * @description Request pfs account data
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Response implements ModelInterface, ArrayAccess
+class PfsAccountRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Response implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Response';
+    protected static $swaggerModelName = 'PfsAccountRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,8 @@ class Response implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'success' => 'bool',
-'message' => 'string',
-'contextType' => 'string',
-'contextId' => 'float',
-'data' => 'map[string,object]',
-'errorCode' => 'string'    ];
+        'issuingId' => 'string',
+'cardholderId' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,12 +66,8 @@ class Response implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'success' => null,
-'message' => null,
-'contextType' => null,
-'contextId' => 'int64',
-'data' => null,
-'errorCode' => null    ];
+        'issuingId' => null,
+'cardholderId' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -104,12 +96,8 @@ class Response implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-'message' => 'message',
-'contextType' => 'contextType',
-'contextId' => 'contextId',
-'data' => 'data',
-'errorCode' => 'error_code'    ];
+        'issuingId' => 'issuingId',
+'cardholderId' => 'cardholderId'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -117,12 +105,8 @@ class Response implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-'message' => 'setMessage',
-'contextType' => 'setContextType',
-'contextId' => 'setContextId',
-'data' => 'setData',
-'errorCode' => 'setErrorCode'    ];
+        'issuingId' => 'setIssuingId',
+'cardholderId' => 'setCardholderId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -130,12 +114,8 @@ class Response implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-'message' => 'getMessage',
-'contextType' => 'getContextType',
-'contextId' => 'getContextId',
-'data' => 'getData',
-'errorCode' => 'getErrorCode'    ];
+        'issuingId' => 'getIssuingId',
+'cardholderId' => 'getCardholderId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -195,12 +175,8 @@ class Response implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['contextType'] = isset($data['contextType']) ? $data['contextType'] : null;
-        $this->container['contextId'] = isset($data['contextId']) ? $data['contextId'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
-        $this->container['errorCode'] = isset($data['errorCode']) ? $data['errorCode'] : null;
+        $this->container['issuingId'] = isset($data['issuingId']) ? $data['issuingId'] : null;
+        $this->container['cardholderId'] = isset($data['cardholderId']) ? $data['cardholderId'] : null;
     }
 
     /**
@@ -212,9 +188,6 @@ class Response implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['success'] === null) {
-            $invalidProperties[] = "'success' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -231,145 +204,49 @@ class Response implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success success
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
+     * Gets issuingId
      *
      * @return string
      */
-    public function getMessage()
+    public function getIssuingId()
     {
-        return $this->container['message'];
+        return $this->container['issuingId'];
     }
 
     /**
-     * Sets message
+     * Sets issuingId
      *
-     * @param string $message message
+     * @param string $issuingId issuingId
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setIssuingId($issuingId)
     {
-        $this->container['message'] = $message;
+        $this->container['issuingId'] = $issuingId;
 
         return $this;
     }
 
     /**
-     * Gets contextType
+     * Gets cardholderId
      *
      * @return string
      */
-    public function getContextType()
+    public function getCardholderId()
     {
-        return $this->container['contextType'];
+        return $this->container['cardholderId'];
     }
 
     /**
-     * Sets contextType
+     * Sets cardholderId
      *
-     * @param string $contextType contextType
+     * @param string $cardholderId cardholderId
      *
      * @return $this
      */
-    public function setContextType($contextType)
+    public function setCardholderId($cardholderId)
     {
-        $this->container['contextType'] = $contextType;
-
-        return $this;
-    }
-
-    /**
-     * Gets contextId
-     *
-     * @return float
-     */
-    public function getContextId()
-    {
-        return $this->container['contextId'];
-    }
-
-    /**
-     * Sets contextId
-     *
-     * @param float $contextId contextId
-     *
-     * @return $this
-     */
-    public function setContextId($contextId)
-    {
-        $this->container['contextId'] = $contextId;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return map[string,object]
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param map[string,object] $data data
-     *
-     * @return $this
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets errorCode
-     *
-     * @return string
-     */
-    public function getErrorCode()
-    {
-        return $this->container['errorCode'];
-    }
-
-    /**
-     * Sets errorCode
-     *
-     * @param string $errorCode errorCode
-     *
-     * @return $this
-     */
-    public function setErrorCode($errorCode)
-    {
-        $this->container['errorCode'] = $errorCode;
+        $this->container['cardholderId'] = $cardholderId;
 
         return $this;
     }
