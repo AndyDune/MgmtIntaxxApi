@@ -1,6 +1,6 @@
 <?php
 /**
- * PfsAccountRequest
+ * OrderCardClientCompanyAssignRerquest
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * PfsAccountRequest Class Doc Comment
+ * OrderCardClientCompanyAssignRerquest Class Doc Comment
  *
  * @category Class
- * @description Request pfs account data
+ * @description Request for assign Card client company to order
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PfsAccountRequest implements ModelInterface, ArrayAccess
+class OrderCardClientCompanyAssignRerquest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PfsAccountRequest';
+    protected static $swaggerModelName = 'OrderCardClientCompanyAssignRerquest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'issuingId' => 'string',
-'cardholderId' => 'string'    ];
+        'id' => 'string',
+'hash' => 'string',
+'card' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,8 +67,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'issuingId' => null,
-'cardholderId' => null    ];
+        'id' => null,
+'hash' => null,
+'card' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -96,8 +98,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'issuingId' => 'issuingId',
-'cardholderId' => 'cardholderId'    ];
+        'id' => 'id',
+'hash' => 'hash',
+'card' => 'card'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -105,8 +108,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'issuingId' => 'setIssuingId',
-'cardholderId' => 'setCardholderId'    ];
+        'id' => 'setId',
+'hash' => 'setHash',
+'card' => 'setCard'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -114,8 +118,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'issuingId' => 'getIssuingId',
-'cardholderId' => 'getCardholderId'    ];
+        'id' => 'getId',
+'hash' => 'getHash',
+'card' => 'getCard'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -175,8 +180,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['issuingId'] = isset($data['issuingId']) ? $data['issuingId'] : null;
-        $this->container['cardholderId'] = isset($data['cardholderId']) ? $data['cardholderId'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : '';
+        $this->container['hash'] = isset($data['hash']) ? $data['hash'] : '';
+        $this->container['card'] = isset($data['card']) ? $data['card'] : null;
     }
 
     /**
@@ -188,6 +194,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['card'] === null) {
+            $invalidProperties[] = "'card' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -204,49 +213,73 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets issuingId
+     * Gets id
      *
      * @return string
      */
-    public function getIssuingId()
+    public function getId()
     {
-        return $this->container['issuingId'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets issuingId
+     * Sets id
      *
-     * @param string $issuingId issuingId
+     * @param string $id id
      *
      * @return $this
      */
-    public function setIssuingId($issuingId)
+    public function setId($id)
     {
-        $this->container['issuingId'] = $issuingId;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets cardholderId
+     * Gets hash
      *
      * @return string
      */
-    public function getCardholderId()
+    public function getHash()
     {
-        return $this->container['cardholderId'];
+        return $this->container['hash'];
     }
 
     /**
-     * Sets cardholderId
+     * Sets hash
      *
-     * @param string $cardholderId cardholderId
+     * @param string $hash hash
      *
      * @return $this
      */
-    public function setCardholderId($cardholderId)
+    public function setHash($hash)
     {
-        $this->container['cardholderId'] = $cardholderId;
+        $this->container['hash'] = $hash;
+
+        return $this;
+    }
+
+    /**
+     * Gets card
+     *
+     * @return string
+     */
+    public function getCard()
+    {
+        return $this->container['card'];
+    }
+
+    /**
+     * Sets card
+     *
+     * @param string $card card
+     *
+     * @return $this
+     */
+    public function setCard($card)
+    {
+        $this->container['card'] = $card;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * PfsAccountRequest
+ * OrderCardClientCompanyAssignResponse
  *
  * PHP version 5
  *
@@ -32,15 +32,15 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * PfsAccountRequest Class Doc Comment
+ * OrderCardClientCompanyAssignResponse Class Doc Comment
  *
  * @category Class
- * @description Request pfs account data
+ * @description Response for assign Card client company to order
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PfsAccountRequest implements ModelInterface, ArrayAccess
+class OrderCardClientCompanyAssignResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PfsAccountRequest';
+    protected static $swaggerModelName = 'OrderCardClientCompanyAssignResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'issuingId' => 'string',
-'cardholderId' => 'string'    ];
+        'success' => 'bool',
+'message' => 'string',
+'data' => '\AndyDune\MgmtIntaxxApi\Model\OrderCardClientCompanyAssignResponseData'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,8 +67,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'issuingId' => null,
-'cardholderId' => null    ];
+        'success' => null,
+'message' => null,
+'data' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -96,8 +98,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'issuingId' => 'issuingId',
-'cardholderId' => 'cardholderId'    ];
+        'success' => 'success',
+'message' => 'message',
+'data' => 'data'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -105,8 +108,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'issuingId' => 'setIssuingId',
-'cardholderId' => 'setCardholderId'    ];
+        'success' => 'setSuccess',
+'message' => 'setMessage',
+'data' => 'setData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -114,8 +118,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'issuingId' => 'getIssuingId',
-'cardholderId' => 'getCardholderId'    ];
+        'success' => 'getSuccess',
+'message' => 'getMessage',
+'data' => 'getData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -175,8 +180,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['issuingId'] = isset($data['issuingId']) ? $data['issuingId'] : null;
-        $this->container['cardholderId'] = isset($data['cardholderId']) ? $data['cardholderId'] : null;
+        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
     /**
@@ -188,6 +194,9 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['success'] === null) {
+            $invalidProperties[] = "'success' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -204,49 +213,73 @@ class PfsAccountRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets issuingId
+     * Gets success
      *
-     * @return string
+     * @return bool
      */
-    public function getIssuingId()
+    public function getSuccess()
     {
-        return $this->container['issuingId'];
+        return $this->container['success'];
     }
 
     /**
-     * Sets issuingId
+     * Sets success
      *
-     * @param string $issuingId issuingId
+     * @param bool $success success
      *
      * @return $this
      */
-    public function setIssuingId($issuingId)
+    public function setSuccess($success)
     {
-        $this->container['issuingId'] = $issuingId;
+        $this->container['success'] = $success;
 
         return $this;
     }
 
     /**
-     * Gets cardholderId
+     * Gets message
      *
      * @return string
      */
-    public function getCardholderId()
+    public function getMessage()
     {
-        return $this->container['cardholderId'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets cardholderId
+     * Sets message
      *
-     * @param string $cardholderId cardholderId
+     * @param string $message message
      *
      * @return $this
      */
-    public function setCardholderId($cardholderId)
+    public function setMessage($message)
     {
-        $this->container['cardholderId'] = $cardholderId;
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets data
+     *
+     * @return \AndyDune\MgmtIntaxxApi\Model\OrderCardClientCompanyAssignResponseData
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param \AndyDune\MgmtIntaxxApi\Model\OrderCardClientCompanyAssignResponseData $data data
+     *
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
 
         return $this;
     }
