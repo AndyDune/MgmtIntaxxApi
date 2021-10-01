@@ -39,6 +39,10 @@ Name | Type | Description | Notes
 **isAgreedToUsePersonalDataConfirmed** | **bool** |  | [optional] 
 **loanRequest** | **string** | It may be no, yes or sent | [optional] 
 **isPowerOfAttorneyConfirmed** | **bool** |  | [optional] 
+**occupationProfession** | **string** |  | [optional] 
+**occupation** | **string** |  | [optional] 
+**cardPurpose** | **string** |  | [optional] 
+**monthlyIncome** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

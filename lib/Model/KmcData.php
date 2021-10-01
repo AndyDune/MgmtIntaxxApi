@@ -91,7 +91,11 @@ class KmcData implements ModelInterface, ArrayAccess
 'isTermsAndConditionsConfirmed' => 'bool',
 'isAgreedToUsePersonalDataConfirmed' => 'bool',
 'loanRequest' => 'string',
-'isPowerOfAttorneyConfirmed' => 'bool'    ];
+'isPowerOfAttorneyConfirmed' => 'bool',
+'occupationProfession' => 'string',
+'occupation' => 'string',
+'cardPurpose' => 'string',
+'monthlyIncome' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -134,7 +138,11 @@ class KmcData implements ModelInterface, ArrayAccess
 'isTermsAndConditionsConfirmed' => null,
 'isAgreedToUsePersonalDataConfirmed' => null,
 'loanRequest' => null,
-'isPowerOfAttorneyConfirmed' => null    ];
+'isPowerOfAttorneyConfirmed' => null,
+'occupationProfession' => null,
+'occupation' => null,
+'cardPurpose' => null,
+'monthlyIncome' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -198,7 +206,11 @@ class KmcData implements ModelInterface, ArrayAccess
 'isTermsAndConditionsConfirmed' => 'is_terms_and_conditions_confirmed',
 'isAgreedToUsePersonalDataConfirmed' => 'is_agreed_to_use_personal_data_confirmed',
 'loanRequest' => 'loan_request',
-'isPowerOfAttorneyConfirmed' => 'is_power_of_attorney_confirmed'    ];
+'isPowerOfAttorneyConfirmed' => 'is_power_of_attorney_confirmed',
+'occupationProfession' => 'occupation_profession',
+'occupation' => 'occupation',
+'cardPurpose' => 'Card_Purpose',
+'monthlyIncome' => 'Monthly_Income'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -241,7 +253,11 @@ class KmcData implements ModelInterface, ArrayAccess
 'isTermsAndConditionsConfirmed' => 'setIsTermsAndConditionsConfirmed',
 'isAgreedToUsePersonalDataConfirmed' => 'setIsAgreedToUsePersonalDataConfirmed',
 'loanRequest' => 'setLoanRequest',
-'isPowerOfAttorneyConfirmed' => 'setIsPowerOfAttorneyConfirmed'    ];
+'isPowerOfAttorneyConfirmed' => 'setIsPowerOfAttorneyConfirmed',
+'occupationProfession' => 'setOccupationProfession',
+'occupation' => 'setOccupation',
+'cardPurpose' => 'setCardPurpose',
+'monthlyIncome' => 'setMonthlyIncome'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -284,7 +300,11 @@ class KmcData implements ModelInterface, ArrayAccess
 'isTermsAndConditionsConfirmed' => 'getIsTermsAndConditionsConfirmed',
 'isAgreedToUsePersonalDataConfirmed' => 'getIsAgreedToUsePersonalDataConfirmed',
 'loanRequest' => 'getLoanRequest',
-'isPowerOfAttorneyConfirmed' => 'getIsPowerOfAttorneyConfirmed'    ];
+'isPowerOfAttorneyConfirmed' => 'getIsPowerOfAttorneyConfirmed',
+'occupationProfession' => 'getOccupationProfession',
+'occupation' => 'getOccupation',
+'cardPurpose' => 'getCardPurpose',
+'monthlyIncome' => 'getMonthlyIncome'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -380,6 +400,10 @@ class KmcData implements ModelInterface, ArrayAccess
         $this->container['isAgreedToUsePersonalDataConfirmed'] = isset($data['isAgreedToUsePersonalDataConfirmed']) ? $data['isAgreedToUsePersonalDataConfirmed'] : null;
         $this->container['loanRequest'] = isset($data['loanRequest']) ? $data['loanRequest'] : null;
         $this->container['isPowerOfAttorneyConfirmed'] = isset($data['isPowerOfAttorneyConfirmed']) ? $data['isPowerOfAttorneyConfirmed'] : null;
+        $this->container['occupationProfession'] = isset($data['occupationProfession']) ? $data['occupationProfession'] : null;
+        $this->container['occupation'] = isset($data['occupation']) ? $data['occupation'] : null;
+        $this->container['cardPurpose'] = isset($data['cardPurpose']) ? $data['cardPurpose'] : null;
+        $this->container['monthlyIncome'] = isset($data['monthlyIncome']) ? $data['monthlyIncome'] : null;
     }
 
     /**
@@ -1266,6 +1290,102 @@ class KmcData implements ModelInterface, ArrayAccess
     public function setIsPowerOfAttorneyConfirmed($isPowerOfAttorneyConfirmed)
     {
         $this->container['isPowerOfAttorneyConfirmed'] = $isPowerOfAttorneyConfirmed;
+
+        return $this;
+    }
+
+    /**
+     * Gets occupationProfession
+     *
+     * @return string
+     */
+    public function getOccupationProfession()
+    {
+        return $this->container['occupationProfession'];
+    }
+
+    /**
+     * Sets occupationProfession
+     *
+     * @param string $occupationProfession occupationProfession
+     *
+     * @return $this
+     */
+    public function setOccupationProfession($occupationProfession)
+    {
+        $this->container['occupationProfession'] = $occupationProfession;
+
+        return $this;
+    }
+
+    /**
+     * Gets occupation
+     *
+     * @return string
+     */
+    public function getOccupation()
+    {
+        return $this->container['occupation'];
+    }
+
+    /**
+     * Sets occupation
+     *
+     * @param string $occupation occupation
+     *
+     * @return $this
+     */
+    public function setOccupation($occupation)
+    {
+        $this->container['occupation'] = $occupation;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardPurpose
+     *
+     * @return string
+     */
+    public function getCardPurpose()
+    {
+        return $this->container['cardPurpose'];
+    }
+
+    /**
+     * Sets cardPurpose
+     *
+     * @param string $cardPurpose cardPurpose
+     *
+     * @return $this
+     */
+    public function setCardPurpose($cardPurpose)
+    {
+        $this->container['cardPurpose'] = $cardPurpose;
+
+        return $this;
+    }
+
+    /**
+     * Gets monthlyIncome
+     *
+     * @return string
+     */
+    public function getMonthlyIncome()
+    {
+        return $this->container['monthlyIncome'];
+    }
+
+    /**
+     * Sets monthlyIncome
+     *
+     * @param string $monthlyIncome monthlyIncome
+     *
+     * @return $this
+     */
+    public function setMonthlyIncome($monthlyIncome)
+    {
+        $this->container['monthlyIncome'] = $monthlyIncome;
 
         return $this;
     }

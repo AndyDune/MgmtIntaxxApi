@@ -24,6 +24,7 @@ Method | HTTP request | Description
 [**updateKmcDataPost**](DefaultApi.md#updatekmcdatapost) | **POST** /update-kmc-data | Upload KMC data
 [**updateOrderPost**](DefaultApi.md#updateorderpost) | **POST** /update-order | Update customer data for order
 [**uploadImagesPost**](DefaultApi.md#uploadimagespost) | **POST** /upload-images | Upload selfie, signature and maybe more
+[**valueVariantsPost**](DefaultApi.md#valuevariantspost) | **POST** /value-variants | Get available value variants
 
 # **cardClientCompanyAssignPost**
 > \AndyDune\MgmtIntaxxApi\Model\OrderCardClientCompanyAssignResponse cardClientCompanyAssignPost($body)
@@ -1065,6 +1066,58 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **valueVariantsPost**
+> \AndyDune\MgmtIntaxxApi\Model\Response valueVariantsPost($body)
+
+Get available value variants
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: ApiKeyAuth
+$config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \AndyDune\MgmtIntaxxApi\Model\ValueVariantRequest(); // \AndyDune\MgmtIntaxxApi\Model\ValueVariantRequest | 
+
+try {
+    $result = $apiInstance->valueVariantsPost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->valueVariantsPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\AndyDune\MgmtIntaxxApi\Model\ValueVariantRequest**](../Model/ValueVariantRequest.md)|  |
+
+### Return type
+
+[**\AndyDune\MgmtIntaxxApi\Model\Response**](../Model/Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

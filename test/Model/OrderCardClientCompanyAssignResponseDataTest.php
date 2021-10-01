@@ -1,6 +1,6 @@
 <?php
 /**
- * PincodeCheckTest
+ * OrderCardClientCompanyAssignResponseDataTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * PincodeCheckTest Class Doc Comment
+ * OrderCardClientCompanyAssignResponseDataTest Class Doc Comment
  *
  * @category    Class
- * @description PincodeCheck
+ * @description OrderCardClientCompanyAssignResponseData
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PincodeCheckTest extends \PHPUnit_Framework_TestCase
+class OrderCardClientCompanyAssignResponseDataTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,30 +69,30 @@ class PincodeCheckTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "PincodeCheck"
+     * Test "OrderCardClientCompanyAssignResponseData"
      */
-    public function testPincodeCheck()
+    public function testOrderCardClientCompanyAssignResponseData()
     {
     }
 
     /**
-     * Test attribute "login"
+     * Test attribute "orderId"
      */
-    public function testPropertyLogin()
+    public function testPropertyOrderId()
     {
     }
 
     /**
-     * Test attribute "pin"
+     * Test attribute "cardName"
      */
-    public function testPropertyPin()
+    public function testPropertyCardName()
     {
     }
 
     /**
-     * Test attribute "type"
+     * Test attribute "cardId"
      */
-    public function testPropertyType()
+    public function testPropertyCardId()
     {
     }
 }

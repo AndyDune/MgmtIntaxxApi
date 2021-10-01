@@ -1,6 +1,6 @@
 <?php
 /**
- * PincodeCheckTest
+ * ValueVariantRequestTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace AndyDune\MgmtIntaxxApi;
 
 /**
- * PincodeCheckTest Class Doc Comment
+ * ValueVariantRequestTest Class Doc Comment
  *
  * @category    Class
- * @description PincodeCheck
+ * @description Request for value vatiants
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class PincodeCheckTest extends \PHPUnit_Framework_TestCase
+class ValueVariantRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,30 +69,16 @@ class PincodeCheckTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "PincodeCheck"
+     * Test "ValueVariantRequest"
      */
-    public function testPincodeCheck()
+    public function testValueVariantRequest()
     {
     }
 
     /**
-     * Test attribute "login"
+     * Test attribute "space"
      */
-    public function testPropertyLogin()
-    {
-    }
-
-    /**
-     * Test attribute "pin"
-     */
-    public function testPropertyPin()
-    {
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
+    public function testPropertySpace()
     {
     }
 }
