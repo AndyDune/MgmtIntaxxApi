@@ -25,7 +25,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/andydune/mgmt-intaxx-api.git"
+      "url": "https://github.com/AndyDune/MgmtIntaxxApi.git"
     }
   ],
   "require": {
