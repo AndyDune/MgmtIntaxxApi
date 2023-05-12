@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentResponse
+ * OrderFile
  *
  * PHP version 5
  *
@@ -32,15 +32,14 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * PaymentResponse Class Doc Comment
+ * OrderFile Class Doc Comment
  *
  * @category Class
- * @description Payment details
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PaymentResponse implements ModelInterface, ArrayAccess
+class OrderFile implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class PaymentResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PaymentResponse';
+    protected static $swaggerModelName = 'OrderFile';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +56,10 @@ class PaymentResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'success' => 'bool',
-'canCreatePayment' => 'bool',
-'orderId' => 'int',
-'orderHash' => 'string',
-'orderStatus' => 'string',
-'orderDebt' => 'float',
-'message' => 'string',
-'payment' => '\AndyDune\MgmtIntaxxApi\Model\Payment'    ];
+        'orderId' => 'int',
+'title' => 'string',
+'name' => 'string',
+'file' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -72,14 +67,10 @@ class PaymentResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'success' => null,
-'canCreatePayment' => null,
-'orderId' => null,
-'orderHash' => null,
-'orderStatus' => null,
-'orderDebt' => null,
-'message' => null,
-'payment' => null    ];
+        'orderId' => null,
+'title' => null,
+'name' => null,
+'file' => 'binary'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -108,14 +99,10 @@ class PaymentResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-'canCreatePayment' => 'can_create_payment',
-'orderId' => 'order_id',
-'orderHash' => 'order_hash',
-'orderStatus' => 'order_status',
-'orderDebt' => 'order_debt',
-'message' => 'message',
-'payment' => 'payment'    ];
+        'orderId' => 'order_id',
+'title' => 'title',
+'name' => 'name',
+'file' => 'file'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -123,14 +110,10 @@ class PaymentResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-'canCreatePayment' => 'setCanCreatePayment',
-'orderId' => 'setOrderId',
-'orderHash' => 'setOrderHash',
-'orderStatus' => 'setOrderStatus',
-'orderDebt' => 'setOrderDebt',
-'message' => 'setMessage',
-'payment' => 'setPayment'    ];
+        'orderId' => 'setOrderId',
+'title' => 'setTitle',
+'name' => 'setName',
+'file' => 'setFile'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -138,14 +121,10 @@ class PaymentResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-'canCreatePayment' => 'getCanCreatePayment',
-'orderId' => 'getOrderId',
-'orderHash' => 'getOrderHash',
-'orderStatus' => 'getOrderStatus',
-'orderDebt' => 'getOrderDebt',
-'message' => 'getMessage',
-'payment' => 'getPayment'    ];
+        'orderId' => 'getOrderId',
+'title' => 'getTitle',
+'name' => 'getName',
+'file' => 'getFile'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -205,14 +184,10 @@ class PaymentResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['canCreatePayment'] = isset($data['canCreatePayment']) ? $data['canCreatePayment'] : null;
         $this->container['orderId'] = isset($data['orderId']) ? $data['orderId'] : null;
-        $this->container['orderHash'] = isset($data['orderHash']) ? $data['orderHash'] : null;
-        $this->container['orderStatus'] = isset($data['orderStatus']) ? $data['orderStatus'] : null;
-        $this->container['orderDebt'] = isset($data['orderDebt']) ? $data['orderDebt'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['payment'] = isset($data['payment']) ? $data['payment'] : null;
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['file'] = isset($data['file']) ? $data['file'] : null;
     }
 
     /**
@@ -224,8 +199,17 @@ class PaymentResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['success'] === null) {
-            $invalidProperties[] = "'success' can't be null";
+        if ($this->container['orderId'] === null) {
+            $invalidProperties[] = "'orderId' can't be null";
+        }
+        if ($this->container['title'] === null) {
+            $invalidProperties[] = "'title' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['file'] === null) {
+            $invalidProperties[] = "'file' can't be null";
         }
         return $invalidProperties;
     }
@@ -243,54 +227,6 @@ class PaymentResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success success
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets canCreatePayment
-     *
-     * @return bool
-     */
-    public function getCanCreatePayment()
-    {
-        return $this->container['canCreatePayment'];
-    }
-
-    /**
-     * Sets canCreatePayment
-     *
-     * @param bool $canCreatePayment canCreatePayment
-     *
-     * @return $this
-     */
-    public function setCanCreatePayment($canCreatePayment)
-    {
-        $this->container['canCreatePayment'] = $canCreatePayment;
-
-        return $this;
-    }
-
-    /**
      * Gets orderId
      *
      * @return int
@@ -303,7 +239,7 @@ class PaymentResponse implements ModelInterface, ArrayAccess
     /**
      * Sets orderId
      *
-     * @param int $orderId orderId
+     * @param int $orderId Internal mgmt order id
      *
      * @return $this
      */
@@ -315,121 +251,73 @@ class PaymentResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets orderHash
+     * Gets title
      *
      * @return string
      */
-    public function getOrderHash()
+    public function getTitle()
     {
-        return $this->container['orderHash'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets orderHash
+     * Sets title
      *
-     * @param string $orderHash orderHash
+     * @param string $title File title
      *
      * @return $this
      */
-    public function setOrderHash($orderHash)
+    public function setTitle($title)
     {
-        $this->container['orderHash'] = $orderHash;
+        $this->container['title'] = $title;
 
         return $this;
     }
 
     /**
-     * Gets orderStatus
+     * Gets name
      *
      * @return string
      */
-    public function getOrderStatus()
+    public function getName()
     {
-        return $this->container['orderStatus'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets orderStatus
+     * Sets name
      *
-     * @param string $orderStatus orderStatus
+     * @param string $name File name
      *
      * @return $this
      */
-    public function setOrderStatus($orderStatus)
+    public function setName($name)
     {
-        $this->container['orderStatus'] = $orderStatus;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets orderDebt
-     *
-     * @return float
-     */
-    public function getOrderDebt()
-    {
-        return $this->container['orderDebt'];
-    }
-
-    /**
-     * Sets orderDebt
-     *
-     * @param float $orderDebt orderDebt
-     *
-     * @return $this
-     */
-    public function setOrderDebt($orderDebt)
-    {
-        $this->container['orderDebt'] = $orderDebt;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
+     * Gets file
      *
      * @return string
      */
-    public function getMessage()
+    public function getFile()
     {
-        return $this->container['message'];
+        return $this->container['file'];
     }
 
     /**
-     * Sets message
+     * Sets file
      *
-     * @param string $message message
+     * @param string $file Order file. Allowed only pdf files.
      *
      * @return $this
      */
-    public function setMessage($message)
+    public function setFile($file)
     {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets payment
-     *
-     * @return \AndyDune\MgmtIntaxxApi\Model\Payment
-     */
-    public function getPayment()
-    {
-        return $this->container['payment'];
-    }
-
-    /**
-     * Sets payment
-     *
-     * @param \AndyDune\MgmtIntaxxApi\Model\Payment $payment payment
-     *
-     * @return $this
-     */
-    public function setPayment($payment)
-    {
-        $this->container['payment'] = $payment;
+        $this->container['file'] = $file;
 
         return $this;
     }
