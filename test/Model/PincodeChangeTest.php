@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderCardClientCompanyAssignRerquestTest
+ * PincodeChangeTest
  *
  * PHP version 5
  *
@@ -31,15 +31,15 @@ namespace AndyDune\MgmtIntaxxApi;
 use PHPUnit\Framework\TestCase;
 
 /**
- * OrderCardClientCompanyAssignRerquestTest Class Doc Comment
+ * PincodeChangeTest Class Doc Comment
  *
  * @category    Class
- * @description Request for assign Card client company to order
+ * @description PincodeChange
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrderCardClientCompanyAssignRerquestTest extends TestCase
+class PincodeChangeTest extends TestCase
 {
 
     /**
@@ -71,30 +71,23 @@ class OrderCardClientCompanyAssignRerquestTest extends TestCase
     }
 
     /**
-     * Test "OrderCardClientCompanyAssignRerquest"
+     * Test "PincodeChange"
      */
-    public function testOrderCardClientCompanyAssignRerquest()
+    public function testPincodeChange()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "orderId"
      */
-    public function testPropertyId()
+    public function testPropertyOrderId()
     {
     }
 
     /**
-     * Test attribute "hash"
+     * Test attribute "pin"
      */
-    public function testPropertyHash()
-    {
-    }
-
-    /**
-     * Test attribute "card"
-     */
-    public function testPropertyCard()
+    public function testPropertyPin()
     {
     }
 }

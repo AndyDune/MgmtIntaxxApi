@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderCardClientCompanyAssignRerquestTest
+ * OrderFileTest
  *
  * PHP version 5
  *
@@ -31,15 +31,15 @@ namespace AndyDune\MgmtIntaxxApi;
 use PHPUnit\Framework\TestCase;
 
 /**
- * OrderCardClientCompanyAssignRerquestTest Class Doc Comment
+ * OrderFileTest Class Doc Comment
  *
  * @category    Class
- * @description Request for assign Card client company to order
+ * @description OrderFile
  * @package     AndyDune\MgmtIntaxxApi
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class OrderCardClientCompanyAssignRerquestTest extends TestCase
+class OrderFileTest extends TestCase
 {
 
     /**
@@ -71,30 +71,37 @@ class OrderCardClientCompanyAssignRerquestTest extends TestCase
     }
 
     /**
-     * Test "OrderCardClientCompanyAssignRerquest"
+     * Test "OrderFile"
      */
-    public function testOrderCardClientCompanyAssignRerquest()
+    public function testOrderFile()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "orderId"
      */
-    public function testPropertyId()
+    public function testPropertyOrderId()
     {
     }
 
     /**
-     * Test attribute "hash"
+     * Test attribute "title"
      */
-    public function testPropertyHash()
+    public function testPropertyTitle()
     {
     }
 
     /**
-     * Test attribute "card"
+     * Test attribute "name"
      */
-    public function testPropertyCard()
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "file"
+     */
+    public function testPropertyFile()
     {
     }
 }

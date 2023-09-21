@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**cardClientCompanyAssignPost**](DefaultApi.md#cardclientcompanyassignpost) | **POST** /card-client-company/assign | Assign card client company to order
 [**cardClientCompanyAvailableVariantsPost**](DefaultApi.md#cardclientcompanyavailablevariantspost) | **POST** /card-client-company/available-variants | Get available variants of card client company
 [**createOrderPost**](DefaultApi.md#createorderpost) | **POST** /create-order | Create order with product of given brand
+[**customerPincodeChangePost**](DefaultApi.md#customerpincodechangepost) | **POST** /customer/pincode-change | Request to change customer pincode.
 [**customerPincodeCheckPost**](DefaultApi.md#customerpincodecheckpost) | **POST** /customer/pincode-check | Request to check customer pincode.
 [**dataGet**](DefaultApi.md#dataget) | **GET** /data | Basic data.
 [**emailConfirmPost**](DefaultApi.md#emailconfirmpost) | **POST** /email-confirm | Customer email confirmation.
@@ -163,6 +164,58 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\AndyDune\MgmtIntaxxApi\Model\Order**](../Model/Order.md)| Order and customer datails |
+
+### Return type
+
+[**\AndyDune\MgmtIntaxxApi\Model\Response**](../Model/Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerPincodeChangePost**
+> \AndyDune\MgmtIntaxxApi\Model\Response customerPincodeChangePost($body)
+
+Request to change customer pincode.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: ApiKeyAuth
+$config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = AndyDune\MgmtIntaxxApi\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new AndyDune\MgmtIntaxxApi\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \AndyDune\MgmtIntaxxApi\Model\PincodeChange(); // \AndyDune\MgmtIntaxxApi\Model\PincodeChange | Order id and pincode
+
+try {
+    $result = $apiInstance->customerPincodeChangePost($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->customerPincodeChangePost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\AndyDune\MgmtIntaxxApi\Model\PincodeChange**](../Model/PincodeChange.md)| Order id and pincode |
 
 ### Return type
 

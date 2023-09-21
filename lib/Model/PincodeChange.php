@@ -1,6 +1,6 @@
 <?php
 /**
- * PaymentResponse
+ * PincodeChange
  *
  * PHP version 5
  *
@@ -32,15 +32,14 @@ use \ArrayAccess;
 use \AndyDune\MgmtIntaxxApi\ObjectSerializer;
 
 /**
- * PaymentResponse Class Doc Comment
+ * PincodeChange Class Doc Comment
  *
  * @category Class
- * @description Payment details
  * @package  AndyDune\MgmtIntaxxApi
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PaymentResponse implements ModelInterface, ArrayAccess
+class PincodeChange implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +48,7 @@ class PaymentResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PaymentResponse';
+    protected static $swaggerModelName = 'PincodeChange';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +56,8 @@ class PaymentResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'success' => 'bool',
-        'canCreatePayment' => 'bool',
-        'orderId' => 'int',
-        'orderHash' => 'string',
-        'orderStatus' => 'string',
-        'orderDebt' => 'float',
-        'message' => 'string',
-        'payment' => '\AndyDune\MgmtIntaxxApi\Model\Payment'
+        'orderId' => 'string',
+        'pin' => 'string'
     ];
 
     /**
@@ -73,14 +66,8 @@ class PaymentResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'success' => null,
-        'canCreatePayment' => null,
         'orderId' => null,
-        'orderHash' => null,
-        'orderStatus' => null,
-        'orderDebt' => null,
-        'message' => null,
-        'payment' => null
+        'pin' => null
     ];
 
     /**
@@ -110,14 +97,8 @@ class PaymentResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-        'canCreatePayment' => 'can_create_payment',
-        'orderId' => 'order_id',
-        'orderHash' => 'order_hash',
-        'orderStatus' => 'order_status',
-        'orderDebt' => 'order_debt',
-        'message' => 'message',
-        'payment' => 'payment'
+        'orderId' => 'orderId',
+        'pin' => 'pin'
     ];
 
     /**
@@ -126,14 +107,8 @@ class PaymentResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-        'canCreatePayment' => 'setCanCreatePayment',
         'orderId' => 'setOrderId',
-        'orderHash' => 'setOrderHash',
-        'orderStatus' => 'setOrderStatus',
-        'orderDebt' => 'setOrderDebt',
-        'message' => 'setMessage',
-        'payment' => 'setPayment'
+        'pin' => 'setPin'
     ];
 
     /**
@@ -142,14 +117,8 @@ class PaymentResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-        'canCreatePayment' => 'getCanCreatePayment',
         'orderId' => 'getOrderId',
-        'orderHash' => 'getOrderHash',
-        'orderStatus' => 'getOrderStatus',
-        'orderDebt' => 'getOrderDebt',
-        'message' => 'getMessage',
-        'payment' => 'getPayment'
+        'pin' => 'getPin'
     ];
 
     /**
@@ -210,14 +179,8 @@ class PaymentResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['canCreatePayment'] = isset($data['canCreatePayment']) ? $data['canCreatePayment'] : null;
         $this->container['orderId'] = isset($data['orderId']) ? $data['orderId'] : null;
-        $this->container['orderHash'] = isset($data['orderHash']) ? $data['orderHash'] : null;
-        $this->container['orderStatus'] = isset($data['orderStatus']) ? $data['orderStatus'] : null;
-        $this->container['orderDebt'] = isset($data['orderDebt']) ? $data['orderDebt'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['payment'] = isset($data['payment']) ? $data['payment'] : null;
+        $this->container['pin'] = isset($data['pin']) ? $data['pin'] : null;
     }
 
     /**
@@ -229,8 +192,11 @@ class PaymentResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['success'] === null) {
-            $invalidProperties[] = "'success' can't be null";
+        if ($this->container['orderId'] === null) {
+            $invalidProperties[] = "'orderId' can't be null";
+        }
+        if ($this->container['pin'] === null) {
+            $invalidProperties[] = "'pin' can't be null";
         }
         return $invalidProperties;
     }
@@ -248,57 +214,9 @@ class PaymentResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success success
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets canCreatePayment
-     *
-     * @return bool
-     */
-    public function getCanCreatePayment()
-    {
-        return $this->container['canCreatePayment'];
-    }
-
-    /**
-     * Sets canCreatePayment
-     *
-     * @param bool $canCreatePayment canCreatePayment
-     *
-     * @return $this
-     */
-    public function setCanCreatePayment($canCreatePayment)
-    {
-        $this->container['canCreatePayment'] = $canCreatePayment;
-
-        return $this;
-    }
-
-    /**
      * Gets orderId
      *
-     * @return int
+     * @return string
      */
     public function getOrderId()
     {
@@ -308,7 +226,7 @@ class PaymentResponse implements ModelInterface, ArrayAccess
     /**
      * Sets orderId
      *
-     * @param int $orderId orderId
+     * @param string $orderId orderId
      *
      * @return $this
      */
@@ -320,121 +238,25 @@ class PaymentResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets orderHash
+     * Gets pin
      *
      * @return string
      */
-    public function getOrderHash()
+    public function getPin()
     {
-        return $this->container['orderHash'];
+        return $this->container['pin'];
     }
 
     /**
-     * Sets orderHash
+     * Sets pin
      *
-     * @param string $orderHash orderHash
+     * @param string $pin pin
      *
      * @return $this
      */
-    public function setOrderHash($orderHash)
+    public function setPin($pin)
     {
-        $this->container['orderHash'] = $orderHash;
-
-        return $this;
-    }
-
-    /**
-     * Gets orderStatus
-     *
-     * @return string
-     */
-    public function getOrderStatus()
-    {
-        return $this->container['orderStatus'];
-    }
-
-    /**
-     * Sets orderStatus
-     *
-     * @param string $orderStatus orderStatus
-     *
-     * @return $this
-     */
-    public function setOrderStatus($orderStatus)
-    {
-        $this->container['orderStatus'] = $orderStatus;
-
-        return $this;
-    }
-
-    /**
-     * Gets orderDebt
-     *
-     * @return float
-     */
-    public function getOrderDebt()
-    {
-        return $this->container['orderDebt'];
-    }
-
-    /**
-     * Sets orderDebt
-     *
-     * @param float $orderDebt orderDebt
-     *
-     * @return $this
-     */
-    public function setOrderDebt($orderDebt)
-    {
-        $this->container['orderDebt'] = $orderDebt;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string $message message
-     *
-     * @return $this
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets payment
-     *
-     * @return \AndyDune\MgmtIntaxxApi\Model\Payment
-     */
-    public function getPayment()
-    {
-        return $this->container['payment'];
-    }
-
-    /**
-     * Sets payment
-     *
-     * @param \AndyDune\MgmtIntaxxApi\Model\Payment $payment payment
-     *
-     * @return $this
-     */
-    public function setPayment($payment)
-    {
-        $this->container['payment'] = $payment;
+        $this->container['pin'] = $pin;
 
         return $this;
     }
