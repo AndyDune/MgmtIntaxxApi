@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **pfsId** | **string** |  | [optional] 
 **debt** | **float** | Order debt. If negative it can create payment. | [optional] 
 **sourceOrderId** | **int** | External order id | [optional] 
+**workflowTemplateId** | **int** | Workflow alfa template id to start work with. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
